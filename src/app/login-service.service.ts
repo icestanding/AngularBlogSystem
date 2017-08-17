@@ -11,15 +11,18 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/toPromise';
 
 
 @Injectable()
 export class LoginServiceService {
+
   constructor(private http: Http) { 
     
   }
-  login(id:string, password:string): boolean {
-      
-      return true;
+  login(id:string, password:string) {
+  return this.http.get('/a')
+             .toPromise()
+            //  .then(response => response.json().data);
   }
 }

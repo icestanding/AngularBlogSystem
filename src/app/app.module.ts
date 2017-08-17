@@ -11,7 +11,6 @@ import { LoginfComponent } from './login/loginf/loginf.component';
 
 
 const appRoutes: Routes = [
-
     {
       path: 'login', pathMatch:'full', component: LoginComponent,
       children: [
@@ -29,16 +28,16 @@ const appRoutes: Routes = [
 
 
 @NgModule({
+  imports: [
+    RouterModule.forRoot(appRoutes),
+    BrowserModule,
+    HttpModule
+  ],
   declarations: [
     AppComponent,
     LoginComponent,
     SuccessfulpageComponent,
-    LoginfComponent,
-    // HttpModule
-  ],
-  imports: [
-    RouterModule.forRoot(appRoutes),
-    BrowserModule
+    LoginfComponent
   ],
   providers: [LoginServiceService],
   bootstrap: [AppComponent]

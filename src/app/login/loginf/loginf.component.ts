@@ -9,14 +9,15 @@ import { Router, Routes } from '@angular/router';
   styleUrls: ['./loginf.component.scss']
 })
 export class LoginfComponent implements OnInit {
+  private result: any;
+  constructor(private router: Router, private login: LoginServiceService) { 
 
-  constructor(private router: Router, private login: LoginServiceService) { }
-
+  }
   ngOnInit() {
   }
   clicked() {
-    if(this.login.login("hah","123")) {
-      this.router.navigateByUrl('success')
-    }
+    let a = this.login.login('a', 's');
+    this.result = a;
+    this.router.navigateByUrl('/success');
   }
 }
