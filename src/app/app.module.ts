@@ -9,39 +9,23 @@ import { LoginServiceService } from './login-service.service';
 // import { LoginfComponent } from './login/loginf/loginf.component';
 import { LoginModule } from './login/login.module';
 import { HeaderComponent } from './share/header/header.component';
+import { FooterComponent } from './share/footer/footer.component';
 
 
 
-// const appRoutes: Routes = [
-//     {
-//       path: 'login', pathMatch:'full', component: LoginComponent,
-//       children: [
-//         {
-//           path: '',
-//           component: LoginfComponent
-//         }
-//       ]
-//     },
-//     {
-//       path: 'success', 
-//       component: SuccessfulpageComponent
-//     }
-// ]
 
 
 @NgModule({
   imports: [
-    // RouterModule.forRoot(appRoutes),
     BrowserModule,
     HttpModule,
-    LoginModule
+    LoginModule,
+    RouterModule.forRoot([])
   ],
   declarations: [
     AppComponent,
     HeaderComponent,
-    // LoginComponent,
-    // SuccessfulpageComponent,
-    // LoginfComponent
+    FooterComponent,
   ],
   providers: [LoginServiceService],
   bootstrap: [AppComponent]
