@@ -7,7 +7,10 @@ import { Router, Routes } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  public logoPath:string;    
+  constructor(private router: Router) {
+    this.logoPath = '../../assets/img/logo.jpg'
+  }
   ngOnInit() {
   }
 }
