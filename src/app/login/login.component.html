@@ -1,35 +1,35 @@
 <div class="logindiv">
     <md-card class="card">
-    <form class="loginform">
-        <div class="logo">
-            <!-- <img class="logoimg" src="{{logoPath}}"> -->
-            <img md-card-avatar  src="{{logoPath}}">
-        </div>
-        <div class="type">
-            <form class="example-form">
-            <!-- this is for id -->
-            <md-input-container class="text" >
-                <input mdInput placeholder="Email" [formControl]="emailFormControl">
-                <md-error *ngIf="emailFormControl.hasError('pattern')">
-                Please enter a valid email address
-                </md-error>
-                <md-error *ngIf="emailFormControl.hasError('required')">
-                Email is <strong>required</strong>
-                </md-error>
-            </md-input-container>
-            <!-- this is for password -->
-            <md-input-container class="text">
-                <input mdInput placeholder="Password">
-            </md-input-container>
-            Forget your password?
-            </form>
-        </div>
-        <div class="button">
-           <button md-raised-button color="primary">Sign Up </button>
-        <br>
-        <hr class="style1">
-             Don't have account, Sign up
-        </div>
-    </form>
+        <form class="loginform">
+            <div class="logo">
+                <img class="logoimg" src="{{logoPath}}"> 
+                <!-- <img md-card-avatar  src="{{logoPath}}"> -->
+            </div>
+            <div class="type">
+                <form class="example-form">
+                <!-- this is for id -->
+                <md-input-container class="text" >
+                    <input mdInput placeholder="Email" [formControl]="emailFormControl">
+                    <md-error *ngIf="emailFormControl.hasError('pattern')">
+                    Please enter a valid email address
+                    </md-error>
+                    <md-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                    </md-error>
+                </md-input-container>
+                <!-- this is for password -->
+                <md-input-container class="text">
+                    <input mdInput placeholder="Password">
+                </md-input-container>
+               <p> Forget your password?</p>
+                </form>
+            </div>
+            <div class="button">
+            <button md-raised-button color="primary">Sign Up </button>
+            <br>
+            <hr class="style1">
+               <p> Don't have account, Sign up</p>
+            </div>
+        </form>
     </md-card>
 </div>
