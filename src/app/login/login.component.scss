@@ -10,27 +10,31 @@
 }
 .card {
  margin: auto;
-    width: 300px;
+    width: 280px;
 }
 .loginform {
     font-size:14;
     margin: auto;
     // border: 1px solid red;
-    width: 300px;
+    width: 280px;
     height: 50%;
     flex-direction: column;
     display: flex;
+    text-align: center;
     .type {
         width: 200px;
         margin: auto;
         margin-top: 30px;
+        // text-align: center;
+        text-align: center;
     }
     .logo {
-        border: 1px solid yellow;
+        // border: 1px solid yellow;
         width: 170px;
         margin: 0 auto;
         height: 50px;
         margin-top: 25px;
+        text-align: center;
     }
     .button {
         margin: 0 auto;
@@ -51,5 +55,17 @@
     max-width: 100%;
     max-height: 100%;
 }
+.alink {
+       
+        font-size: 12px;
+    // display: inline-block;
 
+}
 
+.fpsw {
+    width: 196px;
+     margin: 0 auto;
+    text-align: left;
+    margin-bottom: 40px;
+    margin-top: -10px;
+}
