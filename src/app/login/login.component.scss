@@ -1,48 +1,52 @@
 .logindiv {
-    border: 1px solid black;
+    // border: 1px solid black;
     // height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
-    height: 700px;
+    height: 800px;
     min-height: 100px;
 }
 .card {
  margin: auto;
-    width: 280px;
+    width: 350px;
 }
 .loginform {
     font-size:14;
     margin: auto;
     // border: 1px solid red;
-    width: 280px;
+    width: 350px;
     height: 50%;
     flex-direction: column;
     display: flex;
     text-align: center;
     .type {
-        width: 200px;
+        width: 300px;
         margin: auto;
-        margin-top: 30px;
+        margin-top: 40px;
         // text-align: center;
         text-align: center;
     }
     .logo {
         // border: 1px solid yellow;
-        width: 170px;
+        width: 350px;
         margin: 0 auto;
-        height: 50px;
-        margin-top: 25px;
-        text-align: center;
+        height: 70px;
+        // margin-top: 25px;
+        text-align: left;
     }
     .button {
         margin: 0 auto;
         margin-bottom: 30px;
+        margin-top: 20px;
+        width: 200px;
         text-align: center;
         .loginbutton {
             margin: 0 auto;
-            width: 50%;
+            padding: 5px;
+            padding-left: 50px;
+            padding-right: 50px;
         }   
     }
        
@@ -52,8 +56,8 @@
     margin-top: 20px;
 }
 .logoimg {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 200px;
+    max-height: 200px;
 }
 .alink {
        
@@ -63,7 +67,7 @@
 }
 
 .fpsw {
-    width: 196px;
+    width: 300px;
      margin: 0 auto;
     text-align: left;
     margin-bottom: 40px;
@@ -71,4 +75,8 @@
 }
 .style1 {
     margin-top: 20px;
+}
+.text {
+    width: 100%;
+    margin-top: 15px
 }
