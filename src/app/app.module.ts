@@ -30,9 +30,6 @@ import { MdInputModule } from '@angular/material';
   ],
   providers: [LoginServiceService],
   bootstrap: [AppComponent],
-  exports: [    BrowserAnimationsModule,
-    MdToolbarModule,
-    MdInputModule]
 })
 export class AppModule { }
 
