@@ -8,9 +8,15 @@
     height: 700px;
     min-height: 100px;
 }
+.card {
+ margin: auto;
+    width: 250px;
+}
+
+
 .loginform {
     margin: auto;
-    border: 1px solid red;
+    // border: 1px solid red;
     width: 250px;
     height: 50%;
     flex-direction: column;
@@ -36,6 +42,7 @@
             width: 50%;
         }   
     }
+       
 
 }
 .myp {

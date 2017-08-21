@@ -5,10 +5,11 @@ import { HomeModule } from './login-routing.module'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MdToolbarModule } from '@angular/material';
 import { MdInputModule } from '@angular/material';
-
+// import { MdButton } from '@angular/material';
 // for form control
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
+import {FormsModule,  ReactiveFormsModule} from '@angular/forms';
+import { MdButtonModule } from '@angular/material';
+import { MdCardModule } from '@angular/material';
 
 
 @NgModule({
@@ -19,7 +20,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MdToolbarModule,
     MdInputModule,
     FormsModule,
-    ReactiveFormsModule
+    MdButtonModule,
+    // MdButton,
+    ReactiveFormsModule,
+    MdCardModule
   ],
   declarations: [LoginComponent],
   exports: [LoginComponent]
