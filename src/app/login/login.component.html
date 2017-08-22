@@ -1,5 +1,7 @@
-<app-loginheader>
+<app-loginheader 
+(event)="dummyFunction()">
 </app-loginheader>
+<p>here is the data : {{data}}</p>
 <div class="login">
 <app-loginform>
 </app-loginform>
@@ -12,6 +14,9 @@
   <md-sidenav #start2 opened mode="side">
     Drawer
   </md-sidenav>
+    <button md-button (click)="start2.toggle()">Toggle Start Side Drawer</button>
+
+
 </md-sidenav-container>
 
 
