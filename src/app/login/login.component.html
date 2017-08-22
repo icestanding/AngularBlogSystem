@@ -1,5 +1,4 @@
 <div class="logindiv">
-    <!-- <span> MY PORT </span> -->
     <md-card class="card">
         <div *ngIf="hidden" class="progressbar">
             <md-progress-bar mode="indeterminate" ></md-progress-bar>
@@ -27,14 +26,14 @@
                 </md-input-container>     
             </div>
             <!-- forget password link -->
-            <div class="fpsw"><a class="alink" href="/login"> Forget your password? </a></div>
+            <div class="fpsw"><a class="alink" (click)="fogetpsw()" > Forget your password? </a></div>
             <!-- button and 'dont have account link' -->
             <div class="button">
             <button md-raised-button color="primary" class="loginbutton" (click)="signUp()">
                 Sign Up 
             </button>  
             <hr class="style1">
-               <p class="alink"> Don't have account, <a class="alink" href="/login">Sign up </a></p>
+               <p [@flyout]='state' (click)="sample()" style=" font-size: 12px;"> Don't have account, <a class="alink" href="/login">Sign up </a></p>
             </div>
         </form>
     </md-card>

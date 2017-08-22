@@ -63,8 +63,6 @@
             padding-right: 50px;
         }   
     }
-       
-
 }
 .myp {
     margin-top: 20px;
@@ -74,14 +72,19 @@
     max-height: 200px;
 }
 .alink {
-        font-size: 12px;
+    font-size: 12px;
+    text-decoration: underline;
+    display: inline-block;
+}
+.alink:hover {
+    cursor: pointer; 
 }
 .fpsw {
     width: 300px;
      margin: 0 auto;
     text-align: left;
     margin-bottom: 40px;
-    margin-top: -10px;
+    margin-top: -5px;
 }
 .style1 {
     margin-top: 20px;

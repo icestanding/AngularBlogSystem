@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, Routes } from '@angular/router';
 import {FormControl, Validators} from '@angular/forms';
-// import { NgIf } from '@angular/common';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -9,7 +15,22 @@ const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  // animation
+  animations: [
+    trigger('flyout',[
+      state('in', style({transform: 'translateX(0)'})),
+
+      transition('void => *', [
+      style({transform: 'translateX(-100%)'}),
+      animate(100)]),
+
+      transition('* => void', [
+      animate(100, style({transform: 'translateX(100%)'}))
+    ])
+    ]),
+  ]
+
 })
 
 
@@ -21,6 +42,9 @@ export class LoginComponent implements OnInit {
   public hidden:boolean;
   color: string = 'primary';
   determinateProgressValue: number = 30;
+
+
+  state: string = 'small';
  
 
   // initial part
@@ -42,7 +66,17 @@ export class LoginComponent implements OnInit {
   private clampValue(value: number) {
     return Math.max(0, Math.min(100, value));
   }
+
   signUp () {
     this.hidden = true;
   }
+
+  fogetpsw() {
+    this.hidden = true;
+  }
+  sample() {
+    this.hidden = true;
+     this.state = (this.state === '*' ? 'void' : '*');
+  }
+
 }
