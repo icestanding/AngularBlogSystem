@@ -16,6 +16,9 @@ const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA
 export class LoginComponent implements OnInit {
   public errors;
   public logoPath:string;    
+  color: string = 'primary';
+  determinateProgressValue: number = 30;
+
   constructor(private router: Router) {
     this.logoPath = '../../assets/img/logo.jpg';
     this.errors = "true";
@@ -23,4 +26,10 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   emailFormControl = new FormControl('', [Validators.required, Validators.pattern(EMAIL_REGEX)]);
+  stepDeterminateProgressVal(val: number) {
+    this.determinateProgressValue = this.clampValue(val + this.determinateProgressValue);
+  }
+  private clampValue(value: number) {
+    return Math.max(0, Math.min(100, value));
+  }
 }

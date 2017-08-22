@@ -1,13 +1,13 @@
 <div class="logindiv">
+    <md-progress-bar mode="indeterminate"></md-progress-bar>
     <md-card class="card">
         <form class="loginform">
+            <!-- this is for image -->
             <div class="logo">
                 <img class="logoimg" src="{{logoPath}}"> 
-                <!-- <img md-card-avatar  src="{{logoPath}}"> -->
-                <!-- class="logoimg" -->
             </div>
+            <!-- div for whole input -->
             <div class="type">
-                
                 <!-- this is for id -->
                 <md-input-container class="text" >
                     <input mdInput placeholder="Email" [formControl]="emailFormControl">
@@ -21,13 +21,13 @@
                 <!-- this is for password -->
                 <md-input-container class="text">
                     <input mdInput placeholder="Password">
-                </md-input-container>
-                     
+                </md-input-container>     
             </div>
+            <!-- forget password link -->
             <div class="fpsw"><a class="alink" href="/login"> Forget your password? </a></div>
+            <!-- button and 'dont have account link' -->
             <div class="button">
-            <button md-raised-button color="primary" class="loginbutton">Sign Up </button>
- 
+            <button md-raised-button color="primary" class="loginbutton">Sign Up </button>  
             <hr class="style1">
                <p class="alink"> Don't have account, <a class="alink" href="/login">Sign up </a></p>
             </div>

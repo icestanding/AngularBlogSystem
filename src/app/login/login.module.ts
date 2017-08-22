@@ -10,6 +10,7 @@ import { MdInputModule } from '@angular/material';
 import {FormsModule,  ReactiveFormsModule} from '@angular/forms';
 import { MdButtonModule } from '@angular/material';
 import { MdCardModule } from '@angular/material';
+import { MdProgressBarModule } from '@angular/material';
 
 
 @NgModule({
