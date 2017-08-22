@@ -8,9 +8,6 @@ import { LoginModule } from './login/login.module';
 import { HeaderComponent } from './share/header/header.component';
 import { FooterComponent } from './share/footer/footer.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-// import { MdToolbarModule } from '@angular/material';
-// import { MdInputModule } from '@angular/material';
-// import { MdButton } from '@angular/material';
 
 
 @NgModule({
@@ -20,9 +17,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     LoginModule,
     RouterModule.forRoot([]),
     BrowserAnimationsModule
-    // MdToolbarModule,
-    // MdInputModule,
-    // MdButton
+
 ],
   declarations: [
     AppComponent,

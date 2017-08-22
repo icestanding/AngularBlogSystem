@@ -1,32 +1,5 @@
-<div class="logindiv">
-    <md-card class="login-card">
-        <form class="loginform">
-            <div class="type">
-                <!-- this is for id -->
-                <img class="logoimg" src="{{logoPath}}"> 
-                <md-input-container class="text" >
-                    <input mdInput placeholder="Email" [formControl]="emailFormControl">
-                    <md-error *ngIf="emailFormControl.hasError('pattern')">
-                    Please enter a valid email address
-                    </md-error>
-                    <md-error *ngIf="emailFormControl.hasError('required')">
-                    Email is <strong>required</strong>
-                    </md-error>
-                </md-input-container>
-                <!-- this is for password -->
-                <md-input-container class="text" >
-                    <input mdInput placeholder="Password" type="password">
-                </md-input-container>     
-                <a class="alink" (click)="fogetpsw()" > Forget your password? </a>
-            </div>
-            <!-- button and 'dont have account link' -->
-            <div class="button">
-                <button md-raised-button color="primary" class="loginbutton" (click)="signUp()">
-                    Sign Up 
-                </button>  
-                <p [@flyout]='state' (click)="sample()" style=" font-size: 12px;"> Don't have account, <a href="">Sign up </a></p>
-            </div>
-        </form>
-    </md-card>
-</div>
 
+<div class="login">
+<app-loginform>
+</app-loginform>
+</div>

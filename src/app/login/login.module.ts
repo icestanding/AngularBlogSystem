@@ -11,6 +11,8 @@ import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { MdButtonModule } from '@angular/material';
 import { MdCardModule } from '@angular/material';
 import { MdProgressBarModule } from '@angular/material';
+import { LoginformComponent } from './loginform/loginform.component';
+
 
 
 
@@ -28,7 +30,7 @@ import { MdProgressBarModule } from '@angular/material';
     MdCardModule,
     MdProgressBarModule
   ],
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, LoginformComponent],
   exports: [LoginComponent]
 })
 export class LoginModule { }
