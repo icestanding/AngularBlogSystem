@@ -1,6 +1,9 @@
 <div class="logindiv">
-    <md-progress-bar mode="indeterminate"></md-progress-bar>
+    <!-- <span> MY PORT </span> -->
     <md-card class="card">
+        <div *ngIf="hidden" class="progressbar">
+            <md-progress-bar mode="indeterminate" ></md-progress-bar>
+        </div>
         <form class="loginform">
             <!-- this is for image -->
             <div class="logo">
@@ -19,15 +22,17 @@
                     </md-error>
                 </md-input-container>
                 <!-- this is for password -->
-                <md-input-container class="text">
-                    <input mdInput placeholder="Password">
+                <md-input-container class="text" >
+                    <input mdInput placeholder="Password" type="password">
                 </md-input-container>     
             </div>
             <!-- forget password link -->
             <div class="fpsw"><a class="alink" href="/login"> Forget your password? </a></div>
             <!-- button and 'dont have account link' -->
             <div class="button">
-            <button md-raised-button color="primary" class="loginbutton">Sign Up </button>  
+            <button md-raised-button color="primary" class="loginbutton" (click)="signUp()">
+                Sign Up 
+            </button>  
             <hr class="style1">
                <p class="alink"> Don't have account, <a class="alink" href="/login">Sign up </a></p>
             </div>

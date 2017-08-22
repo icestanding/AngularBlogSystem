@@ -5,13 +5,26 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
-    height: 800px;
+    height:100vh;
     min-height: 100px;
     background-color: #f1f1f1;
+    .element {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
 }
 .card {
- margin: auto;
-    width: 350px;
+    position: relative;
+    margin: auto;
+    width: 380px;
+    .progressbar {
+        position: relative;
+        top:-25px;
+        left: -25px;
+        width: 430px;
+ 
+    }
 }
 .loginform {
     font-size:14;
@@ -61,12 +74,8 @@
     max-height: 200px;
 }
 .alink {
-       
         font-size: 12px;
-    // display: inline-block;
-
 }
-
 .fpsw {
     width: 300px;
      margin: 0 auto;
@@ -81,3 +90,4 @@
     width: 100%;
     margin-top: 15px
 }
+
