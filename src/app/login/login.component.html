@@ -1,16 +1,9 @@
 <div class="logindiv">
-    <md-card class="card">
-        <div *ngIf="hidden" class="progressbar">
-            <md-progress-bar mode="indeterminate" ></md-progress-bar>
-        </div>
+    <md-card class="login-card">
         <form class="loginform">
-            <!-- this is for image -->
-            <div class="logo">
-                <img class="logoimg" src="{{logoPath}}"> 
-            </div>
-            <!-- div for whole input -->
             <div class="type">
                 <!-- this is for id -->
+                <img class="logoimg" src="{{logoPath}}"> 
                 <md-input-container class="text" >
                     <input mdInput placeholder="Email" [formControl]="emailFormControl">
                     <md-error *ngIf="emailFormControl.hasError('pattern')">
@@ -24,17 +17,16 @@
                 <md-input-container class="text" >
                     <input mdInput placeholder="Password" type="password">
                 </md-input-container>     
+                <a class="alink" (click)="fogetpsw()" > Forget your password? </a>
             </div>
-            <!-- forget password link -->
-            <div class="fpsw"><a class="alink" (click)="fogetpsw()" > Forget your password? </a></div>
             <!-- button and 'dont have account link' -->
             <div class="button">
-            <button md-raised-button color="primary" class="loginbutton" (click)="signUp()">
-                Sign Up 
-            </button>  
-            <hr class="style1">
-               <p [@flyout]='state' (click)="sample()" style=" font-size: 12px;"> Don't have account, <a class="alink" href="/login">Sign up </a></p>
+                <button md-raised-button color="primary" class="loginbutton" (click)="signUp()">
+                    Sign Up 
+                </button>  
+                <p [@flyout]='state' (click)="sample()" style=" font-size: 12px;"> Don't have account, <a href="">Sign up </a></p>
             </div>
         </form>
     </md-card>
 </div>
+

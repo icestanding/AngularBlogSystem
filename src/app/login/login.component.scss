@@ -1,60 +1,37 @@
 .logindiv {
-    // border: 1px solid black;
-    // height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    height:100vh;
-    min-height: 100px;
-    background-color: #f1f1f1;
-    .element {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-}
-.card {
-    position: relative;
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
     margin: auto;
-    width: 380px;
-    .progressbar {
-        position: relative;
-        top:-25px;
-        left: -25px;
-        width: 430px;
- 
-    }
 }
 .loginform {
     font-size:14;
     margin: auto;
-    // border: 1px solid red;
-    width: 350px;
     height: 50%;
-    flex-direction: column;
-    display: flex;
     text-align: center;
     .type {
-        width: 300px;
         margin: auto;
         margin-top: 40px;
-        // text-align: center;
-        text-align: center;
+        max-width: 400px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
     }
     .logo {
         // border: 1px solid yellow;
-        width: 350px;
-        margin: 0 auto;
+        max-width: 400px;
+        width: 60%;
+        // margin: 0 auto;
+        margin-left: 20%;
         height: 70px;
         // margin-top: 25px;
         text-align: left;
     }
     .button {
         margin: 0 auto;
-        // margin-bottom: 30px;
         margin-top: 15px;
-        width: 230px;
         text-align: center;
         .loginbutton {
             margin: 0 auto;
@@ -75,22 +52,15 @@
     font-size: 12px;
     text-decoration: underline;
     display: inline-block;
+    max-width: 400px;
+    width: 100%;
+    margin-bottom: 25px;
 }
 .alink:hover {
     cursor: pointer; 
 }
-.fpsw {
-    width: 300px;
-     margin: 0 auto;
-    text-align: left;
-    margin-bottom: 40px;
-    margin-top: -5px;
-}
-.style1 {
-    margin-top: 20px;
-}
+
 .text {
-    width: 100%;
     margin-top: 15px
 }
 
