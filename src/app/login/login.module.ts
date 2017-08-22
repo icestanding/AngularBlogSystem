@@ -12,8 +12,9 @@ import { MdButtonModule } from '@angular/material';
 import { MdCardModule } from '@angular/material';
 import { MdProgressBarModule } from '@angular/material';
 import { LoginformComponent } from './loginform/loginform.component';
-
-
+import { LoginheaderComponent } from './loginheader/loginheader.component';
+import { FooterComponent } from './footer/footer.component';
+import { MdSidenavModule } from '@angular/material';
 
 
 @NgModule({
@@ -28,9 +29,10 @@ import { LoginformComponent } from './loginform/loginform.component';
     MdButtonModule,
     ReactiveFormsModule,
     MdCardModule,
-    MdProgressBarModule
+    MdProgressBarModule,
+    MdSidenavModule
   ],
-  declarations: [LoginComponent, LoginformComponent],
+  declarations: [LoginComponent, LoginformComponent, LoginheaderComponent, FooterComponent],
   exports: [LoginComponent]
 })
 export class LoginModule { }
