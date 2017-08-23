@@ -1,5 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<header *ngIf="false"></header>
-<router-outlet> </router-outlet>
-<footer *ngIf="false"></footer>
+<header 
+(event)="dummyFunction()"
+></header>
+<!-- this part belong side navigations -->
+<md-sidenav-container class="login">
+    <router-outlet> </router-outlet>
+  <md-sidenav class="sideave" #start2 opened mode="side" align="end">
+      This is the first
+  </md-sidenav>
+</md-sidenav-container>
+
+
+<footer></footer>
  

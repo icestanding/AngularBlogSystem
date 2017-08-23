@@ -1,7 +1,9 @@
 .login {
-   height:100vh;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   background-color: #ececec;
+
+   height: calc(100vh - 140px);
+    }
+    .sideave {
+    width: 10%;
+    max-width: 160px;
+    min-width: 120px;
 }

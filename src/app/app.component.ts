@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MdToolbarModule } from '@angular/material';
+import { Component,ViewChild, ElementRef } from '@angular/core';
+import { MdSidenav } from '@angular/material'
 
 @Component({
   selector: 'app-root',
@@ -8,4 +8,11 @@ import { MdToolbarModule } from '@angular/material';
 })
 export class AppComponent {
   title = 'app';
+  @ViewChild('start2') MdSidenav:MdSidenav;
+
+  dummyFunction() {
+    // this.mdSidenav.nativeElement.toggle();
+    this.MdSidenav.toggle();
+  }
+  
 }

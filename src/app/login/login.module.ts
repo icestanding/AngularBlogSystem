@@ -16,6 +16,8 @@ import { LoginheaderComponent } from './loginheader/loginheader.component';
 import { FooterComponent } from './footer/footer.component';
 import { MdSidenavModule } from '@angular/material';
 
+// import { ThemeDirective } from '../theme/theme.directive';
+
 
 @NgModule({
   imports: [
@@ -32,7 +34,13 @@ import { MdSidenavModule } from '@angular/material';
     MdProgressBarModule,
     MdSidenavModule
   ],
-  declarations: [LoginComponent, LoginformComponent, LoginheaderComponent, FooterComponent],
+  declarations: [
+    LoginComponent, 
+    LoginformComponent, 
+    LoginheaderComponent, 
+    FooterComponent,
+    // ThemeDirective
+  ],
   exports: [LoginComponent]
 })
 export class LoginModule { }

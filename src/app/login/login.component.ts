@@ -8,8 +8,6 @@ import { MdSidenav } from '@angular/material'
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   // animation
-
-
 })
 
 
@@ -26,5 +24,4 @@ export class LoginComponent implements OnInit {
     this.data = "funny";
     this.MdSidenav.toggle();
   }
-
 }

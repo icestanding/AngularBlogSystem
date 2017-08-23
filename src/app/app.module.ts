@@ -7,8 +7,11 @@ import { LoginServiceService } from './login-service.service';
 import { LoginModule } from './login/login.module';
 import { HeaderComponent } from './share/header/header.component';
 import { FooterComponent } from './share/footer/footer.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdCardModule } from '@angular/material';
+import { ThemeDirective } from './theme/theme.directive';
+import { MdButtonModule } from '@angular/material';
+import { MdSidenavModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -16,13 +19,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HttpModule,
     LoginModule,
     RouterModule.forRoot([]),
-    BrowserAnimationsModule
-
+    BrowserAnimationsModule,
+    MdCardModule,
+    MdButtonModule,
+    MdSidenavModule
 ],
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    ThemeDirective
   ],
   providers: [LoginServiceService],
   bootstrap: [AppComponent],
