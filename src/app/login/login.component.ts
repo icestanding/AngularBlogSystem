@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router, Routes } from '@angular/router';
+import { MdSidenav } from '@angular/material'
+
 
 @Component({
   selector: 'app-login',
@@ -13,12 +15,16 @@ import { Router, Routes } from '@angular/router';
 
 export class LoginComponent implements OnInit {
   
+  @ViewChild('start2') MdSidenav:MdSidenav;
+
   data:string;
   constructor(private router: Router) {}
 
   ngOnInit() {}
   dummyFunction() {
-    this.data = "function called";
+    // this.mdSidenav.nativeElement.toggle();
+    this.data = "funny";
+    this.MdSidenav.toggle();
   }
 
 }
