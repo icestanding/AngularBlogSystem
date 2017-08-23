@@ -17,11 +17,8 @@ export class LoginComponent implements OnInit {
 
   data:string;
   constructor(private router: Router) {}
-
   ngOnInit() {}
   dummyFunction() {
-    // this.mdSidenav.nativeElement.toggle();
-    this.data = "funny";
     this.MdSidenav.toggle();
   }
 }

@@ -3,13 +3,13 @@
 (event)="dummyFunction()"
 ></header>
 <!-- this part belong side navigations -->
-<md-sidenav-container class="login">
-    <router-outlet> </router-outlet>
-  <md-sidenav class="sideave" #start2 opened mode="side" align="end">
-      This is the first
-  </md-sidenav>
-</md-sidenav-container>
 
+<md-sidenav-container>
+  <router-outlet> </router-outlet>
+  <md-sidenav  #start2 closed mode="side" align="end">
+    .........
+  </md-sidenav>
+</md-sidenav-container> 
 
 <footer></footer>
  
