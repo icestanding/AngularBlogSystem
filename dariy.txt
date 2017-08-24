@@ -1,0 +1,47 @@
+use material to rebuild the web page
+
+change font and then go for the change the basic
+
+can't fix font problem
+
+8.22
+try the animation and do the structure
+
+1. Using css size adapt to different size
+2. adjust insite
+3. write sprate component for the signup form
+
+fix forget password, traveledge position and last do the final position
+
+
+
+8.23 do the color first and cent form
+
+I didn't fix the color setting,directive 
+do the color setting again and get understand of directive
+
+read router/directive setting after
+
+1. fix side navigation bar
+2. do the color setting again and get understand of directive
+
+8.24
+Answer
+component export can make these component reuse
+
+
+
+-----------------
+javascript, algorithm
+
+-----------------
+1.Try the theme 
+2.Try the router function\
+3.Session and cookie
+4.Lazy loading
+5.Export component with router
+--------------------------------------
+website design css
+--------------------------------------
+navigation bar design  chose color for deisgn the login page
+--------------------------------------

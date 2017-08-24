@@ -5,9 +5,8 @@ import { MainpageComponent } from './mainpage.component';
 
 @NgModule({
   imports: [
-    RouterModule.forChild([{path: ' ' , component: MainpageComponent}]),
+    RouterModule.forChild([{path: '' , component: MainpageComponent}]),
     CommonModule
   ],
-  declarations: []
 })
 export class MainpageRoutingModule { }
