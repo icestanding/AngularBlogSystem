@@ -12,8 +12,6 @@ import { MdButtonModule } from '@angular/material';
 import { MdCardModule } from '@angular/material';
 import { MdProgressBarModule } from '@angular/material';
 import { LoginformComponent } from './loginform/loginform.component';
-import { LoginheaderComponent } from './loginheader/loginheader.component';
-import { FooterComponent } from './footer/footer.component';
 import { MdSidenavModule } from '@angular/material';
 
 // import { ThemeDirective } from '../theme/theme.directive';
@@ -37,8 +35,6 @@ import { MdSidenavModule } from '@angular/material';
   declarations: [
     LoginComponent, 
     LoginformComponent, 
-    LoginheaderComponent, 
-    FooterComponent,
     // ThemeDirective
   ],
   exports: [LoginComponent]

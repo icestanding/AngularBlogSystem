@@ -12,6 +12,8 @@ import { MdCardModule } from '@angular/material';
 import { ThemeDirective } from './theme/theme.directive';
 import { MdButtonModule } from '@angular/material';
 import { MdSidenavModule } from '@angular/material';
+import { MydirDirective } from './mydir.directive';
+import { MainpageComponent } from './mainpage/mainpage.component';
 
 @NgModule({
   imports: [
@@ -28,7 +30,9 @@ import { MdSidenavModule } from '@angular/material';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ThemeDirective
+    ThemeDirective,
+    MydirDirective,
+    MainpageComponent
   ],
   providers: [LoginServiceService],
   bootstrap: [AppComponent],
