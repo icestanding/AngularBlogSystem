@@ -15,8 +15,8 @@ export class ThemeDirective implements AfterContentInit {
 
   ngAfterContentInit () {
     if (this.theme === 'primary') {
-      this.el.nativeElement.style.backgroundColor = '#e2edff';
-      this.el.nativeElement.style.color = 'rgba(255,255,255,0.8)';
+      this.el.nativeElement.style.backgroundColor = 'white';
+      this.el.nativeElement.style.color = 'black';
     }
   }
 }

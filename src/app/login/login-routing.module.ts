@@ -8,7 +8,7 @@ import { MdInputModule } from '@angular/material';
 
 
 @NgModule({
-  imports: [RouterModule.forChild([{path: '', component: LoginComponent}]),
+  imports: [RouterModule.forChild([{path: 'login', component: LoginComponent}]),
     BrowserAnimationsModule,
     MdToolbarModule,
     MdInputModule],

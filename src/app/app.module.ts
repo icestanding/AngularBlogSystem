@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes} from '@angular/router';
 import { LoginServiceService } from './login-service.service';
 import { LoginModule } from './login/login.module';
+import { MainpageModule } from './mainpage/mainpage.module';
 import { HeaderComponent } from './share/header/header.component';
 import { FooterComponent } from './share/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,13 +14,14 @@ import { ThemeDirective } from './theme/theme.directive';
 import { MdButtonModule } from '@angular/material';
 import { MdSidenavModule } from '@angular/material';
 import { MydirDirective } from './mydir.directive';
-import { MainpageComponent } from './mainpage/mainpage.component';
+
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpModule,
     LoginModule,
+    MainpageModule,
     RouterModule.forRoot([]),
     BrowserAnimationsModule,
     MdCardModule,
@@ -32,7 +34,7 @@ import { MainpageComponent } from './mainpage/mainpage.component';
     FooterComponent,
     ThemeDirective,
     MydirDirective,
-    MainpageComponent
+  
   ],
   providers: [LoginServiceService],
   bootstrap: [AppComponent],
