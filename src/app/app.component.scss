@@ -1,6 +1,9 @@
 // adjust content between header, footer
 .mystyle {
-    height: calc(100vh - 136px);
+    // height: calc(100vh - 136px);
+    height: 100vh;
+    // background-color: #addb2e;
+     background:#d3d3d3;
 }
 .navbar {
     width: 10%;
