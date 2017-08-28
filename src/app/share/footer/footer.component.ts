@@ -16,6 +16,7 @@ export class FooterComponent implements OnInit {
     
   }
   change() {
+    
     this.myset['alternate-theme'] = false;
   }
   

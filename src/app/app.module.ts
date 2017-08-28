@@ -15,6 +15,7 @@ import { MdButtonModule } from '@angular/material';
 import { MdSidenavModule } from '@angular/material';
 import { MydirDirective } from './mydir.directive';
 import { MdMenuModule } from '@angular/material'
+import { MdToolbarModule }from '@angular/material'
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { MdMenuModule } from '@angular/material'
     MdCardModule,
     MdButtonModule,
     MdSidenavModule,
-    MdMenuModule
+    MdMenuModule,
+    MdToolbarModule
 ],
   declarations: [
     AppComponent,
