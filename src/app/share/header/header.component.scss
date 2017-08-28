@@ -1,8 +1,21 @@
 .header {
-    height:20px;
-    opacity: 0.75;   
+    // height:40px;
+    opacity: 0.75;  
+    padding: 12px; 
 }
-.headercontent {
-    max-width: 1024px;
-    margin:0 auto;
+// .headercontent {
+//     max-width: 1024px;
+//     margin:0 auto;
+// }
+    
+.mybutton {
+    line-height: 10px !important;
+    padding: 10px;
+    font-size: 6px;
+    
 }
+.myhref {
+    line-height: 36px;
+    font-size: 14px;
+}
+    

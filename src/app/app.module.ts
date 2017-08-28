@@ -14,6 +14,7 @@ import { ThemeDirective } from './theme/theme.directive';
 import { MdButtonModule } from '@angular/material';
 import { MdSidenavModule } from '@angular/material';
 import { MydirDirective } from './mydir.directive';
+import { MdMenuModule } from '@angular/material'
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { MydirDirective } from './mydir.directive';
     BrowserAnimationsModule,
     MdCardModule,
     MdButtonModule,
-    MdSidenavModule
+    MdSidenavModule,
+    MdMenuModule
 ],
   declarations: [
     AppComponent,

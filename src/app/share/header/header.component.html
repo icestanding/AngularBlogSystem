@@ -1,7 +1,23 @@
+<md-menu #appMenu="mdMenu">
+  <button md-menu-item> Settings </button>
+  <button md-menu-item> Help </button>
+</md-menu>
+
+
+
 <md-card theme="primary" class ="header" >
     <div class="headercontent">
-    <p  class="layout"> <a href="/login">MY PORT</a>
+    <p  class="layout"> <a class="myhref" href="/login">MY PORT</a>
+        <!-- {{color}} -->
+    <md-menu #appMenu="mdMenu">
+         <button md-menu-item (click)= "colorchange('blue')"> blue</button>
+        <button md-menu-item (click)= "colorchange('red')"> Red </button>
+        <button md-menu-item (click)= "colorchange('black')"> Black </button> 
+    </md-menu>
     <span class="spacer"></span> 
      <button md-button color="accent" (click)="toggle($event)">Toggle Start Side Drawer</button> 
+         <button md-icon-button [mdMenuTriggerFor]="appMenu">
+        <md-icon>color</md-icon>
+    </button>
      </div>
 </md-card>

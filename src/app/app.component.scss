@@ -1,14 +1,11 @@
 // adjust content between header, footer
 .mystyle {
-    // height: calc(100vh - 68px);
-    height: 100vh;
+    height: calc(100vh - 68px - 68px);
+    // height: 100vh;
     // background: linear-gradient( #1663e2, #134eaf); 
 }
 .navbar {
     width: 10%;
     min-width: 110px;
     max-width: 150px;
-}
-.mysidenav {
-
 }

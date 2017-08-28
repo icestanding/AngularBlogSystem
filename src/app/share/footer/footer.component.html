@@ -1,3 +1,7 @@
-<md-card theme="primary" class="footer">
+<md-card [ngClass]= "myset">
+    <!-- class="alternate-theme" -->
  This is footer
+   <button md-raised-button color="primary" (click)="change()">
+    Primary
+  </button>
 </md-card>
