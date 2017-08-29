@@ -1,15 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
     <header 
 (event)="dummyFunction()"
-></header>    
-<!-- this part belong side navigations -->
+[ngClass]="mytheme"></header>    
 
- <!-- <router-outlet> </router-outlet>  -->
-  <md-sidenav-container class="mystyle">
+<md-sidenav-container class="mystyle" [ngClass]="mytheme">
   <router-outlet> </router-outlet>
   <md-sidenav  #start2 closed mode="side" align="end" class="navbar" class="mysidenav">
       First
   </md-sidenav>
-</md-sidenav-container>  
-    <footer></footer>    
+    </md-sidenav-container>  
+<footer (colorchange)="themechange()"  [ngClass]="mytheme"></footer>    
  

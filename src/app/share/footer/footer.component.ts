@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -7,17 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  private myset;
+  public myset: {
+    'alternate-theme'?: boolean;
+    'main-theme'?: boolean;
+  };
+  @Output() colorchange = new EventEmitter();
   constructor() { 
-    this.myset={'alternate-theme':true};
+    this.myset={'alternate-theme':true, 'main-theme': false};
   }
 
   ngOnInit() {
     
   }
-  change() {
-    
-    this.myset['alternate-theme'] = false;
+  change(e) {
+    this.colorchange.emit(e);
   }
   
 

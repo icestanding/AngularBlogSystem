@@ -1,13 +1,10 @@
 .header {
-    // height:40px;
+   
     opacity: 0.75;  
     padding: 12px; 
+    display: flex;
+    justify-content: center;
 }
-// .headercontent {
-//     max-width: 1024px;
-//     margin:0 auto;
-// }
-    
 .mybutton {
     line-height: 10px !important;
     padding: 10px;
@@ -17,5 +14,10 @@
 .myhref {
     line-height: 36px;
     font-size: 14px;
+}
+nav a{
+      display: inline-block;
+  padding: 20px;
+
 }
     
