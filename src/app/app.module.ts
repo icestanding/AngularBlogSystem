@@ -16,7 +16,10 @@ import { MdSidenavModule } from '@angular/material';
 import { MydirDirective } from './mydir.directive';
 import { MdMenuModule } from '@angular/material'
 import { MdToolbarModule }from '@angular/material'
-import { SubpageModule } from './subpage/subpage.module'
+import { SubpageModule } from './subpage/subpage.module';
+import { NavComponent } from './share/header/nav/nav.component';
+import { NotfoundComponent } from './share/notfound/notfound.component';
+
 
 
 @NgModule({
@@ -25,7 +28,7 @@ import { SubpageModule } from './subpage/subpage.module'
     HttpModule,
     LoginModule,
     MainpageModule,
-    RouterModule.forRoot([]),
+    RouterModule.forRoot([{path: '**', component:NotfoundComponent}],{enableTracing: true}),
     BrowserAnimationsModule,
     MdCardModule,
     MdButtonModule,
@@ -40,6 +43,8 @@ import { SubpageModule } from './subpage/subpage.module'
     FooterComponent,
     ThemeDirective,
     MydirDirective,
+    NavComponent,
+    NotfoundComponent
   
   ],
   providers: [LoginServiceService],

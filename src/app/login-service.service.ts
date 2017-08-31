@@ -22,7 +22,9 @@ export class LoginServiceService {
     
   }
   login(id:string, password:string) {
-  return this.http.get('/a')
-             .subscribe();
+    return this.http.get('/a').subscribe();
+  }
+  islogin (): boolean {
+    return false;
   }
 }

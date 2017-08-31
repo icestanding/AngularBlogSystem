@@ -1,23 +1,30 @@
-.header {
-   
-    opacity: 0.75;  
-    padding: 12px; 
+.header {  
+    padding: 200px; 
     display: flex;
     justify-content: center;
+    background: url('/../../../assets/img/be.jpeg')  center;
+    background-color: black;
+    background-size: cover;
 }
+
 .mybutton {
     line-height: 10px !important;
     padding: 10px;
     font-size: 6px;
-    
 }
+
 .myhref {
     line-height: 36px;
     font-size: 14px;
 }
+
 nav a{
       display: inline-block;
-  padding: 20px;
+    padding: 20px;
 
+}
+.navp {
+    position: absolute;
+    top: 0;
 }
     

@@ -1,16 +1,17 @@
-<md-toolbar color="primary"class ="header" >
-    <nav>
-        <a class="myhref" [routerLink]="['']">Main</a>
-        <a class="myhref" [routerLink]="['login']">Login</a>
-        <a class="myhref" [routerLink]="['sub']">Sub page</a>
-    </nav>
+
+
+<md-toolbar class ="header" >
+    <navigation class="navp"> </navigation>  
+    <md-card-content>
+        <p> Chen </p>
+    </md-card-content>
     <md-menu #appMenu="mdMenu">
          <button md-menu-item (click)= "colorchange('blue')"> blue</button>
         <button md-menu-item (click)= "colorchange('red')"> Red </button>
         <button md-menu-item (click)= "colorchange('black')"> Black </button> 
     </md-menu>
     <span class="spacer"></span> 
-     <button md-button color="accent" (click)="toggle($event)">Side Drawer</button> 
+    <button md-button color="accent" (click)="toggle($event)">Side Drawer</button> 
          <button md-icon-button [mdMenuTriggerFor]="appMenu">
         <md-icon>color</md-icon>
     </button>
