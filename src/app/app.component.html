@@ -2,14 +2,42 @@
 <header (event)="sidebar()" [ngClass]="mytheme" class="header"></header>      
 
 <md-sidenav-container [ngClass]="mytheme" >
-  <!-- main-content -->
-  <router-outlet style="z-index:2; "> </router-outlet>
-  <!-- sidebar content -->
   <md-sidenav  #start2 closed mode="side" style="border:1px solid black; position:fixed; top:0px;left:0px;">
       <div>First </div>
       <div>Second </div>    
   </md-sidenav>
-  </md-sidenav-container>  
+
+
+  <!-- main-content -->
+  <router-outlet style="z-index:2; overflow: auto"> </router-outlet>
+  <footer (colorchange)="themechange()"  [ngClass]="mytheme"></footer>    
+  <!-- sidebar content -->
+
+
+
+</md-sidenav-container>  
 <!-- footer -->
-<footer (colorchange)="themechange()"  [ngClass]="mytheme"></footer>    
- 
+
+
+<!--<div style="position:absolute;top:0;left:0;right:0;bottom:0;">-->
+<!--<header></header>-->
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;">
+  <md-sidenav-container #sidenav style="height:100%;width:100%;">
+    <md-sidenav mode="over" #sidenav style="min-width:220px;">
+      <p>Sidenav Content</p>
+    </md-sidenav>
+    <md-toolbar color="primary" style="min-height:64px;">
+      <span>
+          <button style="background-color:transparent;border-style:none;" (click)="sidenav.open()">
+              <i class="material-icons toolbar-link-icon" style="color:white;">menu</i>
+          </button>
+      </span>
+    <span>Fixed Header Example</span>
+    </md-toolbar>
+    <div class="inner-sidenav-content">
+      <div style="padding-top:2em;padding-bottom:2em;">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </md-sidenav-container>
+</div>
