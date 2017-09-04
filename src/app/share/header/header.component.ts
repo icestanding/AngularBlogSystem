@@ -15,12 +15,11 @@ export class HeaderComponent implements OnInit {
    }
   ngOnInit() {
   }
-  toggle(e) {
-    this.event.emit(e);
-  
-  }
   colorchange(inside) {
     console.log(inside);
     this.vc.changeColor("red");
+  }
+  sidebar(e){
+    this.event.emit(e);
   }
 }

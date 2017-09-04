@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'navigation',
@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-
+  @Output () event = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
+  }
+  toggle(e) {
+    this.event.emit(e);
   }
 
 }

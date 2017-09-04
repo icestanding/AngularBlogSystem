@@ -1,18 +1,7 @@
-// nav a{
-//     display: block;
-//     padding: 20px;
-//     color: white;
-//     text-decoration: none;
-// }
-// nav a:hover {
-//   color: #d6dbda;
-// }
+
 
 .mynav  {
-   display: flex;
-  // flex-direction: row;
-  // justify-content: space-around;;
-  div {
     width: 100%;
-  }
+    max-width: 1300px;
+    margin: 0 auto;
 }

@@ -18,7 +18,7 @@ export class AppComponent {
     this.mytheme = {'alternate-theme':true, 'main-theme': false};
   }
 
-  dummyFunction() {
+  sidebar() {
     // this.mdSidenav.nativeElement.toggle();
     this.MdSidenav.toggle();
   }

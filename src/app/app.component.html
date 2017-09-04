@@ -1,9 +1,9 @@
 
-  <header (event)="dummyFunction()" [ngClass]="mytheme" class="header"></header>      
+  <header (event)="sidebar()" [ngClass]="mytheme" class="header"></header>      
 
 <md-sidenav-container [ngClass]="mytheme">
   <router-outlet> </router-outlet>
-  <md-sidenav  #start2 closed mode="side" align="end"  >
+  <md-sidenav  #start2 closed mode="side">
       First
   </md-sidenav>
   </md-sidenav-container>  
