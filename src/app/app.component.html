@@ -1,13 +1,15 @@
+<!-- header contain nav -->
+<header (event)="sidebar()" [ngClass]="mytheme" class="header"></header>      
 
-  <header (event)="sidebar()" [ngClass]="mytheme" class="header"></header>      
-
-<md-sidenav-container [ngClass]="mytheme">
-  <router-outlet style="z-index:2"> </router-outlet>
-  <md-sidenav  #start2 closed mode="side" style="border:1px solid black">
+<md-sidenav-container [ngClass]="mytheme" >
+  <!-- main-content -->
+  <router-outlet style="z-index:2; "> </router-outlet>
+  <!-- sidebar content -->
+  <md-sidenav  #start2 closed mode="side" style="border:1px solid black; position:fixed; top:0px;left:0px;">
       <div>First </div>
-      <div>Second </div>
-      
+      <div>Second </div>    
   </md-sidenav>
   </md-sidenav-container>  
+<!-- footer -->
 <footer (colorchange)="themechange()"  [ngClass]="mytheme"></footer>    
  
