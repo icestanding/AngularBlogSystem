@@ -1,30 +1,32 @@
 .header {  
-    padding: 200px; 
-    display: flex;
-    justify-content: center;
+
+    padding-bottom: 5px;
     // background: url('/../../../assets/img/be.jpeg')  center;
     // background-color: black;
     // background-size: cover;
+    height: 200px;
+    display:flex;
+    flex-direction: column-reverse;
 }
 
-.mybutton {
-    line-height: 10px !important;
-    padding: 10px;
-    font-size: 6px;
-}
+// .mybutton {
+//     line-height: 10px !important;
+//     padding: 10px;
+//     font-size: 6px;
+// }
 
-.myhref {
-    line-height: 36px;
-    font-size: 14px;
-}
+// .myhref {
+//     line-height: 36px;
+//     font-size: 14px;
+// }
 
-nav a{
-      display: inline-block;
-    padding: 20px;
+// nav a{
+//       display: inline-block;
+//     padding: 20px;
 
-}
-.navp {
-    position: absolute;
-    top: 0;
-}
+// }
+// .navp {
+//     position: absolute;
+//     top: 0;
+// }
     

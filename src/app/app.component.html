@@ -2,9 +2,11 @@
   <header (event)="sidebar()" [ngClass]="mytheme" class="header"></header>      
 
 <md-sidenav-container [ngClass]="mytheme">
-  <router-outlet> </router-outlet>
-  <md-sidenav  #start2 closed mode="side">
-      First
+  <router-outlet style="z-index:2"> </router-outlet>
+  <md-sidenav  #start2 closed mode="side" style="border:1px solid black">
+      <div>First </div>
+      <div>Second </div>
+      
   </md-sidenav>
   </md-sidenav-container>  
 <footer (colorchange)="themechange()"  [ngClass]="mytheme"></footer>    
