@@ -1,13 +1,11 @@
-<!--The content below is only a placeholder and can be replaced.-->
-    <header 
-(event)="dummyFunction()"
-[ngClass]="mytheme"></header>    
 
-<md-sidenav-container class="mystyle" [ngClass]="mytheme">
+  <header (event)="dummyFunction()" [ngClass]="mytheme" class="header"></header>      
+
+<md-sidenav-container [ngClass]="mytheme">
   <router-outlet> </router-outlet>
-  <md-sidenav  #start2 closed mode="side" align="end" class="navbar" class="mysidenav">
+  <md-sidenav  #start2 closed mode="side" align="end"  >
       First
   </md-sidenav>
-    </md-sidenav-container>  
+  </md-sidenav-container>  
 <footer (colorchange)="themechange()"  [ngClass]="mytheme"></footer>    
  
