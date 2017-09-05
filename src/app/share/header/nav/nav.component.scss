@@ -11,8 +11,15 @@
     margin-bottom: 0px;
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 4;
     width: 100%;
     border: 1px solid black;
-    opacity: 0.2;
+    opacity: 0.8;
+}
+.header {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-bottom: 0;
 }

@@ -18,6 +18,7 @@ export class AppComponent {
   public snav: {
     'snav'?: boolean;
     'snavfix'?: boolean;
+    'height'?: string
   };
 
   title = 'app';
@@ -32,7 +33,8 @@ export class AppComponent {
                   };
     this.snav = {
                     'snav':  true,
-                    'snavfix': false
+                    'snavfix': false,
+                    'height': "",
     }
   }
   ngOnInit() {}
@@ -41,17 +43,29 @@ export class AppComponent {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     let number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    if(number > 264  ) {
+    let maxheight = document.body.scrollHeight - 64;
+    let windowheight = window.innerHeight;
+    console.log(maxheight);
+    console.log(number);
+
+    if(number > 290 && number <= maxheight ) {
       this.mytheme['main'] = false;
       this.mytheme['mainfix'] = true;
       this.snav['snav'] = false;
       this.snav['snavfix'] = true;
+      this.snav['height'] = "";
     }
-    else if (number <= 264 ) {
+    else if (number <= 290 ) {
       this.mytheme['main'] = true;
       this.mytheme['mainfix'] = false;
       this.snav['snav'] = true;
       this.snav['snavfix'] = false;
+      this.snav['height'] = "";
+    }
+    else if (number >= maxheight) {
+      console.log("fku");
+      let offset = number - maxheight;
+      this.snav['height'] = String(windowheight - 36 - offset );
     }
   }
 
