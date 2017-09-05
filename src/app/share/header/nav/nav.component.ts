@@ -18,18 +18,20 @@ export class NavComponent implements OnInit {
     }
     ngOnInit() {}
     
-    @HostListener('window:scroll', [])
-    onWindowScroll() {
-      let number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-      if(number > 200) {
-        this.transform['nav'] = false;
-        this.transform['navfixed'] = true;
-      }
-      else if (number <= 200) {
-        this.transform['nav'] = true;
-        this.transform['navfixed'] = false;
-      }
-    }
+    // when reach 200 change theme
+    // @HostListener('window:scroll', [])
+    // onWindowScroll() {
+    //   let number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    //   if(number > 200) {
+    //     this.transform['nav'] = false;
+    //     this.transform['navfixed'] = true;
+    //   }
+    //   else if (number <= 200) {
+    //     this.transform['nav'] = true;
+    //     this.transform['navfixed'] = false;
+    //   }
+    // }
+
 
     toggle(e) {
       this.event.emit(e);

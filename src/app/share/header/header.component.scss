@@ -1,14 +1,26 @@
 .header {  
 
-    padding-bottom: 5px;
-    padding-left: 5px;
+    padding:0px;
     // background: url('/../../../assets/img/be.jpeg')  center;
     // background-color: black;
     // background-size: cover;
     height: 200px;
+    width: 100%;
     display:flex;
     flex-direction: column-reverse;
 }
+.headerfix {  
+   position:fixed;
+   top: 0; 
+    padding:0px;
+    height: 36px;
+    display:flex;
+    width: 100%;
+    z-index: 5;
+    flex-direction: column-reverse;
+}
+
+
 
 // .mybutton {
 //     line-height: 10px !important;
