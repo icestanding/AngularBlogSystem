@@ -20,9 +20,11 @@ export class AppComponent {
     'snavfix'?: boolean;
     'height'?: string
   };
+  public height: number;
 
   title = 'app';
   @ViewChild('start2') MdSidenav:MdSidenav;
+  @ViewChild('start2') elementView: ElementRef;
 
   constructor(@Inject(DOCUMENT) private document:Document) {
     this.mytheme = {
@@ -36,6 +38,7 @@ export class AppComponent {
                     'snavfix': false,
                     'height': "",
     }
+    this.height= 36;
   }
   ngOnInit() {}
 
@@ -53,14 +56,16 @@ export class AppComponent {
       this.mytheme['mainfix'] = true;
       this.snav['snav'] = false;
       this.snav['snavfix'] = true;
-      this.snav['height'] = "";
+      // this.height= 36;
+      // this.snav['height'] = String(windowheight - 36  );
     }
     else if (number <= 290 ) {
       this.mytheme['main'] = true;
       this.mytheme['mainfix'] = false;
       this.snav['snav'] = true;
       this.snav['snavfix'] = false;
-      this.snav['height'] = "";
+      // this.snav['height'] = String(windowheight - 36  );;
+    this.height=  36;
     }
     else if (number >= maxheight) {
       console.log("fku");

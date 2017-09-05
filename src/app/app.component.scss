@@ -2,15 +2,23 @@
 .header {
     width: 100%;
 }
+// .main {
+//     margin-top: 0;
+// }
+// .main {
+//     margin-top: 326px;
+// }
 .snav {
     position: absolute;
     top: 0px;
     border:1px solid black; 
     left:0px;
+    height: calc(100% - 36px);
 }
 .snavfix {
     position: fixed;
     top: 36px;
     border:1px solid black; 
     left:0px;
+    height: calc(100% - 36px);
 }
