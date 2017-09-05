@@ -45,3 +45,15 @@ website design css
 --------------------------------------
 navigation bar design  chose color for deisgn the login page
 --------------------------------------
+
+----------------------------------------------------
+Websit project start
+--------------------------------------------------
+
+4/9/2017
+Design
+https://github.com/angular/material2/issues/2033
+
+5/9/2017
+finish main page frame.
+late night try to refactor function 

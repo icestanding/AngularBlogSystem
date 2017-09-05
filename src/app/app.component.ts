@@ -16,9 +16,9 @@ export class AppComponent {
     'mainfix'?: boolean;
   };
   public snav: {
-    'snav'?: boolean;
-    'snavfix'?: boolean;
-    'height'?: string
+    snav?: string;
+    snavfix?: string;
+    offset?: number
   };
   public height: number;
 
@@ -30,49 +30,15 @@ export class AppComponent {
     this.mytheme = {
                     'alternate-theme': true, 
                     'main-theme': false,
-                    'main': true,
-                    'mainfix': false,
                   };
     this.snav = {
-                    'snav':  true,
-                    'snavfix': false,
-                    'height': "",
+      snav: "snav",
+      snavfix: "snavfix",
+      offset : 290
     }
-    this.height= 36;
   }
   ngOnInit() {}
 
-      // when reach 200 change theme
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    let number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    let maxheight = document.body.scrollHeight - 64;
-    let windowheight = window.innerHeight;
-    console.log(maxheight);
-    console.log(number);
-
-    if(number > 290 && number <= maxheight ) {
-      this.mytheme['main'] = false;
-      this.mytheme['mainfix'] = true;
-      this.snav['snav'] = false;
-      this.snav['snavfix'] = true;
-      // this.height= 36;
-      // this.snav['height'] = String(windowheight - 36  );
-    }
-    else if (number <= 290 ) {
-      this.mytheme['main'] = true;
-      this.mytheme['mainfix'] = false;
-      this.snav['snav'] = true;
-      this.snav['snavfix'] = false;
-      // this.snav['height'] = String(windowheight - 36  );;
-    this.height=  36;
-    }
-    else if (number >= maxheight) {
-      console.log("fku");
-      let offset = number - maxheight;
-      this.snav['height'] = String(windowheight - 36 - offset );
-    }
-  }
 
   sidebar() {
     this.MdSidenav.toggle();

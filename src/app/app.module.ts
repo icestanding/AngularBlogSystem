@@ -19,6 +19,7 @@ import { MdToolbarModule }from '@angular/material'
 import { SubpageModule } from './subpage/subpage.module';
 import { NavComponent } from './share/header/nav/nav.component';
 import { NotfoundComponent } from './share/notfound/notfound.component';
+import { ScrollDirective } from './scroll.directive';
 
 
 
@@ -44,7 +45,8 @@ import { NotfoundComponent } from './share/notfound/notfound.component';
     ThemeDirective,
     MydirDirective,
     NavComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    ScrollDirective
   
   ],
   providers: [LoginServiceService],

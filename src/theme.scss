@@ -1,5 +1,15 @@
 @import '~@angular/material/theming';
 
+// import custome font later
+// @font-face {
+//     font-family: opensans_l;
+//     src: url('assets/font/Open_Sans/OpenSans-Light.ttf');
+// }
+// $custom-typography: mat-typography-config(
+//     $font-family: 'opensans_l'
+// );
+
+// @include angular-material-typography($custom-typography);
 @include mat-core();
 
 .main-theme {
@@ -22,3 +32,4 @@ $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 
   @include angular-material-theme($alternate-theme);
 }
+
