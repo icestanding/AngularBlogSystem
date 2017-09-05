@@ -9,31 +9,13 @@ import { DOCUMENT }from '@angular/platform-browser'
 export class NavComponent implements OnInit {
 
     @Output () event = new EventEmitter();
-    public transform:{
-      'nav'?: boolean;
-      'navfixed'?: boolean;
-    };
+
     constructor(@Inject(DOCUMENT) private document:Document) {
-      this.transform = {'nav':true, 'navfixed': false};
+    
     }
     ngOnInit() {}
     
     // when reach 200 change theme, can simplify to switch and case
-    @HostListener('window:scroll', [])
-    onWindowScroll() {
-      let number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-      
-      if(number > 290   ) {
-        this.transform['nav'] = false;
-        this.transform['navfixed'] = true;
-      }
-      else if (number <= 290 ) {
-        this.transform['nav'] = true;
-        this.transform['navfixed'] = false;
-      }
-      
-    }
-
 
     toggle(e) {
       this.event.emit(e);
