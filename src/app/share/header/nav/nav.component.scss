@@ -3,14 +3,16 @@
     // position: fixed;
     top:0px;
     width:  100%;
-    overflow: visible;
-    z-index: 3;
+    height: 300px;
+    z-index: 4;
     border: 1px solid black;
 }
 .navfixed {
     margin-bottom: 0px;
     position: fixed;
-    top:0px;
-    overflow: visible;
-    z-index: 3;
+    top: 0;
+    z-index: 4;
+    width: 100%;
+    border: 1px solid black;
+    opacity: 0.2;
 }

@@ -26,12 +26,12 @@ export class HeaderComponent implements OnInit {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     let number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    console.log(number);
-    if(number > 200) {  
+    // console.log(number);
+    if(number >= 200) {  
       this.transform['header'] = false;
       this.transform['headerfix'] = true;
     }
-    else if (number <= 200) {
+    else if (number< 200) {
       this.transform['header'] = true;
       this.transform['headerfix'] = false;
     }
