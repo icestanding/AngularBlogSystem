@@ -1,14 +1,10 @@
 .header {  
-
-    padding:0px;
     // background: url('/../../../assets/img/be.jpeg')  center;
     // background-color: black;
     // background-size: cover;
-    height: 200px;
-    width: 100%;
     display:flex;
     flex-direction: column-reverse;
-    z-index: 2;
+
 }
 .headerfix {  
    position:fixed;  
@@ -22,25 +18,3 @@
 }
 
 
-
-// .mybutton {
-//     line-height: 10px !important;
-//     padding: 10px;
-//     font-size: 6px;
-// }
-
-// .myhref {
-//     line-height: 36px;
-//     font-size: 14px;
-// }
-
-// nav a{
-//       display: inline-block;
-//     padding: 20px;
-
-// }
-// .navp {
-//     position: absolute;
-//     top: 0;
-// }
-    
