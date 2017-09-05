@@ -15,15 +15,25 @@ export class AppComponent {
     'main'?: boolean;
     'mainfix'?: boolean;
   };
+  public snav: {
+    'snav'?: boolean;
+    'snavfix'?: boolean;
+  };
 
   title = 'app';
   @ViewChild('start2') MdSidenav:MdSidenav;
 
   constructor(@Inject(DOCUMENT) private document:Document) {
-    this.mytheme = {'alternate-theme': true, 
+    this.mytheme = {
+                    'alternate-theme': true, 
                     'main-theme': false,
                     'main': true,
-                    'mainfix': false};
+                    'mainfix': false,
+                  };
+    this.snav = {
+                    'snav':  true,
+                    'snavfix': false
+    }
   }
   ngOnInit() {}
 
@@ -32,12 +42,16 @@ export class AppComponent {
   onWindowScroll() {
     let number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     if(number > 264  ) {
-      this.mytheme['main'] = true;
+      this.mytheme['main'] = false;
       this.mytheme['mainfix'] = true;
+      this.snav['snav'] = false;
+      this.snav['snavfix'] = true;
     }
     else if (number <= 264 ) {
       this.mytheme['main'] = true;
       this.mytheme['mainfix'] = false;
+      this.snav['snav'] = true;
+      this.snav['snavfix'] = false;
     }
   }
 

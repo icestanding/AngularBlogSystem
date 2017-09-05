@@ -9,3 +9,15 @@
 .mainfix {
     margin-top:300px;
 }
+.snav {
+    position: absolute;
+    top: 0px;
+    border:1px solid black; 
+    left:0px;
+}
+.snavfix {
+    position: fixed;
+    top: 36px;
+    border:1px solid black; 
+    left:0px;
+}
