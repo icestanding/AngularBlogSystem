@@ -57,3 +57,7 @@ https://github.com/angular/material2/issues/2033
 5/9/2017
 finish main page frame.
 late night try to refactor function 
+
+6/9/2017
+finish scroll directive
+start on backend.

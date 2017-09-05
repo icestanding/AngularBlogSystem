@@ -11,7 +11,7 @@ import { DOCUMENT } from '@angular/platform-browser'
 @Injectable() 
 export class ScrollDirective {
  
-  @Input() offset: string; 
+  @Input('scroll') offset: string; 
   @Input() css1: string;
   @Input() css2: string;
   constructor(private el: ElementRef, private renderer: Renderer2) {
