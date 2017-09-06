@@ -61,3 +61,4 @@ late night try to refactor function
 6/9/2017
 finish scroll directive
 start on backend.
+Mission1: Qisques with angular2  

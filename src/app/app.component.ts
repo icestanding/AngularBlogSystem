@@ -1,6 +1,7 @@
 import { Component,ViewChild, ElementRef, Inject, HostListener } from '@angular/core';
 import { MdSidenav } from '@angular/material'
 import { DOCUMENT } from '@angular/platform-browser'
+import { Router } from '@angular/router'
 
 
 @Component({
@@ -15,27 +16,21 @@ export class AppComponent {
     'main'?: boolean;
     'mainfix'?: boolean;
   };
-  public snav: {
-    snav?: string;
-    snavfix?: string;
-    offset?: number
-  };
-  public height: number;
+  private router: Router;
+
+
 
   title = 'app';
   @ViewChild('start2') MdSidenav:MdSidenav;
   @ViewChild('start2') elementView: ElementRef;
 
-  constructor(@Inject(DOCUMENT) private document:Document) {
+  constructor(@Inject(DOCUMENT) private document:Document, private _router:Router) {
     this.mytheme = {
                     'alternate-theme': true, 
                     'main-theme': false,
                   };
-    this.snav = {
-      snav: "snav",
-      snavfix: "snavfix",
-      offset : 290
-    }
+    this.router = _router;
+    console.log(this.router.url);
   }
   ngOnInit() {}
 
