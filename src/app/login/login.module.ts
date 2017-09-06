@@ -13,8 +13,7 @@ import { MdCardModule } from '@angular/material';
 import { MdProgressBarModule } from '@angular/material';
 import { LoginformComponent } from './loginform/loginform.component';
 import { MdSidenavModule } from '@angular/material';
-
-// import { ThemeDirective } from '../theme/theme.directive';
+import { ShareModule } from '../share.module';
 
 
 @NgModule({
@@ -30,12 +29,13 @@ import { MdSidenavModule } from '@angular/material';
     ReactiveFormsModule,
     MdCardModule,
     MdProgressBarModule,
-    MdSidenavModule
+    MdSidenavModule,
+    ShareModule
   ],
   declarations: [
     LoginComponent, 
-    LoginformComponent, 
-    // ThemeDirective
+    LoginformComponent
+  
   ],
   exports: [LoginComponent]
 })

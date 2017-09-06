@@ -1,16 +1,17 @@
 <!-- header contain nav -->
 <!--THis is CHen-->
- <header (event)="sidebar()" [ngClass]="mytheme" class="header"></header>       
- <md-sidenav-container  [ngClass]="mytheme" style="transform: none !important;"  >
-  <md-sidenav  #start2 closed mode="side"   [scroll]="264" css1="snav" css2="snavfix">
+ <header (event)="sidebar()" [ngClass]="mytheme" class="header" ></header>       
+ <md-sidenav-container [ngClass]="mytheme" style="transform: none !important;" >
+  <md-sidenav  #start2 closed mode="side"   [scroll]="264" css1="snav" css2="snavfix" >
     <!--scroll offset='snav.offset' css1="snav.snav" css2="snav.snavfix">-->
     <!--[ngClass]="snav"-->
-        <div>First </div>
-        <div>Second </div>    
+        <div>   <a [routerLink]="['/sub']">second page </a></div>
+        <div> <a [routerLink]="['']">Main page </a> </div>   
+        <div> <a [routerLink]="['/login']">Login page </a> </div>  
     </md-sidenav>
-  <router-outlet> </router-outlet>
+  <router-outlet ></router-outlet>
 </md-sidenav-container>   
-<footer (colorchange)="themechange()" ></footer>  
+<footer (colorchange)="themechange()"  ></footer>  
 <!-- footer -->
 
 

@@ -1,13 +1,8 @@
-var express = require("express");
-// var session = require('express-session');
-var app = express();
-var path = require('path');
-app.use(express.static(path.resolve(__dirname + '/dist' )));
+const Koa = require('koa');
+const app = new Koa();
 
-
-
-
-
-
+app.use(async ctx => {
+  ctx.body = 'Hello World';
+});
 
 app.listen(3000);

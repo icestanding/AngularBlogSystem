@@ -20,6 +20,7 @@ import { SubpageModule } from './subpage/subpage.module';
 import { NavComponent } from './share/header/nav/nav.component';
 import { NotfoundComponent } from './share/notfound/notfound.component';
 import { ScrollDirective } from './scroll.directive';
+// import { HeightfullDirective } from './heightfull.directive';
 
 
 
@@ -47,9 +48,11 @@ import { ScrollDirective } from './scroll.directive';
     MydirDirective,
     NavComponent,
     NotfoundComponent,
-    ScrollDirective
+    ScrollDirective,
+    // HeightfullDirective
   
   ],
+
   providers: [LoginServiceService],
   bootstrap: [AppComponent],
 })
