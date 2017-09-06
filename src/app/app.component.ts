@@ -1,7 +1,8 @@
 import { Component,ViewChild, ElementRef, Inject, HostListener } from '@angular/core';
 import { MdSidenav } from '@angular/material'
 import { DOCUMENT } from '@angular/platform-browser'
-import { Router } from '@angular/router'
+import { Router, NavigationStart, Event as NavigationEvent } from '@angular/router';
+
 
 
 @Component({
@@ -30,7 +31,19 @@ export class AppComponent {
                     'main-theme': false,
                   };
     this.router = _router;
-    console.log(this.router.url);
+    this.router.events.forEach((event: NavigationEvent) => {
+    if(event instanceof NavigationStart) {
+      console.log('fk u ');
+      console.log(event.url);
+    }
+    // NavigationEnd
+    // NavigationCancel
+    // NavigationError
+    // RoutesRecognized
+  });
+
+
+
   }
   ngOnInit() {}
 

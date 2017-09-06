@@ -13,13 +13,14 @@ import { MdCardModule } from '@angular/material';
 import { ThemeDirective } from './theme/theme.directive';
 import { MdButtonModule } from '@angular/material';
 import { MdSidenavModule } from '@angular/material';
-import { MydirDirective } from './mydir.directive';
+
 import { MdMenuModule } from '@angular/material'
 import { MdToolbarModule }from '@angular/material'
 import { SubpageModule } from './subpage/subpage.module';
 import { NavComponent } from './share/header/nav/nav.component';
 import { NotfoundComponent } from './share/notfound/notfound.component';
-import { ScrollDirective } from './scroll.directive';
+import { ShareModule } from './share.module'
+
 // import { HeightfullDirective } from './heightfull.directive';
 
 
@@ -38,17 +39,16 @@ import { ScrollDirective } from './scroll.directive';
     MdSidenavModule,
     MdMenuModule,
     MdToolbarModule,
-    SubpageModule
+    SubpageModule,
+    ShareModule
 ],
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     ThemeDirective,
-    MydirDirective,
     NavComponent,
     NotfoundComponent,
-    ScrollDirective,
     // HeightfullDirective
   
   ],
