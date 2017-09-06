@@ -7,12 +7,6 @@ app.use(express.static(path.resolve(__dirname + '/dist' )));
 
 
 
-// app.get('/*', function(req, res) {
-//     //send the website
-//     console.log("request");
-//     res.sendFile(path.resolve(__dirname + '/dist/index.html'));
-//     console.log("request");
-// });
 
 
 

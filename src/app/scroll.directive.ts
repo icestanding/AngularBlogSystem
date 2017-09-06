@@ -15,11 +15,11 @@ export class ScrollDirective {
   @Input() css1: string;
   @Input() css2: string;
   constructor(private el: ElementRef, private renderer: Renderer2) {
-    //  this.renderer.addClass(this.el.nativeElement, this.css1);
-
+  
   }
-
-
+  ngOnInit() {
+    this.renderer.addClass(this.el.nativeElement, this.css1);
+  }
 
   @HostListener('window:scroll', [])  
   onWindowScroll() {
