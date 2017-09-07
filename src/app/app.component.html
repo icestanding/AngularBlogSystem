@@ -1,6 +1,6 @@
 <!-- header contain nav -->
 <!--THis is CHen-->
- <header (event)="sidebar()" [ngClass]="mytheme" class="header" ></header>       
+ <header (event)="sidebar()" [ngClass]="mytheme" class="header"  *ngIf="hide"></header>       
  <md-sidenav-container [ngClass]="mytheme" style="transform: none !important;" >
   <md-sidenav  #start2 closed    [scroll]="264" css1="snav" css2="snavfix" >
         <div>   <a [routerLink]="['/sub']">second page </a></div>
@@ -9,7 +9,7 @@
   </md-sidenav>
   <router-outlet ></router-outlet>
 </md-sidenav-container>   
-<footer (colorchange)="themechange()"  ></footer>  
+<footer (colorchange)="themechange()"  *ngIf="hide"></footer>  
 <!-- footer -->
 
 

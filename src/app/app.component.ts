@@ -18,7 +18,7 @@ export class AppComponent {
     'mainfix'?: boolean;
   };
   private router: Router;
-
+  public hide: boolean;
 
 
   title = 'app';
@@ -31,10 +31,13 @@ export class AppComponent {
                     'main-theme': false,
                   };
     this.router = _router;
+    this.hide = true;
     this.router.events.forEach((event: NavigationEvent) => {
     if(event instanceof NavigationStart) {
-      console.log('fk u ');
-      console.log(event.url);
+      
+      if(event.url == "/login") {
+        this.hide = false;
+      }
     }
     // NavigationEnd
     // NavigationCancel
