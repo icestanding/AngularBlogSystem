@@ -66,3 +66,7 @@ need figure our navigation and javascript style
 
 
 Mission1: Qisques with angular2  
+
+
+2017.8.9
+include http://www.ruanyifeng.com/blog/2016/01/babel.html
