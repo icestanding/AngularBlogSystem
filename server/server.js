@@ -1,9 +1,13 @@
-// const Koa = require('koa');
-// const app = new Koa();
+import Koa from 'koa';
+import Router from 'koa-router';
+import ServerStatic from "koa-static";
 
-// app.use(async (ctx) => {
-//     ctx.body = 'Hello world';
-// });
-// app.listen(3000);
-let world = 'world';
-console.log(`Hello ${world}`);
+
+
+let server = new Koa();
+let main = new Router();
+
+main.use('/', (ctx)=> {
+
+})
+

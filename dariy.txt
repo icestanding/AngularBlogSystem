@@ -17,7 +17,7 @@ fix forget password, traveledge position and last do the final position
 
 8.23 do the color first and cent form
 
-I didn't fix the color setting,directive 
+I didn't fix the color setting,directive
 do the color setting again and get understand of directive
 
 read router/directive setting after
@@ -35,7 +35,7 @@ component export can make these component reuse
 javascript, algorithm
 
 -----------------
-1.Try the theme 
+1.Try the theme
 2.Try the router function\
 3.Session and cookie
 4.Lazy loading
@@ -56,17 +56,41 @@ https://github.com/angular/material2/issues/2033
 
 5/9/2017
 finish main page frame.
-late night try to refactor function 
+late night try to refactor function
 
 6/9/2017
 finish scroll directive
 start on backend.
 still not star backend ,
-need figure our navigation and javascript style 
+need figure our navigation and javascript style
 
 
-Mission1: Qisques with angular2  
+Mission1: Qisques with angular2
 
 
 2017.8.9
-include http://www.ruanyifeng.com/blog/2016/01/babel.html
+include htt
+
+p://www.ruanyifeng.com/blog/2016/01/babel.html
+node v8.4.0
+
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_8.x | bash -
+apt-get install -y nodejs
+
+prepare for watch when not busy
+异步目的是为了同步
+first is koa + database then go for restful
+promis parameter two method one is resovle one is reject
+
+method jide jia kouhao
+
+install globally babel
+use default setting set
+and confugaration the start point inside confugration.
+node -v 8.4
+
