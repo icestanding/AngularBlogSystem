@@ -13,7 +13,6 @@ import { MdCardModule } from '@angular/material';
 import { ThemeDirective } from './directive/theme/theme.directive';
 import { MdButtonModule } from '@angular/material';
 import { MdSidenavModule } from '@angular/material';
-
 import { MdMenuModule } from '@angular/material'
 import { MdToolbarModule }from '@angular/material'
 import { SubpageModule } from './front/subpage/subpage.module';
@@ -21,8 +20,6 @@ import { NavComponent } from './share/header/nav/nav.component';
 import { NotfoundComponent } from './share/notfound/notfound.component';
 import { ShareModule } from './app-share.module';
 import { AdminModule } from './admin/admin/admin.module'
-// import { AdminComponent } from './admin/admin.component'
-
 
 
 
