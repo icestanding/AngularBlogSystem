@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, CanActivate } from '@angular/router';
 import { SubpageComponent } from './subpage.component';
-import { LoginRouterGuard } from '../guard/loginguard'
+import { LoginRouterGuard } from '../../guard/loginguard'
 
 @NgModule({
   imports: [

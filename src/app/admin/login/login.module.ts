@@ -13,7 +13,7 @@ import { MdCardModule } from '@angular/material';
 import { MdProgressBarModule } from '@angular/material';
 import { LoginformComponent } from './loginform/loginform.component';
 import { MdSidenavModule } from '@angular/material';
-import { ShareModule } from '../share.module';
+import { ShareModule } from '../../share.module';
 
 
 @NgModule({
