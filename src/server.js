@@ -5,15 +5,15 @@ require("babel-core/register");
 require("babel-polyfill");
 
 import Router from 'koa-router';
-import send from 'koa-send';
+
 import ServerStatic from 'koa-static';
-// import historyApiFallback from 'koa-history-api-fallback';
+import historyApiFallback from 'koa-history-api-fallback';
 import session from 'koa-session';
 
 
 
 let app = new Koa();
-// app.use(historyApiFallback());
+app.use(historyApiFallback());
 app.use(ServerStatic(__dirname));
 
 
@@ -37,25 +37,13 @@ app.use(session(CONFIG, app));
 
 let router = new Router();
 router.post('/api/login', async ( ctx )=> {
-  let hello = {"result": 1};
-  // ctx.request.session
-  // ctx.cookies.set(
-  //   'login',
-  //   'hello world',
-  //   {
-  //     domain: 'localhost',
-  //     path: '/admin',
-  //     maxAge: 10 * 60 * 1000,
-  //     expires: new Date('2017-02-15'),
-  //     httpOnly: false,
-  //     overwrite: false
-  //   }
-  // )
+   let hello = {"result": 1};
 
 
   ctx.response.type = 'json';
   ctx.response.body = hello;
 });
+
 
 
 app.use(router.routes()).use(router.allowedMethods());
