@@ -29,6 +29,7 @@
     "express": "^4.15.4",
     "koa": "^2.3.0",
     "koa-router": "^7.2.1",
+    "koa2-static": "^1.0.1",
     "ng2-materialize": "^1.5.1",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
@@ -53,6 +54,7 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "koa-send": "^4.1.0",
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.3.2",
