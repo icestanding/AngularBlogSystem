@@ -97,3 +97,7 @@ node -v 8.4
 9.10
 koa book https://chenshenhai.github.io/koa2-note/note/start/quick.html
 
+9.11
+directory problem
+Webstrom setting root directory for generated nodejs in Babel watch
+
