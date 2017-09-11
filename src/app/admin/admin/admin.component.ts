@@ -15,8 +15,13 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get('/api/hello').subscribe(data=>{
+    // this.http.get('/api/hello').subscribe(data => {
+    //     this.result = data['result'];
+    //     console.log("this is the fking result", this.result);
+    // })
+      this.http.post('/api/login', {"server": "hello"}).subscribe(data => {
         this.result = data['result'];
+        console.log("this is the fking result", this.result);
     })
   }
 
