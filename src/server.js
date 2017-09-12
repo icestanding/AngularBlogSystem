@@ -9,10 +9,11 @@ import Router from 'koa-router';
 import ServerStatic from 'koa-static';
 import historyApiFallback from 'koa-history-api-fallback';
 import session from 'koa-session';
-
+import bodyParser from 'koa-bodyparser';
 
 
 let app = new Koa();
+app.use(bodyParser());
 app.use(historyApiFallback());
 app.use(ServerStatic(__dirname));
 
@@ -20,33 +21,66 @@ app.use(ServerStatic(__dirname));
 app.keys = ['some secret hurr'];
 
 const CONFIG = {
-  key: 'login', /** (string) cookie key (default is koa:sess) */
-  /** (number || 'session') maxAge in ms (default is 1 days) */
-  /** 'session' will result in a cookie that expires when session/browser is closed */
-  /** Warning: If a session cookie is stolen, this cookie will never expire */
+  key: 'login',
   maxAge: 86400000,
-  overwrite: true, /** (boolean) can overwrite or not (default true) */
-  httpOnly: true, /** (boolean) httpOnly or not (default true) */
-  signed: true, /** (boolean) signed or not (default true) */
-  rolling: false, /** (boolean) Force a session identifier cookie to be set on every response. The expiration is reset to the original maxAge, resetting the expiration countdown. default is false **/
+  overwrite: true,
+  httpOnly: true,
+  signed: true,
+  rolling: false,
 };
 
 app.use(session(CONFIG, app));
 
-
-
 let router = new Router();
 router.post('/api/login', async ( ctx )=> {
-   let hello = {"result": 1};
 
+  // // let hello = {"result": 1};
+  // let n = ctx.session.views || 0;
+  // ctx.session.views = ++n;
+  // ctx.body = n + ' views';
+  // console.log(ctx.session.views);
+  // // ctx.session.views = null;
+  // console.log(ctx.session);
+  // ctx.cookies.set("cnm", "hahaha");
+  // ctx.response.type = 'json';
+  // ctx.response.body = hello;
+  ctx.body = ctx.request.body;
+  console.log(ctx.body);
+  if(ctx.session.isNew) {
+    console.log("user has not log in");
+  }
+  else {
 
-  ctx.response.type = 'json';
-  ctx.response.body = hello;
+  }
 });
 
+router.post('/api/islogin', async ( ctx )=> {
 
+  // // let hello = {"result": 1};
+  // let n = ctx.session.views || 0;
+  // ctx.session.views = ++n;
+  // ctx.body = n + ' views';
+  // console.log(ctx.session.views);
+  // // ctx.session.views = null;
+  // console.log(ctx.session);
+  // ctx.cookies.set("cnm", "hahaha");
+  // ctx.response.type = 'json';
+  // ctx.response.body = hello;
+
+});
+
+router.post('/api/logout', async ( ctx )=> {
+
+  if(ctx.session.isNew()) {
+    console.log("not login");
+  }
+  else {
+    console.log("already login");
+  }
+});
 
 app.use(router.routes()).use(router.allowedMethods());
 app.listen(3000);
+console.log("run");
 
 

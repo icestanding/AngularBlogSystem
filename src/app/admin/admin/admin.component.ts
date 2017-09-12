@@ -19,7 +19,20 @@ export class AdminComponent implements OnInit {
     //     this.result = data['result'];
     //     console.log("this is the fking result", this.result);
     // })
+    //   this.http.post('/api/login', {"server": "hello"}).subscribe(data => {
+    //     this.result = data['result'];
+    //     console.log("this is the fking result", this.result);
+    // })
+  }
+  login() {
       this.http.post('/api/login', {"server": "hello"}).subscribe(data => {
+        this.result = data['result'];
+        console.log("this is the fking result", this.result);
+    })
+
+  }
+  logout() {
+      this.http.post('/api/logout', {"server": "hello"}).subscribe(data => {
         this.result = data['result'];
         console.log("this is the fking result", this.result);
     })
