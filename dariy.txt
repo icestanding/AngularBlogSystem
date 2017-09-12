@@ -115,3 +115,6 @@ save session on server 1. tmp 2. server
 when installation session, session generate a cookie and send back to frontend
 we need to delet cookie at the front,
 next compare session.user with cookie.user
+
+angular2 guard with swt
+http://jasonwatmore.com/post/2016/08/16/angular-2-jwt-authentication-example-tutorial

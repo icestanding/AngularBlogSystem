@@ -10,6 +10,7 @@ import ServerStatic from 'koa-static';
 import historyApiFallback from 'koa-history-api-fallback';
 import session from 'koa-session';
 import bodyParser from 'koa-bodyparser';
+import jwt from 'jsonwebtoken';
 
 
 let app = new Koa();
@@ -32,6 +33,27 @@ const CONFIG = {
 app.use(session(CONFIG, app));
 
 let router = new Router();
+
+ router.post('/api/user', async(ctx)=>{
+   // if(ctx.request.body.userInfo != null) {
+      let usertoken = { user:"hnmb"};
+      let token = jwt.sign(usertoken, 'asdasd');
+      ctx.response.type = 'jason';
+      ctx.response.body = {
+        message: "successful",
+        token: token
+      };
+      ctx.response.status=500;
+   // }
+   // else {
+   //
+   // }
+
+
+ });
+
+
+
 router.post('/api/login', async ( ctx )=> {
 
   // // let hello = {"result": 1};
@@ -44,14 +66,14 @@ router.post('/api/login', async ( ctx )=> {
   // ctx.cookies.set("cnm", "hahaha");
   // ctx.response.type = 'json';
   // ctx.response.body = hello;
-  ctx.body = ctx.request.body;
-  console.log(ctx.body);
-  if(ctx.session.isNew) {
-    console.log("user has not log in");
-  }
-  else {
-
-  }
+  // ctx.body = ctx.request.body;
+  // console.log(ctx.body);
+  // if(ctx.session.isNew) {
+  //   console.log("user has not log in");
+  // }
+  // else {
+  //
+  // }
 });
 
 router.post('/api/islogin', async ( ctx )=> {
@@ -71,12 +93,12 @@ router.post('/api/islogin', async ( ctx )=> {
 
 router.post('/api/logout', async ( ctx )=> {
 
-  if(ctx.session.isNew()) {
-    console.log("not login");
-  }
-  else {
-    console.log("already login");
-  }
+  // if(ctx.session.isNew()) {
+  //   console.log("not login");
+  // }
+  // else {
+  //   console.log("already login");
+  // }
 });
 
 app.use(router.routes()).use(router.allowedMethods());

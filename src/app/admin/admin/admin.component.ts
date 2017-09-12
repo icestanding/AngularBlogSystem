@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AdminComponent implements OnInit {
 
-  private result: Number;
+  private result: Object;
   constructor(private http: HttpClient) {
 
   }
@@ -22,20 +22,25 @@ export class AdminComponent implements OnInit {
     //   this.http.post('/api/login', {"server": "hello"}).subscribe(data => {
     //     this.result = data['result'];
     //     console.log("this is the fking result", this.result);
-    // })
+    // }) 
   }
   login() {
-      this.http.post('/api/login', {"server": "hello"}).subscribe(data => {
-        this.result = data['result'];
-        console.log("this is the fking result", this.result);
+      this.http.post('/api/user', {"server": "hello"}).subscribe(data => {
+        this.result = data;
+        // console.log("this is the fking result", this.result);
+        localStorage.setItem('login', JSON.stringify({use:"hello", token:data['token']}));
+        console.log("set successful");
+        console.log(JSON.parse(localStorage.getItem('login')));
+    }, error=> {
+      console.log("fuck up");
     })
 
   }
   logout() {
-      this.http.post('/api/logout', {"server": "hello"}).subscribe(data => {
-        this.result = data['result'];
-        console.log("this is the fking result", this.result);
-    })
+      // this.http.post('/api/logout', {"server": "hello"}).subscribe(data => {
+      //   this.result = data['result'];
+      
+   
   }
 
 }
