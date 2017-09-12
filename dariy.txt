@@ -121,3 +121,14 @@ http://jasonwatmore.com/post/2016/08/16/angular-2-jwt-authentication-example-tut
 
 admin design
 https://themeforest.net/item/coco-responsive-bootstrap-admin-and-frontend-template/9110062?ref=webdesignboom
+
+(thans to professional edu and traveledge. I got nothing to do )
+prepare to include database   11111111111111
+
+try to include quill editor 
+and then refactor the whole project again,
+
+interceptor
+https://scotch.io/@kashyapmukkamala/using-http-interceptor-with-angular2
+
+
