@@ -118,3 +118,6 @@ next compare session.user with cookie.user
 
 angular2 guard with swt
 http://jasonwatmore.com/post/2016/08/16/angular-2-jwt-authentication-example-tutorial
+
+admin design
+https://themeforest.net/item/coco-responsive-bootstrap-admin-and-frontend-template/9110062?ref=webdesignboom

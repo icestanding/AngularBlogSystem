@@ -5,15 +5,37 @@ require("babel-core/register");
 require("babel-polyfill");
 
 import Router from 'koa-router';
-
 import ServerStatic from 'koa-static';
 import historyApiFallback from 'koa-history-api-fallback';
 import session from 'koa-session';
 import bodyParser from 'koa-bodyparser';
 import jwt from 'jsonwebtoken';
+import monk from 'monk';
 
 
 let app = new Koa();
+const db = monk('localhost:27018/myblog', (err, db)=>{
+  if(err){
+    console.error("Db is not connected", err.message);
+  }
+  else {
+    console.log("successful");
+  }
+});
+const users = db.get('user');
+// users.find({"user_name":"admin"}).then((val)=>{
+//   console.log(val);
+// }).catch((err)=> {
+//   console.log("fuck up");
+// })
+users.insert({"user_name":"123", "password": "321"}).then(()=>{
+  console.log("success");
+}).catch((err)=>console.log(err));
+
+
+
+
+
 app.use(bodyParser());
 app.use(historyApiFallback());
 app.use(ServerStatic(__dirname));
@@ -102,7 +124,20 @@ router.post('/api/logout', async ( ctx )=> {
 });
 
 app.use(router.routes()).use(router.allowedMethods());
+// let start = async ()=> {
+//   await monk('localhost:27018/myblog', (err, db)=>{
+//     if(err){
+//       console.error("Db is not connected", err.message);
+//     }
+//     else {
+//       console.log("successful");
+//     }
+//   });
+//   app.listen(3000);
+//   console.log("run");
+// }
+// start();
 app.listen(3000);
-console.log("run");
+// console.log("run");
 
 

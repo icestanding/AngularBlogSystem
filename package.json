@@ -37,6 +37,7 @@
     "koa-session": "^5.5.0",
     "koa-static": "^4.0.1",
     "koa2-static": "^1.0.1",
+    "monk": "^6.0.4",
     "ng2-materialize": "^1.5.1",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
