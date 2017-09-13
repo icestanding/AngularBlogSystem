@@ -38,6 +38,9 @@ export class AppComponent {
       if(event.url == "/login") {
         this.hide = false;
       }
+      else if (event.url == "/admin") {
+        this.hide = false;
+      }
     }
     // NavigationEnd
     // NavigationCancel

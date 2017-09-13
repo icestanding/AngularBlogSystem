@@ -25,9 +25,8 @@ import * as Quill from 'quill';
 
 @Component({
   selector: 'quill-editor',
-  template: `
-  <ng-content select="[quill-editor-toolbar]"></ng-content>
-`,
+  templateUrl: './quill-editor.component.html',
+  // <button (click)="show()"> Show </button>
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => QuillEditorComponent),
@@ -40,6 +39,15 @@ import * as Quill from 'quill';
   encapsulation: ViewEncapsulation.None
 })
 export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor, OnChanges, Validator {
+    foods = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
+
+
+
+
 
   quillEditor: any;
   editorElem: HTMLElement;
@@ -89,10 +97,14 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
 
   constructor(private elementRef: ElementRef, @Inject(DOCUMENT) private doc: any, private renderer: Renderer2) { }
 
+
+  
+
+
   ngAfterViewInit() {
     const toolbarElem = this.elementRef.nativeElement.querySelector('[quill-editor-toolbar]');
     let modules: any = this.modules || this.defaultModules;
-    let placeholder = 'Insert text here ...';
+    let placeholder = '';
   
 
     if (this.placeholder !== null && this.placeholder !== undefined) {
@@ -120,6 +132,7 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
       bounds: this.bounds || this.doc.body
     });
 
+
     if (this.content) {
       const contents = this.quillEditor.clipboard.convert(this.content);
       this.quillEditor.setContents(contents);
@@ -142,6 +155,7 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
       }
     });
 
+
     // update model if text changes
     this.quillEditor.on('text-change', (delta: any, oldDelta: any, source: string) => {
       let html: (string | null) = this.editorElem.children[0].innerHTML;
@@ -160,11 +174,6 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
         delta: delta,
         oldDelta: oldDelta,
         source: source
-        
-
-
-
-        
       });
     });
   }
@@ -195,10 +204,12 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
     this.onModelTouched = fn;
   }
 
+
   validate() {
     if (!this.quillEditor) {
       return null;
     }
+  
 
     let err: {
       minLengthError?: {given: number, minLength: number};
@@ -236,5 +247,11 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
     }
 
     return valid ? null : err;
+  }
+  show() {
+    // console.log(this.quillEditor.getContents());
+      var contents = JSON.stringify(this.quillEditor.root.innerHTML);
+      console.log(contents);
+      console.log(this.quillEditor.getContents());
   }
 }

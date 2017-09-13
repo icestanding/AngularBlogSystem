@@ -1,0 +1,11 @@
+  
+<md-input-container class="text" >
+    <input mdInput placeholder="Title" >
+
+</md-input-container>  
+    <md-select placeholder="Category">
+        <md-option *ngFor="let food of foods" [value]="food.value">
+            {{ food.viewValue }}
+        </md-option>
+    </md-select> 
+<ng-content select="[quill-editor-toolbar]"></ng-content>

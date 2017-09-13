@@ -130,5 +130,12 @@ and then refactor the whole project again,
 
 interceptor
 https://scotch.io/@kashyapmukkamala/using-http-interceptor-with-angular2
+9.13
+photo can load locally, need function to upload photo from client
+
+---------------------------------------------------
+Later to do                                         |
+Tag Generator                                       |
+----------------------------------------------------
 
 
