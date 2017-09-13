@@ -13,6 +13,7 @@ import jwt from 'jsonwebtoken';
 import monk from 'monk';
 import https from 'https';
 import http from 'http';
+import fs from 'fs';
 
 
 let app = new Koa();
@@ -140,7 +141,13 @@ app.use(router.routes()).use(router.allowedMethods());
 // http server
 // http.createServer(app.callback()).listen(3000);
 // https server
-https.createServer(app.callback()).listen(3001);
+
+let option = {
+  key: fs.readFileSync("./encryption/host.key"),
+  cert: fs.readFileSync("./encryption/host.cert")
+}
+
+https.createServer(option, app.callback()).listen(3001);
 
 
 

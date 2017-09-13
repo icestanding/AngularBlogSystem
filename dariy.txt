@@ -144,5 +144,10 @@ finish login first
 submit blog, display blog then go for design
 Both backend and frontend need refactor
 -----------------------------------------------------
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ssl: StartCom; host for my ssl                x
+chose cerbot to install my ssl                x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+need aws + put my website on aws then go for design
 
 
