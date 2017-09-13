@@ -22,7 +22,11 @@ export class LoginServiceService {
     
   }
   login(id:string, password:string) {
-    return this.http.get('/a').subscribe();
+    this.http.post('/api/user', {id:id, password:password}).subscribe((data)=>{
+      return true;
+    }, (error)=>{
+      return false;
+    });
   }
   islogin (): boolean {
     return true;

@@ -137,5 +137,12 @@ photo can load locally, need function to upload photo from client
 Later to do                                         |
 Tag Generator                                       |
 ----------------------------------------------------
+finish login first
+    1. login
+        -?> ssl server first   
+    2. guard with islogin?
+submit blog, display blog then go for design
+Both backend and frontend need refactor
+-----------------------------------------------------
 
 

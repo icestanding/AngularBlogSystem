@@ -39,8 +39,6 @@ export class AdminComponent implements OnInit {
   logout() {
       // this.http.post('/api/logout', {"server": "hello"}).subscribe(data => {
       //   this.result = data['result'];
-      
-   
   }
 
 }

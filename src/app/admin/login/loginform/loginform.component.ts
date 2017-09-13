@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+import { FormControl, Validators } from '@angular/forms';
 import {
   trigger,
   state,
@@ -7,8 +8,10 @@ import {
   animate,
   transition
 } from '@angular/animations';
+// import {} from '../../service/login-service.service'
+import { LoginServiceService } from '../../../service/login/login-service.service'
 
-const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+// const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 @Component({
   selector: 'app-loginform',
@@ -19,24 +22,29 @@ const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA
 export class LoginformComponent implements OnInit {
   // for basic setting
   public errors;
-  public logoPath:string;
-  public hidden:boolean;
+  public logoPath: string;
+  public hidden: boolean;
+  public username: string;
+  public password: string;
   color: string = 'primary';
   determinateProgressValue: number = 30;
 
  
 
   // initial part
-  constructor() {
+  constructor(private login: LoginServiceService, private route: Router) {
     this.logoPath = '../../assets/img/logo.jpg';
     this.errors = "true";
     this.hidden = false;
+    this.username = "";
+    this.password = "";
+    
   }
 
   ngOnInit() {}
 
 
-  emailFormControl = new FormControl('', [Validators.required, Validators.pattern(EMAIL_REGEX)]);
+  UsernameFormControl = new FormControl('', [Validators.required]);
   
   stepDeterminateProgressVal(val: number) {
     this.determinateProgressValue = this.clampValue(val + this.determinateProgressValue);
@@ -47,10 +55,10 @@ export class LoginformComponent implements OnInit {
   }
 
   signUp () {
-    this.hidden = true;
+    if(this.login.login(this.username,  this.password)){
+      this.route.navigateByUrl('/admin');
+    }
   }
 
-  fogetpsw() {
-    this.hidden = true;
-  }
+
 }

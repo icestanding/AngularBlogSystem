@@ -11,15 +11,14 @@ import session from 'koa-session';
 import bodyParser from 'koa-bodyparser';
 import jwt from 'jsonwebtoken';
 import monk from 'monk';
+import https from 'https';
+import http from 'http';
 
 
 let app = new Koa();
 const db = monk('localhost:27018/myblog', (err, db)=>{
   if(err){
     console.error("Db is not connected", err.message);
-  }
-  else {
-    console.log("successful");
   }
 });
 const users = db.get('user');
@@ -28,9 +27,9 @@ const users = db.get('user');
 // }).catch((err)=> {
 //   console.log("fuck up");
 // })
-users.insert({"user_name":"123", "password": "321"}).then(()=>{
-  console.log("success");
-}).catch((err)=>console.log(err));
+// users.insert({"user_name":"123", "password": "321"}).then(()=>{
+//   console.log("success");
+// }).catch((err)=>console.log(err));
 
 
 
@@ -56,21 +55,22 @@ app.use(session(CONFIG, app));
 
 let router = new Router();
 
- router.post('/api/user', async(ctx)=>{
-   // if(ctx.request.body.userInfo != null) {
-      let usertoken = { user:"hnmb"};
-      let token = jwt.sign(usertoken, 'asdasd');
-      ctx.response.type = 'jason';
-      ctx.response.body = {
-        message: "successful",
-        token: token
-      };
-      ctx.response.status=500;
-   // }
-   // else {
-   //
-   // }
 
+ router.post('/api/user', async(ctx)=>{
+//    if(ctx.request.body.id != null) {
+//       let usertoken = { user:"hnmb"};
+//    let token = jwt.sign(usertoken, 'asdasd');
+//    ctx.response.type = 'json';
+//    ctx.response.body = {
+//      message: "successful",
+//      token: token
+//    };
+//    ctx.response.status=500;
+//  }
+// else {
+//
+// }
+  console.log(ctx.request.body.id);
 
  });
 
@@ -137,7 +137,10 @@ app.use(router.routes()).use(router.allowedMethods());
 //   console.log("run");
 // }
 // start();
-app.listen(3000);
-// console.log("run");
+// http server
+// http.createServer(app.callback()).listen(3000);
+// https server
+https.createServer(app.callback()).listen(3001);
+
 
 
