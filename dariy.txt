@@ -152,7 +152,12 @@ need aws + put my website on aws then go for design
 Go fow aws, really interesting
 http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html
 do apache tomorrow
+---
 problem with redirect
 https://stackoverflow.com/questions/18947356/node-js-app-cant-run-on-port-80-even-though-theres-no-other-process-blocking-t
+--
 
+9.14 depoly website on aws
+depory angular fps server, first step set privacy group then go below
+http://www.krizna.com/ubuntu/setup-ftp-server-on-ubuntu-14-04-vsftpd/
 
