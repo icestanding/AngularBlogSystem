@@ -160,4 +160,26 @@ https://stackoverflow.com/questions/18947356/node-js-app-cant-run-on-port-80-eve
 9.14 depoly website on aws
 depory angular fps server, first step set privacy group then go below
 http://www.krizna.com/ubuntu/setup-ftp-server-on-ubuntu-14-04-vsftpd/
+last give user access to the root directory chmod use 
+finish
 
+environment problem
+https://askubuntu.com/questions/688318/after-editing-bashrc-commands-return-command-could-not-be-located-because-bi
+
+ubuntu environment path
+so type "echo $PATH" and check your path, if npm/bin isnt there add it again through the bash_profile.
+
+touch ~/.bash_profile
+open ~/.bash_profile
+export PATH="/Users/xxxxxx/npm/bin:$PATH"
+save and close bash_profile
+go to terminal and type "source ~/.bash_profile" that will update your PATH
+"echo $PATH" and check if npm/bin path is there.
+
+this is for the copy of the default 
+default path  export PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin
+here is a sample, default .bashrc file located in /etc/skel - you could make a backup of your current .bashrc with mv .bashrc .bashrc.bak and then cp /etc/skel/.bashrc .bashrc to copy that sample back to your home directory. After that, un-comment force_color_prompt=yes in the new file and add [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" back to the end (last line) of the file so that RVM still works.
+After that, execute . .bashrc at a prompt to reload your bash profile, which should give you a colored prompt again and test RVM with the command type rvm | head -1 which should return the text: rvm is a function
+
+lichenyu
+zgmsx20a

@@ -57,6 +57,7 @@ app.use(session(CONFIG, app));
 let router = new Router();
 
 
+
  router.post('/api/user', async(ctx)=>{
 //    if(ctx.request.body.id != null) {
 //       let usertoken = { user:"hnmb"};
@@ -142,12 +143,17 @@ app.use(router.routes()).use(router.allowedMethods());
 // http.createServer(app.callback()).listen(3000);
 // https server
 
-let option = {
-  key: fs.readFileSync("./encryption/host.key"),
-  cert: fs.readFileSync("./encryption/host.cert")
-}
+// let option = {
+//   key: fs.readFileSync("./encryption/host.key"),
+//   cert: fs.readFileSync("./encryption/host.cert")
+// }
 
-https.createServer(option, app.callback()).listen(3001);
 
+
+app.listen(3000);
+
+
+// https.createServer(app.callback()).listen(3000);
+//
 
 
