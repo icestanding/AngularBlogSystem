@@ -17,12 +17,12 @@ import fs from 'fs';
 
 
 let app = new Koa();
-const db = monk('localhost:27018/myblog', (err, db)=>{
-  if(err){
-    console.error("Db is not connected", err.message);
-  }
-});
-const users = db.get('user');
+// const db = monk('mongodb://127.0.0.1:27017/blog', (err, db)=>{
+//   if(err){
+//     console.error("Db is not connected", err.message);
+//   }
+// });
+// const users = db.get('user');
 // users.find({"user_name":"admin"}).then((val)=>{
 //   console.log(val);
 // }).catch((err)=> {
@@ -154,6 +154,6 @@ app.listen(3000);
 
 
 // https.createServer(app.callback()).listen(3000);
-//
+
 
 

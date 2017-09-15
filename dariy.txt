@@ -183,3 +183,59 @@ After that, execute . .bashrc at a prompt to reload your bash profile, which sho
 
 lichenyu
 zgmsx20a
+
+redirect 
+iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000
+
+
+using ubuntu apache server, balance
+Ubuntu Apache2
+## Start command ##
+systemctl start apache2.service
+## Stop command ##
+systemctl stop apache2.service
+## Restart command ##
+systemctl restart apache2.service
+
+
+
+Run the command dpkg -S mod_ssl.so. Chances are that it will display something like:
+
+apache2.2-common: /usr/lib/apache2/modules/mod_ssl.so
+It means that mod_ssl is already installed on your system, as it does not come in a separate package, but it is bundled in apache2.2-common. Run
+
+
+let's encrpted https service (based on apache service);
+easy
+
+renew https service
+certbot renew 
+
+-----------------------------------------
+Load balance apache vs nginx: next step |
+-----------------------------------------
+
+revese proxy, 
+
+/etx/site-available
+
+    ProxyRequests off
+
+    <Proxy *>
+            Order deny,allow
+            Allow from all
+    </Proxy>
+
+    <Location />
+            ProxyPass http://localhost:3000/
+            ProxyPassReverse http://localhost:3000/
+    </Location>
+
+mod_proxy read
+http://httpd.apache.org/docs/2.2/mod/mod_proxy.html
+
+tmux keep server running
+ssh into the remote machine
+start tmux by typing tmux into the shell
+start the process you want inside the started tmux session
+leave/detach the tmux session by typing Ctrl+b and then d
