@@ -11,18 +11,15 @@ import session from 'koa-session';
 import bodyParser from 'koa-bodyparser';
 import jwt from 'jsonwebtoken';
 import monk from 'monk';
-import https from 'https';
-import http from 'http';
-import fs from 'fs';
 
 
 let app = new Koa();
-// const db = monk('mongodb://127.0.0.1:27017/blog', (err, db)=>{
-//   if(err){
-//     console.error("Db is not connected", err.message);
-//   }
-// });
-// const users = db.get('user');
+const db = monk('mongodb://127.0.0.1:27017/web', (err, db)=>{
+  if(err){
+    console.error("Db is not connected", err.message);
+  }
+});
+const users = db.get('blog');
 // users.find({"user_name":"admin"}).then((val)=>{
 //   console.log(val);
 // }).catch((err)=> {
@@ -58,7 +55,108 @@ let router = new Router();
 
 
 
- router.post('/api/user', async(ctx)=>{
+
+// blog function
+// zeng shan gai cha
+
+router.get('/blog', async ( ctx )=> {
+
+  // if(ctx.session.isNew()) {
+  //   console.log("not login");
+  // }
+  // else {
+  //   console.log("already login");
+  // }
+  let blog = db.get('blog');
+  await blog.find().then((val)=>{
+    ctx.response.type = 'json';
+    ctx.response.body = val;
+  }).catch((err)=> {
+    console.log("fuck up");
+    console.log(err);
+  })
+
+
+});
+router.get('/blog/:id', async ( ctx )=> {
+
+  // if(ctx.session.isNew()) {
+  //   console.log("not login");
+  // }
+  // else {
+  //   console.log("already login");
+  // }
+});
+router.post('/blog/:id', async ( ctx )=> {
+
+  console.log("fuck");
+  let blog = db.get('blog');
+  await blog.insert(ctx.request.body).then(()=> {
+      ctx.response.status = 200;
+  }).catch( (err)=> {
+      ctx.response.status = 404;
+    }
+  );
+
+  // if(ctx.session.isNew()) {
+  //   console.log("not login");
+  // }
+  // else {
+  //   console.log("already login");
+  // }
+});
+router.del('/blog/:id', async ( ctx )=> {
+
+  // if(ctx.session.isNew()) {
+  //   console.log("not login");
+  // }
+  // else {
+  //   console.log("already login");
+  // }
+});
+router.put('/blog/:id', async ( ctx )=> {
+
+  // if(ctx.session.isNew()) {
+  //   console.log("not login");
+  // }
+  // else {
+  //   console.log("already login");
+  // }
+});
+
+
+
+
+
+
+
+
+router.post('/', async ( ctx )=> {
+
+  // if(ctx.session.isNew()) {
+  //   console.log("not login");
+  // }
+  // else {
+  //   console.log("already login");
+  // }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+router.post('/api/user', async(ctx)=>{
 //    if(ctx.request.body.id != null) {
 //       let usertoken = { user:"hnmb"};
 //    let token = jwt.sign(usertoken, 'asdasd');
@@ -125,6 +223,13 @@ router.post('/api/logout', async ( ctx )=> {
   // }
 });
 
+
+
+
+
+
+
+
 app.use(router.routes()).use(router.allowedMethods());
 // let start = async ()=> {
 //   await monk('localhost:27018/myblog', (err, db)=>{
@@ -152,8 +257,6 @@ app.use(router.routes()).use(router.allowedMethods());
 
 app.listen(3000);
 
-
-// https.createServer(app.callback()).listen(3000);
 
 
 

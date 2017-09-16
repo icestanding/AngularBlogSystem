@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -10,8 +10,9 @@ import { HttpClient } from '@angular/common/http';
 export class AdminComponent implements OnInit {
 
   private result: Object;
+  @ViewChild('editor') editor;
   constructor(private http: HttpClient) {
-
+     
   }
 
   ngOnInit() {

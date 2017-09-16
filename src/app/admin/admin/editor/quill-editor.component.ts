@@ -9,9 +9,9 @@ import {
   Output,
   Renderer2,
   SimpleChanges,
-  ViewEncapsulation
+  ViewEncapsulation,
+  
 } from '@angular/core';
-
 import {
   NG_VALUE_ACCESSOR,
   NG_VALIDATORS,
@@ -20,6 +20,7 @@ import {
 } from '@angular/forms';
 import { Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
+import { Http } from '@angular/http'
 
 import * as Quill from 'quill';
 
@@ -40,14 +41,14 @@ import * as Quill from 'quill';
 })
 export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor, OnChanges, Validator {
     foods = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
+    {value: 'steak', viewValue: 'Steak'},
+    {value: 'pizza', viewValue: 'Pizza'},
+    {value: 'tacos', viewValue: 'Tacos'}
   ];
 
 
 
-
+  
 
   quillEditor: any;
   editorElem: HTMLElement;
@@ -77,6 +78,10 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
     ]
   };
 
+  //title
+  public title:string;
+  public category:string;
+
   @Input() theme: string;
   @Input() modules: { [index: string]: Object };
   @Input() readOnly: boolean;
@@ -95,7 +100,7 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
   onModelChange: Function = () => {};
   onModelTouched: Function = () => {};
 
-  constructor(private elementRef: ElementRef, @Inject(DOCUMENT) private doc: any, private renderer: Renderer2) { }
+  constructor(private http: Http,private elementRef: ElementRef, @Inject(DOCUMENT) private doc: any, private renderer: Renderer2) { }
 
 
   
@@ -253,5 +258,12 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
       var contents = JSON.stringify(this.quillEditor.root.innerHTML);
       console.log(contents);
       console.log(this.quillEditor.getContents());
+  }
+  getcontent() {
+   return this.quillEditor.root.innerHTML;
+  }
+  submit() {
+    this.http.post("/blog/first",{title: this.title,
+    content: this.quillEditor.root.innerHTML,category:this.category}).subscribe();
   }
 }

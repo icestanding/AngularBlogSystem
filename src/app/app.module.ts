@@ -19,7 +19,8 @@ import { SubpageModule } from './front/subpage/subpage.module';
 import { NavComponent } from './share/header/nav/nav.component';
 import { NotfoundComponent } from './share/notfound/notfound.component';
 import { ShareModule } from './app-share.module';
-import { AdminModule } from './admin/admin/admin.module'
+import { AdminModule } from './admin/admin/admin.module';
+
 
 
 
@@ -39,7 +40,7 @@ import { AdminModule } from './admin/admin/admin.module'
     MdToolbarModule,
     SubpageModule,
     AdminModule,
-    ShareModule
+    ShareModule,
 ],
   declarations: [
     AppComponent,

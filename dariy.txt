@@ -1,3 +1,6 @@
+structure: request -> apache-> angular->nodejs (router)
+
+
 use material to rebuild the web page
 
 change font and then go for the change the basic
@@ -239,3 +242,8 @@ ssh into the remote machine
 start tmux by typing tmux into the shell
 start the process you want inside the started tmux session
 leave/detach the tmux session by typing Ctrl+b and then d
+
+still need to fix out await
+
+Anguar2  
+hash tag with view children can use children component method and other
