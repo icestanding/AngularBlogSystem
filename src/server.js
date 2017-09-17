@@ -120,7 +120,7 @@ router.put('/blog/:id', async ( ctx )=> {
   //   console.log("not login");
   // }
   // else {
-  //   console.log("already login");
+    console.log("already login");
   // }
 });
 
@@ -252,7 +252,7 @@ app.use(router.routes()).use(router.allowedMethods());
 //   key: fs.readFileSync("./encryption/host.key"),
 //   cert: fs.readFileSync("./encryption/host.cert")
 // }
-
+//
 
 
 app.listen(3000);

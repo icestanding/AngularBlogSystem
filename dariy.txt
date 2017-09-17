@@ -247,3 +247,5 @@ still need to fix out await
 
 Anguar2  
 hash tag with view children can use children component method and other
+
+use redirect to do redirect to sub

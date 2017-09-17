@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router'
 
 
 @NgModule({
-  imports: [RouterModule.forChild([{path: 'admin', component: AdminComponent}]),
+  imports: [RouterModule.forRoot([{path: 'admin', component: AdminComponent}]),
   ],
   exports:[RouterModule]
 })
