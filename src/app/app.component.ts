@@ -34,11 +34,16 @@ export class AppComponent {
     this.hide = true;
     this.router.events.forEach((event: NavigationEvent) => {
     if(event instanceof NavigationStart) {
-      
+      // console.log("this is fking url"+ event.url);
+      this.hide = true;
+      let regx = /^\/admin.*/;
       if(event.url == "/login") {
         this.hide = false;
       }
-      else if (event.url == "/admin") {
+      // else if (event.url == "/admin") {
+      //   this.hide = false;
+      // }
+      else if (event.url.match(regx)) {
         this.hide = false;
       }
     }

@@ -5,7 +5,6 @@ import { ScrollDirective } from './directive/scroll/scroll.directive';
 
 
 // this file is for directive declarations
-
 @NgModule({
   imports: [
     CommonModule

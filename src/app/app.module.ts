@@ -20,8 +20,8 @@ import { NavComponent } from './share/header/nav/nav.component';
 import { NotfoundComponent } from './share/notfound/notfound.component';
 import { ShareModule } from './app-share.module';
 import { AdminModule } from './admin/admin/admin.module';
-
-
+import { MainpageComponent } from './front/mainpage/mainpage.component'
+import { SubpageComponent } from './front/subpage/subpage.component'
 
 
 
@@ -31,7 +31,14 @@ import { AdminModule } from './admin/admin/admin.module';
     HttpModule,
     LoginModule,
     MainpageModule,
-    RouterModule.forRoot([{path: '**', component:NotfoundComponent}],{enableTracing: true}),
+    RouterModule.forRoot(
+      [
+        {path: '',   component: MainpageComponent},
+        {path: 'sub', component:SubpageComponent},
+        {path: '**', component:NotfoundComponent}
+      ],
+      {enableTracing: true}
+    ),
     BrowserAnimationsModule,
     MdCardModule,
     MdButtonModule,

@@ -248,4 +248,17 @@ still need to fix out await
 Anguar2  
 hash tag with view children can use children component method and other
 
-use redirect to do redirect to sub
+use redirect to do redirect to 
+
+
+lazy loading with angular routing 
+https://namitamalik.github.io/Lazy-Loading-with-Angular2-Routing/
+
+I see. Importing submodules with routes into the main module only flattens the configurations together. 
+The users routes aren't a child of admin unless you specify them that way in the route configuration.
+
+doing laze load later
+
+finish the router later
+
+router jump all template, only navigation event trigger

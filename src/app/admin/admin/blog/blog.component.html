@@ -1,4 +1,12 @@
 <p>
   blog works!
 </p>
-<quill-editor></quill-editor>
+<!-- {{blogs}} -->
+    <ul class="heroes">
+      <li *ngFor="let hero of blogs" (click)="show(hero)">
+        <!-- <span class="badge">{{hero.title}}</span> -->
+        <span [innerHTML]="hero.content"></span>
+      </li>
+    </ul>
+<!-- <p *ngFor="let blog of blogs"> {{blog}} </p> -->
+<!-- <quill-editor></quill-editor> -->
