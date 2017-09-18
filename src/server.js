@@ -14,6 +14,7 @@ import monk from 'monk';
 
 
 let app = new Koa();
+let ObjectId = require('mongodb').ObjectId;
 const db = monk('mongodb://127.0.0.1:27017/web', (err, db)=>{
   if(err){
     console.error("Db is not connected", err.message);
@@ -80,6 +81,22 @@ router.get('/blog', async ( ctx )=> {
 });
 router.get('/blog/:id', async ( ctx )=> {
 
+  // let ObjectId = require;
+  console.log(ctx.params.id);
+  // console.log(router.param("id"));
+  let id = new ObjectId(ctx.params.id);
+  let blog = db.get('blog');
+  await blog.find({"_id":id}).then((val)=> {
+      ctx.response.type="json";
+      ctx.response.body = val;
+  }).catch( (err)=> {
+      ctx.response.status = 404;
+    }
+  );
+
+
+
+
   // if(ctx.session.isNew()) {
   //   console.log("not login");
   // }
@@ -87,9 +104,9 @@ router.get('/blog/:id', async ( ctx )=> {
   //   console.log("already login");
   // }
 });
-router.post('/blog/:id', async ( ctx )=> {
+router.post('/blog', async ( ctx )=> {
 
-  console.log("fuck");
+
   let blog = db.get('blog');
   await blog.insert(ctx.request.body).then(()=> {
       ctx.response.status = 200;

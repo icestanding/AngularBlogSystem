@@ -1,8 +1,9 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
 // import observable
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject'
+import { Router } from '@angular/router'
 // import from 'angular'
 
 
@@ -23,7 +24,7 @@ import 'rxjs/add/operator/map'
 })
 export class BlogComponent implements OnInit {
   public blogs: {};
-  constructor(private http: Http) {     this.http.get("/blog").subscribe((data)=>{
+  constructor(private http: Http, private router:Router) {     this.http.get("/blog").subscribe((data)=>{
       // console.log(data.text());
       this.blogs = JSON.parse( data.text());
       
@@ -39,8 +40,7 @@ export class BlogComponent implements OnInit {
   ngOnInit() {
   }
   show(mydesign) {
-    // console.log(this.blogname);
-    console.log(mydesign);
+      this.router.navigateByUrl('admin/editor/' + mydesign._id);
   }
 
-}
+} 

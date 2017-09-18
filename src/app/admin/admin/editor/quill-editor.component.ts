@@ -21,7 +21,7 @@ import {
 import { Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { Http } from '@angular/http'
-
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import * as Quill from 'quill';
 
 @Component({
@@ -100,8 +100,33 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
   onModelChange: Function = () => {};
   onModelTouched: Function = () => {};
 
-  constructor(private http: Http,private elementRef: ElementRef, @Inject(DOCUMENT) private doc: any, private renderer: Renderer2) { }
+  constructor(private http: Http,private elementRef: ElementRef, @Inject(DOCUMENT) private doc: any, private renderer: Renderer2,
+    private route: ActivatedRoute,
+    private router: Router
+) { }
+  ngOnInit() {
+    // this.hero$ = this.route.paramMap
+    //   .switchMap((params: ParamMap) =>
+    //     this.service.getHero(params.get('id')));
+    let id = this.route.snapshot.paramMap.get('id');
+    if(id != null) {
+        this.http.get("/blog/"+id).map(data => data.json()).subscribe((data)=>{
+        // console.log(data[0]._id);
+        // let blog = JSON.parse(data.text());
+        // console.log(blog);
+        this.title = data[0].title;
+        this.category = data[0].category;
+        this.quillEditor.root.innerHTML = data[0].content;
+      // return true;
+    }, (error)=>{
+      // return false;
+      console.log("error cnm");
+    });
 
+
+
+    }
+  }
 
   
 
@@ -260,10 +285,10 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
       console.log(this.quillEditor.getContents());
   }
   getcontent() {
-   return this.quillEditor.root.innerHTML;
+      return this.quillEditor.root.innerHTML;
   }
   submit() {
-    this.http.post("/blog/first",{title: this.title,
-    content: this.quillEditor.root.innerHTML,category:this.category}).subscribe();
+      this.http.post("/blog", {title: this.title,
+      content: this.quillEditor.root.innerHTML, category: this.category, quill: this.quillEditor.getContents()}).subscribe();
   }
 }

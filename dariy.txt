@@ -262,3 +262,12 @@ doing laze load later
 finish the router later
 
 router jump all template, only navigation event trigger
+
+git 
+use almend to reset 
+
+html wen ben bian ji qi  zi dong zhengli wendang 
+
+two parameter get
+1. is oberverable
+2. is non observable I chose none obsevable

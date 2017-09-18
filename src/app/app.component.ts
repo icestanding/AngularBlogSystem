@@ -35,6 +35,7 @@ export class AppComponent {
     this.router.events.forEach((event: NavigationEvent) => {
     if(event instanceof NavigationStart) {
       // console.log("this is fking url"+ event.url);
+      // all template
       this.hide = true;
       let regx = /^\/admin.*/;
       if(event.url == "/login") {
