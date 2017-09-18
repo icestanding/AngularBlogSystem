@@ -29,10 +29,21 @@ const users = db.get('blog');
 // users.insert({"user_name":"123", "password": "321"}).then(()=>{
 //   console.log("success");
 // }).catch((err)=>console.log(err));
+var timeStamp = Math.floor(Date.now());
+console.log(Intl.DateTimeFormat().year);
+
+var currentdate = new Date();
+var datetime = "Last Sync: " + currentdate.getDate() + "/"
+  + (currentdate.getMonth()+1)  + "/"
+  + currentdate.getFullYear() + " @ "
+  + currentdate.getHours() + ":"
+  + currentdate.getMinutes() + ":"
+  + currentdate.getSeconds();
+
+console.log(datetime)
 
 
-
-
+// console.log(timeStamp + "timezone is " +timezone);
 
 app.use(bodyParser());
 app.use(historyApiFallback());
@@ -108,6 +119,7 @@ router.post('/blog', async ( ctx )=> {
 
 
   let blog = db.get('blog');
+  ctx.request.body.time = Date();
   await blog.insert(ctx.request.body).then(()=> {
       ctx.response.status = 200;
   }).catch( (err)=> {
