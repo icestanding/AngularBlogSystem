@@ -3,6 +3,7 @@ import { DOCUMENT } from '@angular/platform-browser'
 
 //  This directive is used to add scroll class
 // bug to fix check if a class exists
+// input size = header height - navheight
 
 @Directive({
   selector: '[scroll]'
