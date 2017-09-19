@@ -11,9 +11,19 @@ import session from 'koa-session';
 import bodyParser from 'koa-bodyparser';
 import jwt from 'jsonwebtoken';
 import monk from 'monk';
+import fs from 'fs';
+import path from 'path';
+import serve from 'koa-static';
+
+console.log(__dirname);
+console.log(path.resolve(__dirname + '/../image'));
+
 
 
 let app = new Koa();
+app.use(serve(path.resolve(__dirname + '/../image')));
+app.use(serve(path.resolve(__dirname + '/../')));
+
 let ObjectId = require('mongodb').ObjectId;
 const db = monk('mongodb://127.0.0.1:27017/web', (err, db)=>{
   if(err){
@@ -229,7 +239,7 @@ router.post('/api/login', async ( ctx )=> {
 
 router.post('/api/islogin', async ( ctx )=> {
 
-  // // let hello = {"result": 1};
+  // let hello = {"result": 1};
   // let n = ctx.session.views || 0;
   // ctx.session.views = ++n;
   // ctx.body = n + ' views';
