@@ -271,3 +271,8 @@ html wen ben bian ji qi  zi dong zhengli wendang
 two parameter get
 1. is oberverable
 2. is non observable I chose none obsevable
+
+working on file upload
+
+example 
+https://github.com/koajs/examples/blob/master/upload/app.js

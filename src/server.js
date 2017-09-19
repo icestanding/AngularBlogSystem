@@ -14,15 +14,50 @@ import monk from 'monk';
 import fs from 'fs';
 import path from 'path';
 import serve from 'koa-static';
+import multer from 'koa-multer';
+import asyncBusboy from 'async-busboy';
 
+
+
+
+const upload = multer({ dest: 'uploads/' });
 console.log(__dirname);
 console.log(path.resolve(__dirname + '/../image'));
+
+function copyFile(source, target, cb) {
+  var cbCalled = false;
+
+  var rd = fs.createReadStream(source);
+  rd.on("error", function(err) {
+    done(err);
+  });
+  var wr = fs.createWriteStream(target);
+  wr.on("error", function(err) {
+    done(err);
+  });
+  wr.on("close", function(ex) {
+    done();
+  });
+  rd.pipe(wr);
+
+  function done(err) {
+    if (!cbCalled) {
+      cb(err);
+      cbCalled = true;
+    }
+  }
+}
+
 
 
 
 let app = new Koa();
+
 app.use(serve(path.resolve(__dirname + '/../image')));
 app.use(serve(path.resolve(__dirname + '/../')));
+const imagepath = path.resolve(__dirname + '/../');
+
+// app.use(route.post('/profile', upload.single('avatar')));
 
 let ObjectId = require('mongodb').ObjectId;
 const db = monk('mongodb://127.0.0.1:27017/web', (err, db)=>{
@@ -125,6 +160,33 @@ router.get('/blog/:id', async ( ctx )=> {
   //   console.log("already login");
   // }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 router.post('/blog', async ( ctx )=> {
 
 
@@ -136,6 +198,36 @@ router.post('/blog', async ( ctx )=> {
       ctx.response.status = 404;
     }
   );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // if(ctx.session.isNew()) {
   //   console.log("not login");
@@ -165,6 +257,84 @@ router.put('/blog/:id', async ( ctx )=> {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+router.post('/image',async (ctx)=> {
+
+  const {files, fields} = await asyncBusboy(ctx.req);
+  // let a = fs.open('files', 'a+', (err,fd)=>{
+  //   if(err) throw err;
+  //   console.log("cnmlgb");
+  // }),
+  //
+  //
+  // // console.log(typeof files);
+  // fs.writeFile(imagepath+'/cnm.jpg', files, 'binary', function (err,data) {
+  //   if(err) throw err;
+  //   console.log("complete");
+  // });
+  console.log(files[0]);
+  copyFile(files[0].path, imagepath+"/"+files[0].filename,(error)=>{if (error) throw error;});
+  // fs.createReadStream(files).pipe(fs.createWriteStream('newLog.jpg'));
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// router.post('/image', async (ctx) => {
+//   console.log("receive");
+//   // console.log(ctx.request);
+//   // console.log(ctx.request.body.files);
+//   // ctx.response.body = ctx.request.body;
+// })
 
 
 

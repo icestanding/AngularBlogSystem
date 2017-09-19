@@ -10,6 +10,7 @@ import {
   Renderer2,
   SimpleChanges,
   ViewEncapsulation,
+  ViewChild
   
 } from '@angular/core';
 import {
@@ -20,8 +21,24 @@ import {
 } from '@angular/forms';
 import { Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
-import { Http } from '@angular/http'
+import { Http, RequestOptions, RequestOptionsArgs } from '@angular/http'
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject'
+
+// Observable class extensions
+import 'rxjs/add/observable/of';
+
+// Observable operators
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map'
+
+
+
+
 import * as Quill from 'quill';
 
 @Component({
@@ -97,6 +114,7 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
   @Output() onContentChanged: EventEmitter<any> = new EventEmitter();
   @Output() onSelectionChanged: EventEmitter<any> = new EventEmitter();
 
+  @ViewChild('fileInput') fileInput;
   onModelChange: Function = () => {};
   onModelTouched: Function = () => {};
 
@@ -291,4 +309,48 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
       this.http.post("/blog", {title: this.title,
       content: this.quillEditor.root.innerHTML, category: this.category, quill: this.quillEditor.getContents()}).subscribe();
   }
+  
+
+  upload() {
+
+    // formData.get("image");
+    // console.log(formData.get("image"));
+    // console.log("cbn");
+    // this.http.post('/image',formData).subscribe();
+    // if (fileBrowser.files && fileBrowser.files[0]) {
+    //   const formData = new FormData();
+    //   formData.append("image", fileBrowser.files[0]);
+    //   this.projectService.upload(formData, this.project.id).subscribe(res => {
+    //     // do stuff w/my uploaded file
+    //   });
+    // this.http.request('/image', {
+    //   method: 'post',
+    //   body: formData,
+    //   headers: header
+    // }).subscribe();
+    // this.http.post('image', {formData}).subscribe();
+
+        // optionargs = new RequestOptionsq
+        
+        // this is can work, fk ng-upload I dont need that 
+        let fileBrowser = this.fileInput.nativeElement;
+        const formData = new FormData();
+        
+
+        // formData.append('key1','value1');
+        // formData.append('key2','value2');
+
+
+      //  console.log(fileBrowser.files[0]);
+        formData.append("image", fileBrowser.files[0]);
+        // if(formData.has("image")) {
+        //   console.log("cnm");
+        // }
+        // console.log(formData.get("image").name);
+        this.http.post('/image', formData).subscribe();
+
+
+
+  }
 }
+
