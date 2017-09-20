@@ -4,7 +4,7 @@
       <div class="row navcontent">  
         
         <div class="col-xs-4">
-        <button md-button style="max-width:30px; min-width:55px"> <i class="material-icons bar" style="cursor:pointer;width:24px" (click)="toggle($event)" >menu</i>
+        <button md-button style="max-width:30px; min-width:55px" (click)="toggle($event)"> <i class="material-icons bar" style="cursor:pointer;width:24px" >menu</i>
         </button>
             <!-- <button md-button color="primary" (click)="toggle($event)">Side Drawer</button>  -->
         </div>
@@ -13,8 +13,6 @@
         </div>
         <div class="col-xs-4" style="align-items:flex-end" >
             <md-slide-toggle style="padding-top:4px" (click)="change($event)"></md-slide-toggle>
-            <!-- <p style="text-align:right; margin-bottom: 0;">color change</p> -->
         </div>
      </div> 
-<!-- </md-toolbar> -->
 </md-card>

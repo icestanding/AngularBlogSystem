@@ -3,38 +3,20 @@
 <header (event)="sidebar()" [ngClass]="mytheme" *ngIf="hide"  (colorevent)="themechange()" >
 </header> 
 <!-- [scroll]="0" css1="mainframe" css2="mainframefix" -->
- <md-sidenav-container [ngClass]="mytheme"  class="mainframe"  >
-  <md-sidenav  #start2 opened="true" class="snavfix" >
-       <!-- <md-list>
-        <md-list-item md-button>    
-     
-           <i class="material-icons"  >home</i> 
-           <p >Home</p>
-        </md-list-item>
-        <md-list-item >    
-  
-          <i class="material-icons" >save</i> 
-          <p >Achieve</p>
-    
-        </md-list-item>
-        <md-list-item>    
-           <i class="material-icons"  >person</i>
-          <p >Person</p>
-        </md-list-item>
-    </md-list>  -->
+  <md-sidenav-container [ngClass]="mytheme"  class="mainframe"  >
+  <md-sidenav  #start2 closed class="snavfix" > 
     <md-card-content class="wori" >
-      <button md-button> <i class="material-icons"  >home</i> Home</button>
+        <button md-button> <i class="material-icons"  >home</i> Home</button>
     </md-card-content> 
     <md-card-content class="wori">
-      <button md-button> <i class="material-icons"  >save</i> Achieve</button>
+        <button md-button> <i class="material-icons"  >save</i> Achieve</button>
     </md-card-content> 
     <md-card-content class="wori">
-      <button md-button><i class="material-icons"  >person</i> About</button>
+        <button md-button><i class="material-icons"  >person</i> About</button>
     </md-card-content> 
-   
   </md-sidenav>
   <router-outlet></router-outlet>
-    <footer   *ngIf="hide"></footer> 
+  <footer   *ngIf="hide"></footer> 
   <!-- <footer (colorchange)="themechange()"  *ngIf="hide"></footer>  -->
 </md-sidenav-container>   
 

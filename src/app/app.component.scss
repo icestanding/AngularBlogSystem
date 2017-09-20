@@ -22,7 +22,7 @@
             padding-top: 13px;
         }
     }
-    .wori{
+    md-card-content {
         display: flex;
         // justify-content:flex-start;
         align-content: flex-start;
@@ -40,16 +40,12 @@
             }
         }
     }
-    // md-list-item:hover {
-    //     background-color: #C0C0C0;
-    // }
-
-
 
 }
 // work for sidebar
 .mainframe {
     transform: none !important;
+    margin-top: 50px;
 }
 
 
