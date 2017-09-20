@@ -1,16 +1,39 @@
-
-
 .snavfix {
     position: fixed;
-    top: 45px;
-    border:1px solid black; 
+    top: 50px;
     left:0px;
     height: 100%;
-    width: 220px;
+    width: 25%;
+    min-width: 120px;
+    max-width: 225px;
+    md-list-item {
+        cursor:pointer; 
+        margin:0 auto; 
+        display:flex; 
+        justify-content: left ;
+        align-items:center;
+        padding-left: 0px;
+        // color: gray;
+        i {
+            width:24px;
+        }
+        p {
+            padding-left: 6%;
+            padding-top: 13px;
+        }
+    }
+    md-list-item:hover {
+        background-color: #C0C0C0;
+    }
+
+
+
 }
+// work for sidebar
 .mainframe {
     transform: none !important;
 }
+
 
 
 

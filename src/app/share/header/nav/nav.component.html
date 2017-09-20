@@ -4,11 +4,12 @@
       <div class="row navcontent">  
         
         <div class="col-xs-4">
-            <i class="material-icons" style="cursor:pointer;width:24px" (click)="toggle($event)" >menu</i>
+        <button md-button style="max-width:30px; min-width:55px"> <i class="material-icons bar" style="cursor:pointer;width:24px" (click)="toggle($event)" >menu</i>
+        </button>
             <!-- <button md-button color="primary" (click)="toggle($event)">Side Drawer</button>  -->
         </div>
         <div class="col-xs-4" > 
-            <p style="margin:0 auto; width:20%; text-align: center;" >Unkonw</p>
+            <p style="margin:0 auto; text-align: center;" >Unkonw</p>
         </div>
         <div class="col-xs-4" style="align-items:flex-end" >
             <md-slide-toggle style="padding-top:4px" (click)="change($event)"></md-slide-toggle>

@@ -4,9 +4,24 @@
 </header> 
 <!-- [scroll]="0" css1="mainframe" css2="mainframefix" -->
  <md-sidenav-container [ngClass]="mytheme"  class="mainframe"  >
-  <md-sidenav  #start2 closed class="snavfix" >
-        <div>   <a [routerLink]="['/sub']">second page </a></div>
-        <div> <a [routerLink]="['']">Main page </a> </div> 
+  <md-sidenav  #start2 opened="true" class="snavfix" >
+      <md-list>
+        <md-list-item>    
+           <!-- home -->
+           <i class="material-icons"  >home</i> 
+           <p >Home</p>
+        </md-list-item>
+        <md-list-item >    
+          <!-- achieve  -->
+          <i class="material-icons" >save</i> 
+          <p >Achieve</p>
+          <!-- about  -->
+        </md-list-item>
+        <md-list-item>    
+           <i class="material-icons"  >person</i>
+          <p >Person</p>
+        </md-list-item>
+    </md-list>
    
   </md-sidenav>
   <router-outlet></router-outlet>
