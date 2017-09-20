@@ -22,9 +22,27 @@
             padding-top: 13px;
         }
     }
-    md-list-item:hover {
-        background-color: #C0C0C0;
+    .wori{
+        display: flex;
+        // justify-content:flex-start;
+        align-content: flex-start;
+        margin-bottom: 0;
+        margin-top: 10px;
+
+        button {
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 400;
+            i {
+                padding-bottom: 5px;
+                padding-right: 5px;
+            }
+        }
     }
+    // md-list-item:hover {
+    //     background-color: #C0C0C0;
+    // }
 
 
 
