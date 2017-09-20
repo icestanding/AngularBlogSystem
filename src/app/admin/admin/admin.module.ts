@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminRoutingModule } from "./admin-routing.module";
 import { MdButtonModule } from '@angular/material';
 
-import { QuillModule } from './editor/quill.module'
+// import { QuillModule } from './editor/quill.module'
 import { ShareModule } from '../../app-share.module';
 import { BlogModule } from './blog/blog.module';
 
@@ -18,7 +18,7 @@ import { BlogModule } from './blog/blog.module';
    HttpClientModule,
    MdButtonModule,
    ShareModule,
-   QuillModule,
+  //  QuillModule,
    BlogModule
   ],
   declarations: [
