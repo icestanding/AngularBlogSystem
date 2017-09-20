@@ -2,7 +2,7 @@
     margin-bottom: 0px;
     top:0px;
     width:  100%;
-    height: 60px;
+    height: 45px;
     z-index: 4;
     padding: 0px;
     margin: 0px;
@@ -17,7 +17,7 @@
     margin-bottom: 0px;
     position: fixed;
     top: 0;
-    height: 60px;
+    height: 45px;
     left: 0;
     right: 0;
     z-index: 4;
@@ -35,4 +35,10 @@
      position: absolute;
      top: 50%;
      transform: translateY(-50%);
+     width: 100%;
+     .vertical {
+         display: flex; 
+         flex-direction: column; 
+         justify-content: center;
+     }
 }

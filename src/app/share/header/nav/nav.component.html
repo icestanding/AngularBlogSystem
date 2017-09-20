@@ -1,12 +1,15 @@
-<!-- <md-card class="mynav">
-    This is my 
-</md-card> -->
-
 
 <md-card [scroll]="0" css1="nav" css2="navfixed" >
-    <div class="navcontent" style="display:flex">
-    <button md-button color="primary" (click)="toggle($event)">Side Drawer</button> 
-    <div style="margin:0 auto"><p >Unkonw</p></div>
+    <div class="row navcontent">
+        <div class="col-xs-4">
+            <md-icon></md-icon>
+            <button md-button color="primary" (click)="toggle($event)">Side Drawer</button> 
+        </div>
+        <div class="col-xs-4 vertical" > 
+            <p style="margin:0 auto; width:20%; text-align: center;" >Unkonw</p>
+        </div>
+        <div class="col-xs-4 vertical">
+            <p style="text-align:right; margin-bottom: 0;">color change</p>
+        </div>
     </div>
 </md-card>
-
