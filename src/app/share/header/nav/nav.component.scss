@@ -11,11 +11,13 @@
     transition-duration: 0.25s;
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-delay: initial;
+    // position: relative; 
 }
 .navfixed {
     margin-bottom: 0px;
     position: fixed;
     top: 0;
+    height: 60px;
     left: 0;
     right: 0;
     z-index: 4;
@@ -29,9 +31,8 @@
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-delay: initial;
 }
-.header {
-    display: flex;
-    flex-direction: column-reverse;
-    padding:0;
-    height: 60px;
+.navcontent {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
 }

@@ -26,7 +26,7 @@ export class ScrollDirective {
   onWindowScroll() {
     let number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     let windowheight = window.innerHeight;
-    if(number >= parseInt(this.offset)) {
+    if(number > 0) {
        this.renderer.addClass(this.el.nativeElement, this.css2);
         this.renderer.removeClass(this.el.nativeElement, this.css1);
        

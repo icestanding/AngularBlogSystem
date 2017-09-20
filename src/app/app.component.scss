@@ -1,7 +1,5 @@
 // adjust content between header, footer
-.header {
-    width: 100%;
-}
+
 .snav {
     position: absolute;
     top: 0px;
@@ -11,14 +9,17 @@
 }
 .snavfix {
     position: fixed;
-    top: 36px;
+    top: 60px;
     border:1px solid black; 
     left:0px;
     height: 100%;
 }
-.test {
-    // height: 300px;
-    // background: url('/../../../../../image/sample.jpg')  center;
+.mainframe {
+    transform: none !important;
+}
+.mainframefix {
+     transform: none !important;
+    margin-top:60px;
 }
 
 
