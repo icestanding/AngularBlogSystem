@@ -27,8 +27,8 @@ export class AppComponent {
 
   constructor(@Inject(DOCUMENT) private document:Document, private _router:Router) {
     this.mytheme = {
-                    'alternate-theme': true, 
-                    'main-theme': false,
+                    'alternate-theme': false, 
+                    'main-theme': true,
                   };
     this.router = _router;
     this.hide = true;
@@ -64,7 +64,11 @@ export class AppComponent {
     this.MdSidenav.toggle();
   }
   themechange() {
-    this.mytheme['alternate-theme'] = false;
-    this.mytheme['main-theme'] = true;
+    if(this.mytheme["alternate-theme"] == true) {
+      this.mytheme={'alternate-theme':false, 'main-theme': true};
+    }
+    else {
+       this.mytheme={'alternate-theme':true, 'main-theme': false};
+    }
   }
 }

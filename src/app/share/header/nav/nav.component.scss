@@ -22,7 +22,7 @@
     right: 0;
     z-index: 4;
     width: 100%;
-    opacity: 0.8;
+    // opacity: 0.8;
     padding: 0px;
     margin: 0px;
     transition: transform 0.25s cubic-bezier(.25,.8,.25,1);
@@ -32,14 +32,19 @@
     transition-delay: initial;
 }
 .navcontent {
+    
      position: absolute;
      top: 50%;
      transform: translateY(-50%);
      width: 100%;
-     right: 15px;
+    right:15px;
+
      div {
          display: flex; 
          flex-direction: column; 
          justify-content: center;
      }
+    .mat-toolbar-layout {
+        width: 100%;
+    }
 }

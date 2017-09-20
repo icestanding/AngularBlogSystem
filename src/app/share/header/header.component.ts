@@ -9,8 +9,17 @@ import { DOCUMENT }from '@angular/platform-browser'
 })
 export class HeaderComponent implements OnInit {
 
-  private color:string;
+  // private color:string;
+  public mytheme: {
+    'alternate-theme'?: boolean;
+    'main-theme'?: boolean;
+    'main'?: boolean;
+    'mainfix'?: boolean;
+  };
+
+
   @Output() event = new EventEmitter();
+  @Output() colorevent = new EventEmitter();
   @ViewChild(ThemeDirective) vc:ThemeDirective; 
   public transform:{
     'header'?: boolean;
@@ -18,7 +27,11 @@ export class HeaderComponent implements OnInit {
   };
   constructor() {
      this.transform = {'header':true, 'headerfix': false};
-     this.color = "none"; 
+    //  this.color = "none"; 
+         this.mytheme = {
+                    'alternate-theme': true, 
+                    'main-theme': false,
+                  };
   }
   ngOnInit() {}
 
@@ -37,10 +50,11 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  colorchange(inside) {
-    this.vc.changeColor("red");
+  color(e) {
+    this.colorevent.emit(e);
   }
   sidebar(e){
     this.event.emit(e);
   }
+
 }

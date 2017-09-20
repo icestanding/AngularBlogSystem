@@ -263,8 +263,9 @@ finish the router later
 
 router jump all template, only navigation event trigger
 
-git 
+git changing comment
 use almend to reset 
+https://help.github.com/articles/changing-a-commit-message/
 
 html wen ben bian ji qi  zi dong zhengli wendang 
 
@@ -276,3 +277,8 @@ working on file upload
 
 example 
 https://github.com/koajs/examples/blob/master/upload/app.js
+
+material Icon
+https://material.io/icons/#ic_more_vert
+
+theme problem   

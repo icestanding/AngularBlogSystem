@@ -9,6 +9,7 @@ import { DOCUMENT }from '@angular/platform-browser'
 export class NavComponent implements OnInit {
 
     @Output () event = new EventEmitter();
+    @Output () color = new EventEmitter();
 
     constructor(@Inject(DOCUMENT) private document:Document) {
     
@@ -18,7 +19,10 @@ export class NavComponent implements OnInit {
     // when reach 200 change theme, can simplify to switch and case
 
     toggle(e) {
-      this.event.emit(e);
+        this.event.emit(e);
       
+    }
+    change(e) {
+        this.color.emit(e);
     }
 }

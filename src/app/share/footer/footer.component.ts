@@ -20,6 +20,14 @@ export class FooterComponent implements OnInit {
     
   }
   change(e) {
+    if(this.myset["alternate-theme"] == true) {
+      this.myset={'alternate-theme':false, 'main-theme': true};
+    }
+    else {
+       this.myset={'alternate-theme':true, 'main-theme': false};
+    }
+      console.log("cnm");
+   
     this.colorchange.emit(e);
   }
   

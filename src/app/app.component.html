@@ -1,17 +1,19 @@
 <!-- header contain nav -->
 <!--THis is CHen-->
-<header (event)="sidebar()" [ngClass]="mytheme" *ngIf="hide">
+<header (event)="sidebar()" [ngClass]="mytheme" *ngIf="hide"  (colorevent)="themechange()" >
 </header> 
- <md-sidenav-container [ngClass]="mytheme"    [scroll]="0" css1="mainframe" css2="mainframefix"  >
-  <md-sidenav  #start2 closed    [scroll]="0" css1="snav" css2="snavfix" >
+<!-- [scroll]="0" css1="mainframe" css2="mainframefix" -->
+ <md-sidenav-container [ngClass]="mytheme"  class="mainframe"  >
+  <md-sidenav  #start2 closed class="snavfix" >
         <div>   <a [routerLink]="['/sub']">second page </a></div>
         <div> <a [routerLink]="['']">Main page </a> </div> 
-         <!-- <div> <a [routerLink]="['/login']">Login page </a> </div>          -->
+   
   </md-sidenav>
   <router-outlet></router-outlet>
+    <footer   *ngIf="hide"></footer> 
   <!-- <footer (colorchange)="themechange()"  *ngIf="hide"></footer>  -->
 </md-sidenav-container>   
-  <footer (colorchange)="themechange()"  *ngIf="hide"></footer> 
+
 
  
 <!-- footer -->
