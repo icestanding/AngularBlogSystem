@@ -2,14 +2,15 @@
 <md-card [scroll]="0" css1="nav" css2="navfixed" >
     <div class="row navcontent">
         <div class="col-xs-4">
-            <md-icon></md-icon>
-            <button md-button color="primary" (click)="toggle($event)">Side Drawer</button> 
+            <i class="material-icons" style="cursor:pointer;width:24px" (click)="toggle($event)" >menu</i>
+            <!-- <button md-button color="primary" (click)="toggle($event)">Side Drawer</button>  -->
         </div>
-        <div class="col-xs-4 vertical" > 
+        <div class="col-xs-4" > 
             <p style="margin:0 auto; width:20%; text-align: center;" >Unkonw</p>
         </div>
-        <div class="col-xs-4 vertical">
-            <p style="text-align:right; margin-bottom: 0;">color change</p>
+        <div class="col-xs-4" style="align-items:flex-end" >
+            <md-slide-toggle style="padding-top:4px"></md-slide-toggle>
+            <!-- <p style="text-align:right; margin-bottom: 0;">color change</p> -->
         </div>
     </div>
 </md-card>

@@ -9,7 +9,7 @@ import { MainpageModule } from './front/mainpage/mainpage.module';
 import { HeaderComponent } from './share/header/header.component';
 import { FooterComponent } from './share/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdCardModule } from '@angular/material';
+import { MdCardModule,MdSlideToggleModule } from '@angular/material';
 import { ThemeDirective } from './directive/theme/theme.directive';
 import { MdButtonModule } from '@angular/material';
 import { MdSidenavModule } from '@angular/material';
@@ -48,6 +48,7 @@ import { SubpageComponent } from './front/subpage/subpage.component'
     SubpageModule,
     AdminModule,
     ShareModule,
+    MdSlideToggleModule
 ],
   declarations: [
     AppComponent,
