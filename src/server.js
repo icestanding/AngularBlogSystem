@@ -190,44 +190,19 @@ router.get('/blog/:id', async ( ctx )=> {
 router.post('/blog', async ( ctx )=> {
 
 
-  let blog = db.get('blog');
-  ctx.request.body.time = Date();
-  await blog.insert(ctx.request.body).then(()=> {
-      ctx.response.status = 200;
-  }).catch( (err)=> {
-      ctx.response.status = 404;
-    }
-  );
+  // let blog = db.get('blog');
+  // ctx.request.body.time = Date();
+  // await blog.insert(ctx.request.body).then(()=> {
+  //     ctx.response.status = 200;
+  // }).catch( (err)=> {
+  //     ctx.response.status = 404;
+  //   }
+  // );
+  const {files, fields} = await asyncBusboy(ctx.req);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  let blog = JSON.parse(fields.blog);
+  console.log(blog);
+  copyFile(files[0].path, imagepath+"/image/"+files[0].filename, (error)=>{if (error) throw error;});
 
   // if(ctx.session.isNew()) {
   //   console.log("not login");
@@ -286,24 +261,27 @@ router.put('/blog/:id', async ( ctx )=> {
 
 
 
-router.post('/image',async (ctx)=> {
-
-  const {files, fields} = await asyncBusboy(ctx.req);
-  // let a = fs.open('files', 'a+', (err,fd)=>{
-  //   if(err) throw err;
-  //   console.log("cnmlgb");
-  // }),
-  //
-  //
-  // // console.log(typeof files);
-  // fs.writeFile(imagepath+'/cnm.jpg', files, 'binary', function (err,data) {
-  //   if(err) throw err;
-  //   console.log("complete");
-  // });
-  console.log(files[0]);
-  copyFile(files[0].path, imagepath+"/"+files[0].filename,(error)=>{if (error) throw error;});
-  // fs.createReadStream(files).pipe(fs.createWriteStream('newLog.jpg'));
-});
+// router.post('/image',async (ctx)=> {
+//
+//   const {files, fields} = await asyncBusboy(ctx.req);
+//   // let a = fs.open('files', 'a+', (err,fd)=>{
+//   //   if(err) throw err;
+//   //   console.log("cnmlgb");
+//   // }),
+//   //
+//   //
+//   // // console.log(typeof files);
+//   // fs.writeFile(imagepath+'/cnm.jpg', files, 'binary', function (err,data) {
+//   //   if(err) throw err;
+//   //   console.log("complete");
+//   // });
+//   // console.log(fields)
+//
+//   let blog = JSON.parse(fields.blog);
+//   console.log(blog);
+//   copyFile(files[0].path, imagepath+"/image/"+files[0].filename, (error)=>{if (error) throw error;});
+//   // fs.createReadStream(files).pipe(fs.createWriteStream('newLog.jpg'));
+// });
 
 
 
@@ -365,23 +343,59 @@ router.post('/', async ( ctx )=> {
 
 
 
-router.post('/api/user', async(ctx)=>{
-//    if(ctx.request.body.id != null) {
-//       let usertoken = { user:"hnmb"};
-//    let token = jwt.sign(usertoken, 'asdasd');
-//    ctx.response.type = 'json';
-//    ctx.response.body = {
-//      message: "successful",
-//      token: token
-//    };
-//    ctx.response.status=500;
-//  }
-// else {
-//
-// }
-  console.log(ctx.request.body.id);
+router.post('/api/authenticate', async(ctx)=>{
+  let user = db.get("user");
+  await user.findOne({id: ctx.request.body.id}).then( (data) => {
+    console.log(data);
+    if(data != null) {
+      if(data.password == ctx.request.body.password) {
+        let usertoken = { user: ctx.request.body.id};
+        let token = jwt.sign(usertoken, 'chen', {expiresIn: '1h'});
+        ctx.response.type = 'json';
+        ctx.response.body = {
+          message: "successful",
+          token:token
+        }
+        ctx.response.status = 200;
+      }
+      else {
+        ctx.response.status =  422;
+      }
+    }
+    else {
+      ctx.response.status = 404;
+    }
+  }).catch((err)=> {
+    console.log(err);
+    ctx.response.status=500;
+  })
+});
 
- });
+router.post('/api/islogin', async(ctx)=> {
+  console.log(ctx.request.body.token);
+  await jwt.verify(ctx.request.body.token, 'chen', async (err, decoded) => {
+    if (err) {
+      ctx.response.status = 422;
+    }
+    console.log(decoded);
+    let user = db.get("user");
+
+    await user.findOne({id: decoded.user}).then( (data) => {
+        if (data!=null) {
+          ctx.response.status = 200;
+        }
+        else {
+          ctx.response.status = 404;
+        }
+      }).catch((err)=>{
+        ctx.response.status = 422;
+      });
+    });
+  
+});
+
+
+
 
 
 

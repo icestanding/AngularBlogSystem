@@ -33,7 +33,7 @@ export class LoginformComponent implements OnInit {
 
   // initial part
   constructor(private login: LoginServiceService, private route: Router) {
-    this.logoPath = '../../assets/img/logo.jpg';
+
     this.errors = "true";
     this.hidden = false;
     this.username = "";

@@ -306,51 +306,13 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
       return this.quillEditor.root.innerHTML;
   }
   submit() {
-      this.http.post("/blog", {title: this.title,
-      content: this.quillEditor.root.innerHTML, category: this.category, quill: this.quillEditor.getContents()}).subscribe();
-  }
-  
-
-  upload() {
-
-    // formData.get("image");
-    // console.log(formData.get("image"));
-    // console.log("cbn");
-    // this.http.post('/image',formData).subscribe();
-    // if (fileBrowser.files && fileBrowser.files[0]) {
-    //   const formData = new FormData();
-    //   formData.append("image", fileBrowser.files[0]);
-    //   this.projectService.upload(formData, this.project.id).subscribe(res => {
-    //     // do stuff w/my uploaded file
-    //   });
-    // this.http.request('/image', {
-    //   method: 'post',
-    //   body: formData,
-    //   headers: header
-    // }).subscribe();
-    // this.http.post('image', {formData}).subscribe();
-
-        // optionargs = new RequestOptionsq
-        
-        // this is can work, fk ng-upload I dont need that 
+        let blog = {title: this.title,
+        content: this.quillEditor.root.innerHTML, category: this.category, quill: this.quillEditor.getContents()}
         let fileBrowser = this.fileInput.nativeElement;
         const formData = new FormData();
-        
-
-        // formData.append('key1','value1');
-        // formData.append('key2','value2');
-
-
-      //  console.log(fileBrowser.files[0]);
         formData.append("image", fileBrowser.files[0]);
-        // if(formData.has("image")) {
-        //   console.log("cnm");
-        // }
-        // console.log(formData.get("image").name);
-        this.http.post('/image', formData).subscribe();
-
-
-
+        formData.append("blog", JSON.stringify(blog))
+        this.http.post('/blog', formData).subscribe();
   }
 }
 
