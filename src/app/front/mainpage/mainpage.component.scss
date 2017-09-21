@@ -2,8 +2,19 @@
     text-align: center;
     height: 2000px;
     .col-sm-10 {
-         max-width: 800px;
+         max-width: 750px;
          margin: 0 auto;
     }
 
+}
+.blog {
+    .blogimg {
+        height: 200px;
+        src: url("~/assets/img/be.jpeg")  center center;
+        
+    }
+    
+}
+.mat-card-header-text {
+    margin: 0;
 }
