@@ -5,15 +5,19 @@
 <!-- [scroll]="0" css1="mainframe" css2="mainframefix" -->
   <md-sidenav-container [ngClass]="mytheme"  class="mainframe"  >
   <md-sidenav  #start2 closed class="snavfix" > 
-    <md-card-content class="wori" >
-        <button md-button> <i class="material-icons"  >home</i> Home</button>
-    </md-card-content> 
-    <md-card-content class="wori">
-        <button md-button> <i class="material-icons"  >save</i> Achieve</button>
-    </md-card-content> 
-    <md-card-content class="wori">
-        <button md-button><i class="material-icons"  >person</i> About</button>
-    </md-card-content> 
+
+    <!-- <md-card style="display:flex; flex-direction:column;"> -->
+        <md-card-content style="margin-top:20px">
+            <button md-button > <i class="material-icons"  >home</i> Home</button>
+        </md-card-content> 
+        <md-card-content >
+            <button md-button> <i class="material-icons"  >save</i> Achieve</button>
+        </md-card-content> 
+        <md-card-content >
+            <button md-button ><i class="material-icons"  >person</i> About</button>
+        </md-card-content> 
+    <!-- </md-card> -->
+
   </md-sidenav>
   <router-outlet></router-outlet>
   <footer   *ngIf="hide"></footer> 

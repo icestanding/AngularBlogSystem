@@ -1,4 +1,9 @@
 .content {
     text-align: center;
     height: 2000px;
+    .col-sm-10 {
+         max-width: 800px;
+         margin: 0 auto;
+    }
+
 }
