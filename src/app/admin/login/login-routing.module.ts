@@ -9,7 +9,7 @@ import { LoginRouterGuard } from '../../guard/loginguard'
 @NgModule({
   imports: [RouterModule.forChild([
     
-    // {path: 'login', component: LoginComponent, redirectTo:'admin'},
+      // {path: 'login', component: LoginComponent, redirectTo:'admin', canActivate:[LoginRouterGuard]},
     {path: 'login', component: LoginComponent}
   ]),
   ],
