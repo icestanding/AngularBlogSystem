@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes} from '@angular/router';
 import { LoginServiceService } from './service/login/login-service.service';
 import { LoginModule } from './login/login.module';
-import { MainpageModule } from './front/mainpage/mainpage.module';
 import { HeaderComponent } from './share/header/header.component';
 import { FooterComponent } from './share/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,14 +14,16 @@ import { MdButtonModule } from '@angular/material';
 import { MdSidenavModule } from '@angular/material';
 import { MdMenuModule } from '@angular/material'
 import { MdToolbarModule }from '@angular/material'
-import { SubpageModule } from './front/subpage/subpage.module';
+
 import { NavComponent } from './share/header/nav/nav.component';
 import { NotfoundComponent } from './share/notfound/notfound.component';
 import { ShareModule } from './share/app-share.module';
 import { AdminModule } from './admin/admin.module';
-import { MainpageComponent } from './front/mainpage/mainpage.component'
-import { SubpageComponent } from './front/subpage/subpage.component'
-
+// import { MainpageComponent } from './front/mainpage/mainpage.component'
+// import { SubpageComponent } from './front/subpage/subpage.component'
+import { FrontComponent } from './front/front.component'
+import { FrontModule } from './front/front.module'
+import { AdminComponent } from './admin/admin.component'
 
 
 @NgModule({
@@ -30,12 +31,12 @@ import { SubpageComponent } from './front/subpage/subpage.component'
     BrowserModule,
     HttpModule,
     LoginModule,
-    MainpageModule,
+    FrontModule,
     RouterModule.forRoot(
       [
-        {path: '',   component: MainpageComponent},
-        // {path: 'sub', component:SubpageComponent},
-        // {path: '**', component:NotfoundComponent}
+        { path: '',   component: FrontComponent},
+        { path: 'admin', component: AdminComponent},
+        {path: '**', component:NotfoundComponent}
       ],
       {enableTracing: true}
     ),
@@ -45,7 +46,6 @@ import { SubpageComponent } from './front/subpage/subpage.component'
     MdSidenavModule,
     MdMenuModule,
     MdToolbarModule,
-    SubpageModule,
     AdminModule,
     ShareModule,
     MdSlideToggleModule,

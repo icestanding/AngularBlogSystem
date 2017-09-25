@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router'
+import { MainpageComponent } from './mainpage/mainpage.component';
+import { FrontComponent } from './front.component';
+
 
 @NgModule({
   imports: [
-    CommonModule
+ 
+    RouterModule.forChild([{path:'', component: FrontComponent,
+    children:[{path:'', pathMatch: 'full', component:MainpageComponent}]}]),
   ],
+   exports:[RouterModule],
   declarations: []
 })
 export class FrontRoutingModule { }
