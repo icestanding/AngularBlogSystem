@@ -296,15 +296,7 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
 
     return valid ? null : err;
   }
-  show() {
-    // console.log(this.quillEditor.getContents());
-      var contents = JSON.stringify(this.quillEditor.root.innerHTML);
-      console.log(contents);
-      console.log(this.quillEditor.getContents());
-  }
-  getcontent() {
-      return this.quillEditor.root.innerHTML;
-  }
+
   submit() {
 
       let blog = {title: this.title,
