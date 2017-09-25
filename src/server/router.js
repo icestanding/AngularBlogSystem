@@ -102,11 +102,13 @@ router.post('/blog', async ( ctx )=> {
 
     let blogs = db.get('blog');
     blog.time = Date();
+    blog.img = "";
     await blogs.insert(blog).then(async ()=> {
       if(files[0]) {
-        await blogs.findOne({title: blog.title}).then((doc)=> {
+        await blogs.findOne({title: blog.title}).then(async (doc)=> {
 
           copyFile(files[0].path, imagepath+"/image/" + doc._id + path.extname(files[0].filename), (error)=>{if (error) throw error;});
+          await blogs.update({_id: doc._id},{ $set:{ img:doc._id + path.extname(files[0].filename)}}).then();
         })
       }
       else {

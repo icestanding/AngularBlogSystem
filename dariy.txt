@@ -299,3 +299,4 @@ mongodump
 1. fix webpack + fire structure.  
 2. fix backend api, frontend api.
 3. fix router problem
+4. diary title can't be same
