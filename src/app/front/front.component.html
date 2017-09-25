@@ -1,7 +1,7 @@
-<!--<header (event)="sidebar()" [ngClass]="mytheme" *ngIf="hide"  (colorevent)="themechange()" >
-</header> -->
+<header (event)="sidebar()" [ngClass]="mytheme"   (colorevent)="themechange()" >
+</header> 
 <!--[ngClass]="mytheme"-->
-  <md-sidenav-container   class="mainframe"  >
+  <md-sidenav-container  [ngClass]="mytheme" class="mainframe"  >
   <md-sidenav  #start2 closed class="snavfix" > 
       <md-card>
           For other 
@@ -17,5 +17,5 @@
         </md-card-content> 
   </md-sidenav>
   <router-outlet></router-outlet>
-  <!--<footer *ngIf="hide"></footer> -->
+  <footer ></footer> 
 </md-sidenav-container>   
