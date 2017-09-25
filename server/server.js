@@ -1,9 +1,8 @@
+// to support babel
+import "babel-core/register";
+import "babel-polyfill";
+
 import Koa from 'koa';
-
-// to support stupid function
-require("babel-core/register");
-require("babel-polyfill");
-
 import Router from 'koa-router';
 import ServerStatic from 'koa-static';
 import historyApiFallback from 'koa-history-api-fallback';
@@ -53,16 +52,16 @@ console.log(path.resolve(__dirname + '/../'));
 
 let app = new Koa();
 
-app.use(serve(path.resolve(__dirname + '/../../image')));
-app.use(serve(path.resolve(__dirname + '/../../')));
-app.use(serve(path.resolve(__dirname + '/../')));
+// app.use(serve(path.resolve(__dirname + '/../../image')));
+// app.use(serve(path.resolve(__dirname + '/../../')));
+// app.use(serve(path.resolve(__dirname + '/../')));
 const imagepath = path.resolve(__dirname + '/../../');
 
 
 // static root
-app.use(mount('/dist', serve(__dirname + '/../', {defer: true})));
+app.use(mount('/', serve(__dirname + '/../')));
 // app.use(route.post('/profile', upload.single('avatar')));
-
+app.use(historyApiFallback());
 let ObjectId = require('mongodb').ObjectId;
 const db = monk('mongodb://127.0.0.1:27017/web', (err, db)=>{
   if(err){
@@ -95,10 +94,6 @@ console.log(datetime)
 // console.log(timeStamp + "timezone is " +timezone);
 
 app.use(bodyParser());
-app.use(historyApiFallback());
-app.use(ServerStatic(__dirname));
-
-
 app.keys = ['some secret hurr'];
 
 const CONFIG = {
@@ -153,9 +148,6 @@ router.get('/blog/:id', async ( ctx )=> {
       ctx.response.status = 404;
     }
   );
-
-
-
 
   // if(ctx.session.isNew()) {
   //   console.log("not login");
@@ -480,8 +472,10 @@ app.use(router.routes()).use(router.allowedMethods());
 //   cert: fs.readFileSync("./encryption/host.cert")
 // }
 //
-
-
+// for send file
+const ui = new Koa();
+ui.use(serve(path.resolve(__dirname + '/../')));
+app.use(mount('/', ui));
 app.listen(3000);
 
 
