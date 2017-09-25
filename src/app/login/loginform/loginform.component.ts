@@ -9,7 +9,7 @@ import {
   transition
 } from '@angular/animations';
 // import {} from '../../service/login-service.service'
-import { LoginServiceService } from '../../../service/login/login-service.service'
+import { LoginServiceService } from '../../service/login/login-service.service'
 
 // const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router, Routes, NavigationStart, Event as NavigationEvent } from '@angular/router';
 import { MdSidenav } from '@angular/material'
-import { LoginServiceService } from '../../service/login/login-service.service'
+import { LoginServiceService } from '../service/login/login-service.service'
 
 
 @Component({

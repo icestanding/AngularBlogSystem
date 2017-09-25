@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { LoginComponent } from './login.component';
 import { RouterModule } from '@angular/router'
-import { LoginRouterGuard } from '../../guard/loginguard'
+import { LoginRouterGuard } from '../guard/loginguard'
 
 
 

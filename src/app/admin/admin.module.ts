@@ -7,7 +7,7 @@ import { AdminRoutingModule } from "./admin-routing.module";
 import { MdButtonModule } from '@angular/material';
 
 // import { QuillModule } from './editor/quill.module'
-import { ShareModule } from '../../app-share.module';
+import { ShareModule } from '../share/app-share.module';
 import { BlogModule } from './blog/blog.module';
 
 @NgModule({

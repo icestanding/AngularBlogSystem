@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes} from '@angular/router';
 import { LoginServiceService } from './service/login/login-service.service';
-import { LoginModule } from './admin/login/login.module';
+import { LoginModule } from './login/login.module';
 import { MainpageModule } from './front/mainpage/mainpage.module';
 import { HeaderComponent } from './share/header/header.component';
 import { FooterComponent } from './share/footer/footer.component';
@@ -18,8 +18,8 @@ import { MdToolbarModule }from '@angular/material'
 import { SubpageModule } from './front/subpage/subpage.module';
 import { NavComponent } from './share/header/nav/nav.component';
 import { NotfoundComponent } from './share/notfound/notfound.component';
-import { ShareModule } from './app-share.module';
-import { AdminModule } from './admin/admin/admin.module';
+import { ShareModule } from './share/app-share.module';
+import { AdminModule } from './admin/admin.module';
 import { MainpageComponent } from './front/mainpage/mainpage.component'
 import { SubpageComponent } from './front/subpage/subpage.component'
 
@@ -34,8 +34,8 @@ import { SubpageComponent } from './front/subpage/subpage.component'
     RouterModule.forRoot(
       [
         {path: '',   component: MainpageComponent},
-        {path: 'sub', component:SubpageComponent},
-        {path: '**', component:NotfoundComponent}
+        // {path: 'sub', component:SubpageComponent},
+        // {path: '**', component:NotfoundComponent}
       ],
       {enableTracing: true}
     ),

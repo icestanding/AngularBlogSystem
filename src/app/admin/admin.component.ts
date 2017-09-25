@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { LoginServiceService } from '../../service/login/login-service.service';
+import { LoginServiceService } from '../service/login/login-service.service';
 
 
 @Component({

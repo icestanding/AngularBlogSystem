@@ -3,7 +3,7 @@ import { AdminComponent } from './admin.component';
 import { RouterModule, CanActivate } from '@angular/router';
 import { BlogComponent } from './blog/blog.component';
 import { QuillEditorComponent } from './editor/quill-editor.component';
-import { LoginRouterGuard } from '../../guard/loginguard'
+import { LoginRouterGuard } from '../guard/loginguard'
 
 
 

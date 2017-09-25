@@ -51,7 +51,6 @@ export class AppComponent {
       //   this.hide = false;
       // }
       if(event instanceof NavigationCancel) {
-        console.log("cnmbbbbbbb")
          if(event.url == "/admin"){
           this.router.navigateByUrl('/login')
         }
