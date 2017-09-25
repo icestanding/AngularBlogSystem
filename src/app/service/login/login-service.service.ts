@@ -22,7 +22,7 @@ export class LoginServiceService {
     
   }
   login(id:string, password:string) {
-    this.http.post('/api/authenticate', { id:id, password:password }).subscribe((data)=>{
+    this.http.post('/api/auth', { id:id, password:password }).subscribe((data)=>{
       let res = JSON.parse(data.text())
       localStorage.setItem('user', JSON.stringify({user:id, token:res.token}));
       this.router.navigate(['/admin/blog']);
@@ -39,9 +39,10 @@ export class LoginServiceService {
   islogin (): boolean {
 
     if(localStorage.getItem('user')) {
-      let token = JSON.parse(localStorage.getItem('user'));
+      // let token = JSON.parse(localStorage.getItem('user'));
       // console.log(token);
-      this.http.post('/api/islogin', token).subscribe((data)=>{
+      this.http.get('/api/auth/' + localStorage.getItem('user')).subscribe((data)=>{
+        console.log("cnmbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
         return true
       }, (error)=>{
           console.log(error);

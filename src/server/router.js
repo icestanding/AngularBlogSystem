@@ -4,7 +4,6 @@ import jwt from 'jsonwebtoken';
 import multer from 'koa-multer';
 import asyncBusboy from 'async-busboy';
 import monk from 'monk';
-
 const router = new Router();
 
 const db = monk('mongodb://127.0.0.1:27017/web', (err, db)=>{
@@ -14,15 +13,8 @@ const db = monk('mongodb://127.0.0.1:27017/web', (err, db)=>{
 });
 
 
-
 router.get('/blog', async ( ctx )=> {
 
-  // if(ctx.session.isNew()) {
-  //   console.log("not login");
-  // }
-  // else {
-  //   console.log("already login");
-  // }
   let blog = db.get('blog');
   await blog.find().then((val)=>{
     ctx.response.type = 'json';
@@ -31,14 +23,10 @@ router.get('/blog', async ( ctx )=> {
     console.log("fuck up");
     console.log(err);
   })
-
-
 });
-router.get('/blog/:id', async ( ctx )=> {
 
-  // let ObjectId = require;
+router.get('/blog/:id', async ( ctx )=> {
   console.log(ctx.params.id);
-  // console.log(router.param("id"));
   let id = new ObjectId(ctx.params.id);
   let blog = db.get('blog');
   await blog.find({"_id":id}).then((val)=> {
@@ -48,39 +36,7 @@ router.get('/blog/:id', async ( ctx )=> {
       ctx.response.status = 404;
     }
   );
-
-  // if(ctx.session.isNew()) {
-  //   console.log("not login");
-  // }
-  // else {
-  //   console.log("already login");
-  // }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 router.post('/blog', async ( ctx )=> {
@@ -125,84 +81,6 @@ router.put('/blog/:id', async ( ctx )=> {
   //   console.log("already login");
   // }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// router.post('/image',async (ctx)=> {
-//
-//   const {files, fields} = await asyncBusboy(ctx.req);
-//   // let a = fs.open('files', 'a+', (err,fd)=>{
-//   //   if(err) throw err;
-//   //   console.log("cnmlgb");
-//   // }),
-//   //
-//   //
-//   // // console.log(typeof files);
-//   // fs.writeFile(imagepath+'/cnm.jpg', files, 'binary', function (err,data) {
-//   //   if(err) throw err;
-//   //   console.log("complete");
-//   // });
-//   // console.log(fields)
-//
-//   let blog = JSON.parse(fields.blog);
-//   console.log(blog);
-//   copyFile(files[0].path, imagepath+"/image/"+files[0].filename, (error)=>{if (error) throw error;});
-//   // fs.createReadStream(files).pipe(fs.createWriteStream('newLog.jpg'));
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // router.post('/image', async (ctx) => {
 //   console.log("receive");
 //   // console.log(ctx.request);
@@ -211,35 +89,7 @@ router.put('/blog/:id', async ( ctx )=> {
 // })
 
 
-
-
-
-router.post('/', async ( ctx )=> {
-
-  // if(ctx.session.isNew()) {
-  //   console.log("not login");
-  // }
-  // else {
-  //   console.log("already login");
-  // }
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-router.post('/api/authenticate', async(ctx)=>{
+router.post('/api/auth', async(ctx)=>{
   let user = db.get("user");
   await user.findOne({id: ctx.request.body.id}).then( (data) => {
     console.log(data);
@@ -267,17 +117,17 @@ router.post('/api/authenticate', async(ctx)=>{
   })
 });
 
-router.post('/api/islogin', async(ctx)=> {
-  console.log(ctx.request.body.token);
-  await jwt.verify(ctx.request.body.token, 'chen', async (err, decoded) => {
+router.get('/api/auth/:id', async(ctx)=> {
+  let token =  JSON.parse(ctx.params.id);
+  console.log(token);
+  await jwt.verify(token.token , 'chen', async (err, decoded) => {
     if (err) {
       ctx.response.status = 422;
     }
     console.log(decoded);
     let user = db.get("user");
-
     await user.findOne({id: decoded.user}).then( (data) => {
-      if (data!=null) {
+      if (data != null) {
         ctx.response.status = 200;
       }
       else {
@@ -290,56 +140,5 @@ router.post('/api/islogin', async(ctx)=> {
 
 });
 
-
-
-
-
-
-router.post('/api/login', async ( ctx )=> {
-
-  // // let hello = {"result": 1};
-  // let n = ctx.session.views || 0;
-  // ctx.session.views = ++n;
-  // ctx.body = n + ' views';
-  // console.log(ctx.session.views);
-  // // ctx.session.views = null;
-  // console.log(ctx.session);
-  // ctx.cookies.set("cnm", "hahaha");
-  // ctx.response.type = 'json';
-  // ctx.response.body = hello;
-  // ctx.body = ctx.request.body;
-  // console.log(ctx.body);
-  // if(ctx.session.isNew) {
-  //   console.log("user has not log in");
-  // }
-  // else {
-  //
-  // }
-});
-
-router.post('/api/islogin', async ( ctx )=> {
-
-  // let hello = {"result": 1};
-  // let n = ctx.session.views || 0;
-  // ctx.session.views = ++n;
-  // ctx.body = n + ' views';
-  // console.log(ctx.session.views);
-  // // ctx.session.views = null;
-  // console.log(ctx.session);
-  // ctx.cookies.set("cnm", "hahaha");
-  // ctx.response.type = 'json';
-  // ctx.response.body = hello;
-
-});
-
-router.post('/api/logout', async ( ctx )=> {
-
-  // if(ctx.session.isNew()) {
-  //   console.log("not login");
-  // }
-  // else {
-  //   console.log("already login");
-  // }
-});
 
 export default router;
