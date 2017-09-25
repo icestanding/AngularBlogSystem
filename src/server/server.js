@@ -76,7 +76,6 @@ var datetime = "Last Sync: " + currentdate.getDate() + "/"
 
 console.log(datetime)
 
-
 // console.log(timeStamp + "timezone is " +timezone);
 
 app.use(bodyParser());
@@ -92,54 +91,14 @@ const CONFIG = {
 };
 
 app.use(session(CONFIG, app));
-
-// let router = new Router();
-
-
-
-
-// blog function
-// zeng shan gai cha
-
-
-
-
-
-
-
-
-
-
 app.use(router.routes()).use(router.allowedMethods());
-// let start = async ()=> {
-//   await monk('localhost:27018/myblog', (err, db)=>{
-//     if(err){
-//       console.error("Db is not connected", err.message);
-//     }
-//     else {
-//       console.log("successful");
-//     }
-//   });
-//   app.listen(3000);
-//   console.log("run");
-// }
-// start();
-// http server
-// http.createServer(app.callback()).listen(3000);
-// https server
-
-// let option = {
-//   key: fs.readFileSync("./encryption/host.key"),
-//   cert: fs.readFileSync("./encryption/host.cert")
-// }
-//
-// for send file
 const ui = new Koa();
 ui.use(serve(path.resolve(__dirname + '/../')));
 // for image
 ui.use(serve(path.resolve(__dirname + '/../../')));
 ui.use(serve(path.resolve(__dirname + '/../../image')));
 app.use(mount('/', ui));
+
 app.listen(3000);
 
 
