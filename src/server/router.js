@@ -97,9 +97,7 @@ router.post('/blog', async ( ctx )=> {
 
   if(AuthenCheck(ctx.header)) {
     const {files, fields} = await asyncBusboy(ctx.req);
-
     let blog = JSON.parse(fields.blog);
-
     let blogs = db.get('blog');
     blog.time = Date();
     blog.img = "";
@@ -119,17 +117,23 @@ router.post('/blog', async ( ctx )=> {
         ctx.response.status = 404;
       }
     );
-
   }
   else {
     ctx.response.status = 422;
   }
-
-
 });
+
 router.del('/blog/:id', async ( ctx )=> {
 
-
+  let id = new mongo.ObjectId(ctx.params.id);
+  let blog = db.get('blog');
+  await blog.find({"_id":id}).then((doc)=> {
+    ctx.response.type="json";
+    ctx.response.body = doc;
+  }).catch( (err)=> {
+      ctx.response.status = 404;
+    }
+  );
 
 });
 router.put('/blog/:id', async ( ctx )=> {
@@ -168,6 +172,7 @@ router.post('/api/auth', async(ctx)=>{
 });
 
 router.get('/api/auth/:id', async(ctx)=> {
+
   let token =  JSON.parse(ctx.params.id);
 
   await jwt.verify(token.token , 'chen', async (err, decoded) => {

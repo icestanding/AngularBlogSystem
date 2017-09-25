@@ -5,6 +5,9 @@
 /tmp
 /out-tsc
 
+# image saving directory
+/image
+
 # dependencies
 /node_modules
 

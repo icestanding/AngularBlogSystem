@@ -296,7 +296,7 @@ have to finish login function
 9.25 back
 mongodump
 
-1. fix webpack + fire structure.  
-2. fix backend api, frontend api.
-3. fix router problem
+1. fix webpack + fire structure.  g
+2. fix backend api, frontend api. g
+3. fix router problem 
 4. diary title can't be same
