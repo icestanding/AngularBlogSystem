@@ -16,13 +16,13 @@ import path from 'path';
 import serve from 'koa-static';
 import multer from 'koa-multer';
 import asyncBusboy from 'async-busboy';
+import mount from 'koa-mount';
 
 
 
 
-const upload = multer({ dest: 'uploads/' });
-console.log(__dirname);
-console.log(path.resolve(__dirname + '/../image'));
+
+
 
 function copyFile(source, target, cb) {
   var cbCalled = false;
@@ -49,14 +49,18 @@ function copyFile(source, target, cb) {
 }
 
 
-
+console.log(path.resolve(__dirname + '/../'));
 
 let app = new Koa();
 
-app.use(serve(path.resolve(__dirname + '/../image')));
+app.use(serve(path.resolve(__dirname + '/../../image')));
+app.use(serve(path.resolve(__dirname + '/../../')));
 app.use(serve(path.resolve(__dirname + '/../')));
-const imagepath = path.resolve(__dirname + '/../');
+const imagepath = path.resolve(__dirname + '/../../');
 
+
+// static root
+app.use(mount('/dist', serve(__dirname + '/../', {defer: true})));
 // app.use(route.post('/profile', upload.single('avatar')));
 
 let ObjectId = require('mongodb').ObjectId;
