@@ -42,7 +42,6 @@ export class LoginServiceService {
       // let token = JSON.parse(localStorage.getItem('user'));
       // console.log(token);
       this.http.get('/api/auth/' + localStorage.getItem('user')).subscribe((data)=>{
-        console.log("cnmbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
         return true
       }, (error)=>{
           console.log(error);

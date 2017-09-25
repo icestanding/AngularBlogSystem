@@ -6,36 +6,14 @@ import Koa from 'koa';
 import historyApiFallback from 'koa-history-api-fallback';
 import session from 'koa-session';
 import bodyParser from 'koa-bodyparser';
-import fs from 'fs';
+
 import path from 'path';
 import serve from 'koa-static';
 import mount from 'koa-mount';
 import router from './router'
 
 
-function copyFile(source, target, cb) {
-  var cbCalled = false;
 
-  var rd = fs.createReadStream(source);
-  rd.on("error", function(err) {
-    done(err);
-  });
-  var wr = fs.createWriteStream(target);
-  wr.on("error", function(err) {
-    done(err);
-  });
-  wr.on("close", function(ex) {
-    done();
-  });
-  rd.pipe(wr);
-
-  function done(err) {
-    if (!cbCalled) {
-      cb(err);
-      cbCalled = true;
-    }
-  }
-}
 
 
 console.log(path.resolve(__dirname + '/../'));
@@ -45,14 +23,14 @@ let app = new Koa();
 // app.use(serve(path.resolve(__dirname + '/../../image')));
 // app.use(serve(path.resolve(__dirname + '/../../')));
 // app.use(serve(path.resolve(__dirname + '/../')));
-const imagepath = path.resolve(__dirname + '/../../');
+
 
 
 // static root
 app.use(mount('/', serve(__dirname + '/../')));
 // app.use(route.post('/profile', upload.single('avatar')));
 app.use(historyApiFallback());
-let ObjectId = require('mongodb').ObjectId;
+
 
 
 // users.find({"user_name":"admin"}).then((val)=>{

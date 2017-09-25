@@ -21,7 +21,7 @@ import {
 } from '@angular/forms';
 import { Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
-import { Http, RequestOptions, RequestOptionsArgs } from '@angular/http'
+import { Http, RequestOptions, RequestOptionsArgs, Headers } from '@angular/http'
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject'
@@ -306,13 +306,18 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
       return this.quillEditor.root.innerHTML;
   }
   submit() {
-        let blog = {title: this.title,
-        content: this.quillEditor.root.innerHTML, category: this.category, quill: this.quillEditor.getContents()}
-        let fileBrowser = this.fileInput.nativeElement;
-        const formData = new FormData();
-        formData.append("image", fileBrowser.files[0]);
-        formData.append("blog", JSON.stringify(blog))
-        this.http.post('/blog', formData).subscribe();
+
+      let blog = {title: this.title,
+      content: this.quillEditor.root.innerHTML, category: this.category, quill: this.quillEditor.getContents()}
+      let fileBrowser = this.fileInput.nativeElement;
+      const formData = new FormData();  
+      formData.append("image", fileBrowser.files[0]);
+      formData.append("blog", JSON.stringify(blog))
+      let arg:RequestOptionsArgs = {
+        headers: new Headers({'Authorization': localStorage.getItem('user')})
+      }
+      let options = new RequestOptions(arg);  
+      this.http.post('/blog', formData, options).subscribe();
   }
 }
 
