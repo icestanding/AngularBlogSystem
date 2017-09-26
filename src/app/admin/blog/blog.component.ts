@@ -24,7 +24,7 @@ import 'rxjs/add/operator/map'
 })
 export class BlogComponent implements OnInit {
   public blogs: {};
-  constructor(private http: Http, private router:Router) {     this.http.get("/blog").subscribe((data)=>{
+  constructor(private http: Http, private router:Router) {     this.http.get("/api/blog").subscribe((data)=>{
       // console.log(data.text());
       this.blogs = JSON.parse( data.text());
       
@@ -44,9 +44,9 @@ export class BlogComponent implements OnInit {
   }
   delete(blog) {
     console.log("fuck")
-      this.http.delete('/blog/' + blog._id).subscribe();
+      this.http.delete('/api/blog/' + blog._id).subscribe();
 
-    this.http.get("/blog").subscribe((data)=>{
+    this.http.get("/api/blog").subscribe((data)=>{
       // console.log(data.text());
       this.blogs = JSON.parse( data.text());
       

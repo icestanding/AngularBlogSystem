@@ -310,7 +310,7 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
           headers: new Headers({'Authorization': localStorage.getItem('user')})
         }
         let options = new RequestOptions(arg);  
-        this.http.post('/blog', formData, options).subscribe();
+        this.http.post('/api/blog', formData, options).subscribe();
       } else {
         console.log('not null');
         let blog = {title: this.title,
@@ -324,7 +324,7 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
           headers: new Headers({'Authorization': localStorage.getItem('user')})
         }
         let options = new RequestOptions(arg);  
-        this.http.put('/blog/'+this.id, formData, options).subscribe();
+        this.http.put('/api/blog/'+this.id, formData, options).subscribe();
       }
   }
 }

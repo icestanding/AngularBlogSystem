@@ -1,21 +1,22 @@
 <header (event)="sidebar()" [ngClass]="mytheme"   (colorevent)="themechange()" >
 </header> 
 <!--[ngClass]="mytheme"-->
+
   <md-sidenav-container  [ngClass]="mytheme" class="mainframe"  >
-  <md-sidenav  #start2 closed class="snavfix" > 
-      <md-card>
-          For other 
-      </md-card>
-        <md-card-content style="margin-top:20px">
-            <button md-button color="accent"> <i class="material-icons"  >home</i> Home</button>
-        </md-card-content> 
-        <md-card-content >
-            <button md-button color="accent"> <i class="material-icons"  >save</i> Achieve</button>
-        </md-card-content> 
-        <md-card-content >
-            <button md-button color="accent"><i class="material-icons"  >person</i> About</button>
-        </md-card-content> 
-  </md-sidenav>
+    <md-sidenav  #start2 closed class="snavfix" > 
+        <md-card>
+            For other 
+        </md-card>
+            <md-card-content style="margin-top:20px">
+                <button md-button color="accent"> <i class="material-icons"  >home</i> Home</button>
+            </md-card-content> 
+            <md-card-content >
+                <button md-button color="accent"> <i class="material-icons"  >save</i> Achieve</button>
+            </md-card-content> 
+            <md-card-content >
+                <button md-button color="accent"><i class="material-icons"  >person</i> About</button>
+            </md-card-content> 
+    </md-sidenav>
   <router-outlet></router-outlet>
   <footer ></footer> 
 </md-sidenav-container>   

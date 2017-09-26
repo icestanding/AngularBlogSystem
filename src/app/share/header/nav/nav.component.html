@@ -1,18 +1,22 @@
 <!-- [scroll]="0" css1="nav" css2="navfixed" -->
+
 <md-toolbar class="navfixed" color="primary">
 <!-- <md-toolbar class="row navcontent">     -->
-      <div class="row navcontent">  
-        <!-- <button md-button style="max-width:30px; min-width:55px" (click)="toggle($event)">  -->
-        <div class="col-xs-4">
-        <i class="material-icons bar" style="cursor:pointer;width:24px"  (click)="toggle($event)">menu</i>
-        <!-- </button> -->
-            <!-- <button md-button color="primary" (click)="toggle($event)">Side Drawer</button>  -->
-        </div>
-        <div class="col-xs-4" > 
-            <p style="margin:0 auto; text-align: center;" >Unkonw</p>
-        </div>
-        <div class="col-xs-4" style="align-items:flex-end" >
-            <md-slide-toggle style="padding-top:4px" (click)="change($event)"></md-slide-toggle>
-        </div>
-     </div> 
+<div class="row navcontent">  
+    <!-- <button md-button style="max-width:30px; min-width:55px" (click)="toggle($event)">  -->
+    <div class="col-xs-4">
+
+    <button md-button style="max-width:20px; min-width:55px" (click)="toggle($event)">  
+    <i class="material-icons bar" style="cursor:pointer;width:24px">menu</i>
+    </button> 
+        <!-- <button md-button color="primary" (click)="toggle($event)">Side Drawer</button>  -->
+    </div>
+    <div class="col-xs-4" > 
+        <p style="margin:0 auto; text-align: center;" >Unkonw</p>
+    </div>
+    <div class="col-xs-4" style="align-items:flex-end" >
+        <md-slide-toggle style="padding-top:4px" (click)="change($event)"></md-slide-toggle>
+    </div>
+</div> 
 </md-toolbar>
+

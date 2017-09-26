@@ -20,18 +20,7 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
   }
-  login() {
-      this.http.post('/api/user', {"server": "hello"}).subscribe(data => {
-        this.result = data;
-        // console.log("this is the fking result", this.result);
-        localStorage.setItem('login', JSON.stringify({use:"hello", token:data['token']}));
-        console.log("set successful");
-        console.log(JSON.parse(localStorage.getItem('login')));
-    }, error=> {
-      console.log("fuck up");
-    })
 
-  }
   logout() {
       this.auth.logout();
   }

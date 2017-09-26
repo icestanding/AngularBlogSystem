@@ -24,7 +24,7 @@ export class MainpageComponent implements OnInit {
   public blog;
 
   constructor(private http: Http) { 
-    this.http.get("/blog").subscribe((data)=>{
+    this.http.get("/api/blog").subscribe((data)=>{
       console.log(data.text());
       this.blog =  data.text();
       // return true;

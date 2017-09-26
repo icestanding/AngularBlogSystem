@@ -42,6 +42,8 @@ function copyFile(source, target, cb) {
     }
   }
 }
+
+// check authentification
 async function AuthenCheck(header) {
   let auth  = JSON.parse(header.authorization);
   await jwt.verify(auth.token , 'chen', async (err, decoded) => {
@@ -57,7 +59,6 @@ async function AuthenCheck(header) {
        else {
         return false
       }
-
     }).catch((err)=>{
       return false
     });
@@ -68,7 +69,7 @@ async function AuthenCheck(header) {
 
 
 /* api for blog */
-router.get('/blog', async ( ctx )=> {
+router.get('/api/blog', async ( ctx )=> {
 
   let blog = db.get('blog');
   await blog.find().then((doc)=>{
@@ -79,7 +80,7 @@ router.get('/blog', async ( ctx )=> {
   })
 });
 
-router.get('/blog/:id', async ( ctx )=> {
+router.get('/api/blog/:id', async ( ctx )=> {
 
   let id = new mongo.ObjectId(ctx.params.id);
   let blog = db.get('blog');
@@ -91,7 +92,7 @@ router.get('/blog/:id', async ( ctx )=> {
     }
   );
 });
-router.delete('/blog/:id', async ( ctx )=> {
+router.delete('/api/blog/:id', async ( ctx )=> {
   console.log("cnmb");
   let id = new mongo.ObjectId(ctx.params.id);
   let blogs = db.get('blog');
@@ -103,7 +104,6 @@ router.delete('/blog/:id', async ( ctx )=> {
         }
         await fs.unlink(imagepath + "/image/" + doc.img, function (err) {
           if (err) return console.log(err);
-          console.log('file deleted successfully');
         })
       })
     }
@@ -112,16 +112,12 @@ router.delete('/blog/:id', async ( ctx )=> {
     ctx.response.type="json";
     ctx.response.body = doc;
   }).catch( (err)=> {
-      ctx.response.status = 404;
-    }
+    ctx.response.status = 404;
+  }
   );
 });
 
-
-
-
-
-router.post('/blog', async ( ctx )=> {
+router.post('/api/blog', async ( ctx )=> {
 
   if(AuthenCheck(ctx.header)) {
     const {files, fields} = await asyncBusboy(ctx.req);
@@ -129,15 +125,16 @@ router.post('/blog', async ( ctx )=> {
     let blogs = db.get('blog');
     blog.time = Date();
     blog.img = "";
+    let id;
     await blogs.insert(blog).then(async ()=> {
       if(files[0]) {
         await blogs.findOne({title: blog.title}).then(async (doc)=> {
-
           copyFile(files[0].path, imagepath+"/image/" + doc._id + path.extname(files[0].filename), (error)=>{if (error) throw error;});
           await blogs.update({_id: doc._id},{ $set:{ img:doc._id + path.extname(files[0].filename)}}).then();
         })
       }
       ctx.response.status = 200;
+
     }).catch( (err)=> {
         ctx.response.status = 404;
       }
@@ -148,8 +145,7 @@ router.post('/blog', async ( ctx )=> {
   }
 });
 
-
-router.put('/blog/:id', async ( ctx )=> {
+router.put('/api/blog/:id', async ( ctx )=> {
   if(AuthenCheck(ctx.header)) {
     const {files, fields} = await asyncBusboy(ctx.req);
     let blog = JSON.parse(fields.blog);
@@ -166,7 +162,6 @@ router.put('/blog/:id', async ( ctx )=> {
               }
              await fs.unlink(imagepath + "/image/" + doc.img, function (err) {
                 if (err) return console.log(err);
-                console.log('file deleted successfully');
                 copyFile(files[0].path, imagepath + "/image/" + doc._id + path.extname(files[0].filename), (error) => {
                   if (error) throw error;
                 });
@@ -185,7 +180,6 @@ router.put('/blog/:id', async ( ctx )=> {
     })
   }
 });
-
 
 
 /* api for auth */
