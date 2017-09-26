@@ -1,6 +1,6 @@
 .snavfix {
     position: fixed;
-    top: 50px;
+    top: 60px;
     left:0px;
     height: 100%;
     width: 25%;
@@ -45,9 +45,14 @@
 // work for sidebar
 .mainframe {
     transform: none !important;
-    margin-top: 50px;
+    // margin-top: 50px;
 }
 
 
 
 
+@media(max-width:601px) {
+   .snavfix {
+       top: 50px;
+   }
+}
