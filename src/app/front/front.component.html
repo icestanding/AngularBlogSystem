@@ -1,11 +1,15 @@
 
 <!--[ngClass]="mytheme"-->
-
+ <header (event)="sidebar()" [ngClass]="mytheme"   (colorevent)="themechange()" ></header>
   <md-sidenav-container  [ngClass]="mytheme" class="mainframe"  >
-    <md-sidenav  #start2 closed class="snavfix" > 
-        <md-toolbar color="accent" style="display:flex; flex-direction:column; height:100%" >
-        
-            <md-toolbar-row style="margin-top:20px">
+    <md-sidenav  #start2 closed  class="snavfix" > 
+        <md-toolbar color="accent" style="display:flex; flex-direction:column; height:50%;" >
+
+            <!--<md-toolbar-row style="margin-top:20px;  flex-direction:column; justify-content:center">-->
+        <md-toolbar-row>><div md-card-avatar class="self-image" style="height:50px; width:50px;"></div>
+            <!--</md-toolbar-row>-->
+        </md-toolbar-row>
+            <md-toolbar-row style="margin-top:20px; ">
                 <button md-button > <i class="material-icons"  >home</i> Home</button>
             </md-toolbar-row> 
             <md-toolbar-row >
@@ -17,8 +21,8 @@
 
         </md-toolbar>
     </md-sidenav>
-    <header (event)="sidebar()" [ngClass]="mytheme"   (colorevent)="themechange()" >
-</header> 
+   
+
   <router-outlet></router-outlet>
   <footer ></footer> 
 </md-sidenav-container>   

@@ -1,6 +1,6 @@
 .snavfix {
     position: fixed;
-    top: 60px;
+    top: 64px;
     left:0px;
     height: 100%;
     width: 25%;
@@ -22,20 +22,25 @@
             padding-top: 13px;
         }
     }
-    md-card-content {
+    md-toolbar {
+        padding: 0px;
+    }
+    md-toolbar-row {
         display: flex;
         // justify-content:flex-start;
         align-content: flex-start;
         margin-bottom: 0;
         // margin-top: 10px;
+        height: 35px;
 
         button {
             width: 100%;
             text-align: left;
             font-size: 16px;
             font-weight: 400;
+            padding: 0px;
             i {
-                padding-bottom: 5px;
+                padding-bottom: 3px;
                 padding-right: 5px;
             }
         }
@@ -45,7 +50,11 @@
 // work for sidebar
 .mainframe {
     transform: none !important;
-    // margin-top: 50px;
+    margin-top: 50px;
+}
+.self-image {
+  background-image: url('../../assets/img/city.jpg');
+  background-size: cover;
 }
 
 
