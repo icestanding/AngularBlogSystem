@@ -264,7 +264,7 @@ finish the router later
 router jump all template, only navigation event trigger
 
 git changing comment
-use almend to reset 
+use amend to reset 
 https://help.github.com/articles/changing-a-commit-message/
 
 html wen ben bian ji qi  zi dong zhengli wendang 
@@ -300,3 +300,6 @@ mongodump
 2. fix backend api, frontend api. g
 3. fix router problem 
 4. diary title can't be same
+
+again
+1. add delete update

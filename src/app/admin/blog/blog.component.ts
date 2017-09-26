@@ -39,8 +39,23 @@ export class BlogComponent implements OnInit {
   
   ngOnInit() {
   }
-  show(mydesign) {
-      this.router.navigateByUrl('admin/editor/' + mydesign._id);
+  show(blog) {
+      this.router.navigateByUrl('admin/editor/' + blog._id);
+  }
+  delete(blog) {
+    console.log("fuck")
+      this.http.delete('/blog/' + blog._id).subscribe();
+
+    this.http.get("/blog").subscribe((data)=>{
+      // console.log(data.text());
+      this.blogs = JSON.parse( data.text());
+      
+      // console.log(this.blogs);
+      // return true;
+    }, (error)=>{
+      // return false;
+      console.log("error cnm");
+    });
   }
 
 } 

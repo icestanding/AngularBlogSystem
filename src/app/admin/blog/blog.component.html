@@ -3,9 +3,10 @@
 </p>
 <!-- {{blogs}} -->
     <ul class="heroes">
-      <li *ngFor="let hero of blogs" (click)="show(hero)">
+      <li *ngFor="let hero of blogs">
         <!-- <span class="badge">{{hero.title}}</span> -->
-        <span [innerHTML]="hero.content"></span>
+        <span [innerHTML]="hero.content" (click)="show(hero)"></span>
+        <button md-button (click)="delete(hero)">Delete </button>
       </li>
     </ul>
 <!-- <p *ngFor="let blog of blogs"> {{blog}} </p> -->

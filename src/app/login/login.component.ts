@@ -17,8 +17,15 @@ export class LoginComponent implements OnInit {
   @ViewChild('start2') MdSidenav:MdSidenav;
   private router: Router;
   data:string;
-  constructor(private _router: Router, private login: LoginServiceService) {
-   
+  constructor(private _router: Router, private auth: LoginServiceService) {
+       this.router = _router;
+    this.router.events.forEach((event: NavigationStart)=> {
+        if(event.url == "/login") {
+            if(auth.islogin()){
+            this.router.navigateByUrl('/admin')
+        } 
+      }
+    });
   
   }
   ngOnInit() {}

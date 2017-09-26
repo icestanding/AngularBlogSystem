@@ -11,9 +11,11 @@ import { LoginServiceService } from '../service/login/login-service.service';
 export class AdminComponent implements OnInit {
 
   private result: Object;
+
+
   @ViewChild('editor') editor;
-  constructor(private http: HttpClient,private auth:LoginServiceService) {
-     
+  constructor(private http: HttpClient, private auth:LoginServiceService) {
+
   }
 
   ngOnInit() {

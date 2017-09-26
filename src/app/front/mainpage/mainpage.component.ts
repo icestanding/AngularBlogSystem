@@ -4,7 +4,6 @@ import { HttpModule, Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject'
 
-
 // Observable class extensions
 import 'rxjs/add/observable/of';
 

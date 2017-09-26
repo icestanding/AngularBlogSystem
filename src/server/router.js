@@ -91,6 +91,34 @@ router.get('/blog/:id', async ( ctx )=> {
     }
   );
 });
+router.delete('/blog/:id', async ( ctx )=> {
+  console.log("cnmb");
+  let id = new mongo.ObjectId(ctx.params.id);
+  let blogs = db.get('blog');
+  await blogs.findOne({_id: mongo.ObjectId(id)}).then(async (doc) => {
+    if(doc.img != "") {
+      await fs.stat(imagepath + "/image/" + doc.img, async function (err, stats) {
+        if (err) {
+          return console.error(err);
+        }
+        await fs.unlink(imagepath + "/image/" + doc.img, function (err) {
+          if (err) return console.log(err);
+          console.log('file deleted successfully');
+        })
+      })
+    }
+  })
+  await blogs.remove({"_id":id}).then((doc)=> {
+    ctx.response.type="json";
+    ctx.response.body = doc;
+  }).catch( (err)=> {
+      ctx.response.status = 404;
+    }
+  );
+});
+
+
+
 
 
 router.post('/blog', async ( ctx )=> {
@@ -109,9 +137,6 @@ router.post('/blog', async ( ctx )=> {
           await blogs.update({_id: doc._id},{ $set:{ img:doc._id + path.extname(files[0].filename)}}).then();
         })
       }
-      else {
-        console.log("empty file");
-      }
       ctx.response.status = 200;
     }).catch( (err)=> {
         ctx.response.status = 404;
@@ -123,21 +148,42 @@ router.post('/blog', async ( ctx )=> {
   }
 });
 
-router.del('/blog/:id', async ( ctx )=> {
 
-  let id = new mongo.ObjectId(ctx.params.id);
-  let blog = db.get('blog');
-  await blog.find({"_id":id}).then((doc)=> {
-    ctx.response.type="json";
-    ctx.response.body = doc;
-  }).catch( (err)=> {
-      ctx.response.status = 404;
-    }
-  );
-
-});
 router.put('/blog/:id', async ( ctx )=> {
-
+  if(AuthenCheck(ctx.header)) {
+    const {files, fields} = await asyncBusboy(ctx.req);
+    let blog = JSON.parse(fields.blog);
+    let id = fields.id;
+    let blogs = db.get('blog');
+    await blogs.update({_id: mongo.ObjectId(id)}, {$set:blog}).then(async () => {
+      if (files[0]) {
+        await blogs.findOne({_id: mongo.ObjectId(id)}).then(async (doc) => {
+          // delete old
+          if(doc.img != "") {
+            await fs.stat(imagepath + "/image/" + doc.img, async function (err, stats) {
+              if (err) {
+                return console.error(err);
+              }
+             await fs.unlink(imagepath + "/image/" + doc.img, function (err) {
+                if (err) return console.log(err);
+                console.log('file deleted successfully');
+                copyFile(files[0].path, imagepath + "/image/" + doc._id + path.extname(files[0].filename), (error) => {
+                  if (error) throw error;
+                });
+                blogs.update({_id: doc._id}, {$set: {img: doc._id + path.extname(files[0].filename)}}).then();
+              })
+            })
+          }
+          else {
+            copyFile(files[0].path, imagepath + "/image/" + doc._id + path.extname(files[0].filename), (error) => {
+              if (error) throw error;
+            });
+            blogs.update({_id: doc._id}, {$set: {img: doc._id + path.extname(files[0].filename)}}).then();
+          }
+        })
+      }
+    })
+  }
 });
 
 

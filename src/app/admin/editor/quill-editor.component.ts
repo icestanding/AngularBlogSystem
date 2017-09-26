@@ -66,7 +66,7 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
 
 
   
-
+  private id;
   quillEditor: any;
   editorElem: HTMLElement;
   emptyArray: any[] = [];
@@ -126,9 +126,9 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
     // this.hero$ = this.route.paramMap
     //   .switchMap((params: ParamMap) =>
     //     this.service.getHero(params.get('id')));
-    let id = this.route.snapshot.paramMap.get('id');
-    if(id != null) {
-        this.http.get("/blog/"+id).map(data => data.json()).subscribe((data)=>{
+    this.id = this.route.snapshot.paramMap.get('id');
+    if(this.id != null) {
+        this.http.get("/blog/"+ this.id).map(data => data.json()).subscribe((data)=>{
         // console.log(data[0]._id);
         // let blog = JSON.parse(data.text());
         // console.log(blog);
@@ -298,18 +298,34 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
   }
 
   submit() {
-
-      let blog = {title: this.title,
-      content: this.quillEditor.root.innerHTML, category: this.category, quill: this.quillEditor.getContents()}
-      let fileBrowser = this.fileInput.nativeElement;
-      const formData = new FormData();  
-      formData.append("image", fileBrowser.files[0]);
-      formData.append("blog", JSON.stringify(blog))
-      let arg:RequestOptionsArgs = {
-        headers: new Headers({'Authorization': localStorage.getItem('user')})
+      if(this.id == null) {
+        console.log('null');
+        let blog = {title: this.title,
+        content: this.quillEditor.root.innerHTML, category: this.category, quill: this.quillEditor.getContents()}
+        let fileBrowser = this.fileInput.nativeElement;
+        const formData = new FormData();  
+        formData.append("image", fileBrowser.files[0]);
+        formData.append("blog", JSON.stringify(blog))
+        let arg:RequestOptionsArgs = {
+          headers: new Headers({'Authorization': localStorage.getItem('user')})
+        }
+        let options = new RequestOptions(arg);  
+        this.http.post('/blog', formData, options).subscribe();
+      } else {
+        console.log('not null');
+        let blog = {title: this.title,
+        content: this.quillEditor.root.innerHTML, category: this.category, quill: this.quillEditor.getContents()}
+        let fileBrowser = this.fileInput.nativeElement;
+        const formData = new FormData();  
+        formData.append("image", fileBrowser.files[0]);
+        formData.append("blog", JSON.stringify(blog));
+        formData.append("id", this.id);
+        let arg:RequestOptionsArgs = {
+          headers: new Headers({'Authorization': localStorage.getItem('user')})
+        }
+        let options = new RequestOptions(arg);  
+        this.http.put('/blog/'+this.id, formData, options).subscribe();
       }
-      let options = new RequestOptions(arg);  
-      this.http.post('/blog', formData, options).subscribe();
   }
 }
 
