@@ -13,8 +13,8 @@
 @include mat-core();
 
 .main-theme {
-$my-app-primary: mat-palette($mat-red, 400);
-$my-app-accent:  mat-palette($mat-cyan, 600);
+$my-app-primary: mat-palette($mat-red, 400,500,600);
+$my-app-accent:  mat-palette($mat-blue-grey, 700);
 $my-app-warn:    mat-palette($mat-deep-orange);
 $my-app-background: mat-palette($mat-deep-orange);
 $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
@@ -22,7 +22,7 @@ $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 
 @include angular-material-theme($my-app-theme);
 }
-
+// $mat-cyan, 600
 .alternate-theme {
 $my-app-primary: mat-palette($mat-red, 400);
 $my-app-accent:  mat-palette($mat-blue-grey, 700);

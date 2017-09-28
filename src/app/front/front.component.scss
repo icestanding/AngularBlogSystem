@@ -1,11 +1,19 @@
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-30 { font-size: 30px; }
+.material-icons.md-48 { font-size: 48px; }
+
 .snavfix {
     position: fixed;
-    top: 64px;
+    top: 50px;
     left:0px;
-    height: 100%;
+    height: calc(100% - 50px);
     width: 25%;
     min-width: 120px;
     max-width: 225px;
+        // box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    // box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+
     md-list-item {
         cursor:pointer; 
         margin:0 auto; 
@@ -38,7 +46,7 @@
             text-align: left;
             font-size: 16px;
             font-weight: 400;
-            padding: 0px;
+            padding-left: 10%;
             i {
                 padding-bottom: 3px;
                 padding-right: 5px;
