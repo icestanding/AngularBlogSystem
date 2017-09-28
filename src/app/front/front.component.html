@@ -2,16 +2,16 @@
 <!--[ngClass]="mytheme"-->
  <header (event)="sidebar()" [ngClass]="mytheme"   (colorevent)="themechange()" ></header>
   <md-sidenav-container  [ngClass]="mytheme" class="mainframe"  >
-    <md-sidenav  #start2 closed  class="snavfix" > 
-        <md-toolbar color="accent" style="display:flex; flex-direction:column; height:100%;" >
+    <md-sidenav  #start2 mode="side" opened="true" class="snavfix" > 
+        <md-toolbar color="accent" style="display:flex; flex-direction:column; height:20%;" >
 
             <!--<md-toolbar-row style="margin-top:20px;  flex-direction:column; justify-content:center">-->
         <div style="margin-top:20px; display:flex; flex-direction:row; justify-content:center; width: 100%">
             <div md-card-avatar class="self-image" style="height:50px; width:50px; margin:0px"></div>
         </div>
             <!--</md-toolbar-row>-->
-       
-            <md-toolbar-row  >
+        </md-toolbar>
+           <md-toolbar-row  >
                 <button md-button > <i class="material-icons md-30"  >home</i> Home</button>
             </md-toolbar-row> 
             <md-toolbar-row >
@@ -21,7 +21,6 @@
                 <button md-button ><i class="material-icons md-30"  >person</i> About</button>
             </md-toolbar-row> 
 
-        </md-toolbar>
     </md-sidenav>
    
 

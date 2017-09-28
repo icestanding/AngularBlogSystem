@@ -20,16 +20,23 @@ export class FrontComponent implements OnInit {
 
 
   title = 'app';
-  @ViewChild('start2') MdSidenav:MdSidenav;
+  @ViewChild('start2') Sidenav:MdSidenav;
   @ViewChild('start2') elementView: ElementRef;
 
   constructor(@Inject(DOCUMENT) private document:Document, private _router:Router, private login: LoginServiceService) {
+    // if inner size 840px
+
     this.mytheme = {
                     'alternate-theme': false, 
                     'main-theme': true,
                   };
     this.router = _router;
     this.hide = true;
+    
+
+          // this.Sidenav.mode='over';
+      // this.Sidenav.opened=false;
+
     this.router.events.forEach((event: NavigationEvent) => {
     if(event instanceof NavigationStart) {
       // console.log("this is fking url"+ event.url);
@@ -53,16 +60,22 @@ export class FrontComponent implements OnInit {
         this.hide = false;
       }
     }
+
   });
 
-
+  }
+  ngOnInit() {
 
   }
-  ngOnInit() {}
-
+  ngAfterViewInit() {
+        if(window.innerWidth <= 840) {
+      this.Sidenav.mode='over';
+      this.Sidenav.opened=false;
+    }
+  }
 
   sidebar() {
-    this.MdSidenav.toggle();
+    this.Sidenav.toggle();
   }
   themechange() {
     if(this.mytheme["alternate-theme"] == true) {

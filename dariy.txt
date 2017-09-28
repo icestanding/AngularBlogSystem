@@ -306,8 +306,7 @@ again
 
 animation + of blog
 
-https://dribbble.com/shots/2741634-IntraBot
-
-1. postman
-2. ? forget
-learn ajax
+1.SSO problem
+postman
+2. Fiddler 
+Cross domain request

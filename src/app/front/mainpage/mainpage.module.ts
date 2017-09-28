@@ -4,12 +4,17 @@ import { MainpageComponent } from './mainpage.component';
 import { MdCardModule,MdListModule,MdButtonModule } from '@angular/material';
 import { BlogcardComponent } from './blogcard/blogcard.component'
 
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   imports: [
     CommonModule,
     MdCardModule,
     MdListModule,
-    MdButtonModule
+    MdButtonModule,
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   declarations: [MainpageComponent, BlogcardComponent]
 })
