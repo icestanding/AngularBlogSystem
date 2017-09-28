@@ -5,11 +5,13 @@ import { DOCUMENT } from '@angular/platform-browser'
 import { LoginServiceService } from '../service/login/login-service.service'
 
 
+
 @Component({
   selector: 'app-front',
   templateUrl: './front.component.html',
   styleUrls: ['./front.component.scss']
 })
+
 export class FrontComponent implements OnInit {
   public mytheme: {
     'alternate-theme'?: boolean;
@@ -22,6 +24,10 @@ export class FrontComponent implements OnInit {
   title = 'app';
   @ViewChild('start2') Sidenav:MdSidenav;
   @ViewChild('start2') elementView: ElementRef;
+ 
+
+
+
 
   constructor(@Inject(DOCUMENT) private document:Document, private _router:Router, private login: LoginServiceService) {
     // if inner size 840px
@@ -68,7 +74,7 @@ export class FrontComponent implements OnInit {
 
   }
   ngAfterViewInit() {
-        if(window.innerWidth <= 840) {
+    if(window.innerWidth <= 1000) {
       this.Sidenav.mode='over';
       this.Sidenav.opened=false;
     }
@@ -85,4 +91,16 @@ export class FrontComponent implements OnInit {
        this.mytheme={'alternate-theme':true, 'main-theme': false};
     }
   }
+   @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    if(window.innerWidth <= 1000) {
+      this.Sidenav.mode='over';
+      this.Sidenav.opened=false;
+    }
+    else {
+      this.Sidenav.mode='side';
+      this.Sidenav.opened=true;
+    }
+  }
+
 }
