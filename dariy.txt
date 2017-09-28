@@ -310,3 +310,5 @@ animation + of blog
 postman
 2. Fiddler 
 Cross domain request
+
+next step do the animation for the blog card, to make it nice

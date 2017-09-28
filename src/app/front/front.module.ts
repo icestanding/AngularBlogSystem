@@ -12,7 +12,9 @@ import { ThemeDirective } from '../directive/theme/theme.directive';
 import { MdButtonModule } from '@angular/material';
 import { MdSidenavModule } from '@angular/material';
 import { MdMenuModule } from '@angular/material'
-import { MdToolbarModule }from '@angular/material'
+import { MdToolbarModule }from '@angular/material';
+import { BlogComponent } from './blog/blog.component'
+
 
 
 @NgModule({
@@ -29,10 +31,12 @@ import { MdToolbarModule }from '@angular/material'
     MdToolbarModule
 ],
 
-declarations: [ThemeDirective,
+declarations: [
+  ThemeDirective,
   FrontComponent, 
   HeaderComponent, 
   FooterComponent, 
-  NavComponent]
+  NavComponent, 
+  BlogComponent]
 })
 export class FrontModule { }

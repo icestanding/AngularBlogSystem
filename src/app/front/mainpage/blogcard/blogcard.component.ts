@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   trigger,
   state,
@@ -37,14 +38,15 @@ import {
 })
 export class BlogcardComponent implements OnInit {
   state: string = 'small';
-  constructor() { 
-   
+  constructor( private router:Router ) { 
+  
   }
 
   ngOnInit() {
   }
   animateMe() {
     this.state = (this.state === 'small' ? 'large' : 'small');
+    this.router.navigateByUrl('/blog');
   }
 
 }
