@@ -12,7 +12,9 @@ import { ThemeDirective } from '../directive/theme/theme.directive';
 import { MdButtonModule } from '@angular/material';
 import { MdSidenavModule } from '@angular/material';
 import { MdMenuModule } from '@angular/material'
-import { MdToolbarModule }from '@angular/material'
+import { MdToolbarModule }from '@angular/material';
+import { BlogComponent } from './blog/blog.component'
+import { MainpageComponent } from './mainpage/mainpage.component'
 
 
 @NgModule({
@@ -26,13 +28,15 @@ import { MdToolbarModule }from '@angular/material'
     MdSlideToggleModule,
     MdMenuModule ,
     MdButtonModule,
-    MdToolbarModule
+    MdToolbarModule,
+  
 ],
 
 declarations: [ThemeDirective,
   FrontComponent, 
   HeaderComponent, 
   FooterComponent, 
-  NavComponent]
+  NavComponent, BlogComponent,
+]
 })
 export class FrontModule { }
