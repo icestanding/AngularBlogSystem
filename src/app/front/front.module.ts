@@ -14,7 +14,7 @@ import { MdSidenavModule } from '@angular/material';
 import { MdMenuModule } from '@angular/material'
 import { MdToolbarModule }from '@angular/material';
 import { BlogComponent } from './blog/blog.component'
-
+import { MainpageComponent } from './mainpage/mainpage.component'
 
 
 @NgModule({
@@ -28,7 +28,8 @@ import { BlogComponent } from './blog/blog.component'
     MdSlideToggleModule,
     MdMenuModule ,
     MdButtonModule,
-    MdToolbarModule
+    MdToolbarModule,
+  
 ],
 
 declarations: [
@@ -36,7 +37,7 @@ declarations: [
   FrontComponent, 
   HeaderComponent, 
   FooterComponent, 
-  NavComponent, 
-  BlogComponent]
+  NavComponent, BlogComponent,
+]
 })
 export class FrontModule { }

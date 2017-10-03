@@ -21,8 +21,6 @@ import { AdminComponent } from './admin/admin.component'
     FrontModule,
     RouterModule.forRoot(
       [
-        { path: '',   component: FrontComponent},
-        { path: 'admin', component: AdminComponent},
         {path: '**', component:NotfoundComponent}
       ],
       {enableTracing: true}

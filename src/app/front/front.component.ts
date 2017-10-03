@@ -3,13 +3,15 @@ import { Router, NavigationStart,NavigationCancel, Event as NavigationEvent } fr
 import { MdSidenav } from '@angular/material'
 import { DOCUMENT } from '@angular/platform-browser'
 import { LoginServiceService } from '../service/login/login-service.service'
+import { routerTransition } from './router.animation'
 
 
 
 @Component({
   selector: 'app-front',
   templateUrl: './front.component.html',
-  styleUrls: ['./front.component.scss']
+  styleUrls: ['./front.component.scss'],
+   animations: [ routerTransition ],
 })
 
 export class FrontComponent implements OnInit {
@@ -102,5 +104,11 @@ export class FrontComponent implements OnInit {
       this.Sidenav.opened=true;
     }
   }
+  getState(outlet) {
+    return outlet.activatedRouteData.state;
+  }
+  
+  
+  
 
 }

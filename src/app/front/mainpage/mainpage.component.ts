@@ -14,7 +14,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map'
 // Animation
-
+import {routerTransition} from '../animate'
 
 
 
@@ -22,7 +22,9 @@ import 'rxjs/add/operator/map'
 @Component({
   selector: 'app-mainpage',
   templateUrl: './mainpage.component.html',
-  styleUrls: ['./mainpage.component.scss']
+  styleUrls: ['./mainpage.component.scss'],
+  // animations: [routerTransition()],
+  // host: {'[@routerTransition]': ''}
 })
 export class MainpageComponent implements OnInit {
 

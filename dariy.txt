@@ -312,3 +312,6 @@ postman
 Cross domain request
 
 next step do the animation for the blog card, to make it nice
+
+get it down
+https://stackoverflow.com/questions/46287674/angular-4-leave-animation-not-triggering
