@@ -13,8 +13,8 @@ import {trigger, state, animate, style, transition,query,group} from '@angular/a
   templateUrl: './front.component.html',
   styleUrls: ['./front.component.scss'],
    animations: [    trigger('routerTransition', [
-    // state('void', style({position:'fixed', width:'100%'}) ),
-    // state('*', style({position:'fixed', width:'100%'}) ),
+    state('main', style({}) ),
+    state('blog', style({}) ),
     transition(':enter', [
       style({transform: 'translateX(100%)'}),
       animate('0.5s ease-in-out', style({transform: 'translateX(0%)'}))
@@ -23,10 +23,23 @@ import {trigger, state, animate, style, transition,query,group} from '@angular/a
       style({transform: 'translateX(0%)'}),
       animate('0.5s ease-in-out', style({transform: 'translateX(-100%)'}))
     ]),
-    transition('*<=>*', [
-         query('md-card', [animate('1.2s', style({transform: 'translateX(-100%)'}))]),
-         query('md-card', [animate('1.2s', style({transform: 'translateX(100%)'}))])
-         
+    transition('main=>blog', [
+      group([
+         query('.content', [style({top: 0,position:'absolute'}),animate('0.5s ease-in-out', style({transform: 'translateX(-100%)'}))]),
+    
+         query('.cnm', [style({transform: 'translateX(100%)'}),animate('0.5s ease-in-out', style({transform: 'translateX(0)'}))])
+     
+       ] )
+        //  query(':enter',[animate('0.5s ease-in-out', style({transform: 'translateX(0%)'}))])    
+    ]),
+    transition('blog=>main', [
+      group([
+         query('.cnm', [style({top: 0,position:'absolute'}),animate('0.5s ease-in-out', style({transform: 'translateX(-100%)'}))]),
+    
+         query('.content', [style({transform: 'translateX(100%)'}),animate('0.5s ease-in-out', style({transform: 'translateX(0)'}))])
+     
+       ] )
+        //  query(':enter',[animate('0.5s ease-in-out', style({transform: 'translateX(0%)'}))])    
     ])
   ]) ],
 })

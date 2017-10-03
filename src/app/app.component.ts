@@ -12,5 +12,5 @@ import { LoginServiceService } from './service/login/login-service.service'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
+    
 }
