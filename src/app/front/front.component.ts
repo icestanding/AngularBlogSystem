@@ -5,13 +5,30 @@ import { DOCUMENT } from '@angular/platform-browser'
 import { LoginServiceService } from '../service/login/login-service.service'
 import { routerTransition } from './router.animation'
 
+import {trigger, state, animate, style, transition,query,group} from '@angular/animations';
 
 
 @Component({
   selector: 'app-front',
   templateUrl: './front.component.html',
   styleUrls: ['./front.component.scss'],
-   animations: [ routerTransition ],
+   animations: [    trigger('routerTransition', [
+    // state('void', style({position:'fixed', width:'100%'}) ),
+    // state('*', style({position:'fixed', width:'100%'}) ),
+    transition(':enter', [
+      style({transform: 'translateX(100%)'}),
+      animate('0.5s ease-in-out', style({transform: 'translateX(0%)'}))
+    ]),
+    transition(':leave', [
+      style({transform: 'translateX(0%)'}),
+      animate('0.5s ease-in-out', style({transform: 'translateX(-100%)'}))
+    ]),
+    transition('*<=>*', [
+         query('md-card', [animate('1.2s', style({transform: 'translateX(-100%)'}))]),
+         query('md-card', [animate('1.2s', style({transform: 'translateX(100%)'}))])
+         
+    ])
+  ]) ],
 })
 
 export class FrontComponent implements OnInit {

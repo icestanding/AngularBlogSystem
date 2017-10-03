@@ -12,17 +12,18 @@
             <!--</md-toolbar-row>-->
         </md-toolbar>
            <md-toolbar-row  >
-                <button md-button routerLink="/"> <i class="material-icons md-30"  >home</i> Home</button>
+                <button md-button routerLink="/" routerLinkActive="active"> <i class="material-icons md-30"  >home</i> Home</button>
             </md-toolbar-row> 
             <md-toolbar-row >
-                <button md-button routerLink="/blog"> <i class="material-icons md-30"  >save</i> Achieve</button>
+                <button md-button routerLink="/blog" routerLinkActive="active"> <i class="material-icons md-30"  >save</i> Achieve</button>
             </md-toolbar-row> 
             <md-toolbar-row >
                 <button md-button ><i class="material-icons md-30"  >person</i> About</button>
             </md-toolbar-row> 
 
     </md-sidenav>
-   
-    <router-outlet> </router-outlet>
+<main [@routerTransition]="getState(o)">
+  <router-outlet #o="outlet"></router-outlet>
+</main>
   <footer ></footer> 
 </md-sidenav-container>   

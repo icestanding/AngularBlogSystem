@@ -23,8 +23,7 @@ import {routerTransition} from '../animate'
   selector: 'app-mainpage',
   templateUrl: './mainpage.component.html',
   styleUrls: ['./mainpage.component.scss'],
-  // animations: [routerTransition()],
-  // host: {'[@routerTransition]': ''}
+
 })
 export class MainpageComponent implements OnInit {
 

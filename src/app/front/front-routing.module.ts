@@ -12,8 +12,8 @@ import { BlogcardComponent } from './mainpage/blogcard/blogcard.component';
 
     RouterModule.forChild([{path:'', component: FrontComponent,
     children:[
-      {path:'', pathMatch: 'full', component:MainpageComponent },
-      {path:'blog', pathMatch: 'full', component: BlogComponent }      
+      {path:'',  component:MainpageComponent, data:{'state': 'main'}},
+      {path:'blog',  component: BlogComponent,  data:{'state': 'blog'} }      
           
       ]}]),
   ],
