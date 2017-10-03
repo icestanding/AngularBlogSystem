@@ -5,43 +5,12 @@ import { DOCUMENT } from '@angular/platform-browser'
 import { LoginServiceService } from '../service/login/login-service.service'
 import { routerTransition } from './router.animation'
 
-import {trigger, state, animate, style, transition,query,group} from '@angular/animations';
-
 
 @Component({
   selector: 'app-front',
   templateUrl: './front.component.html',
   styleUrls: ['./front.component.scss'],
-   animations: [    trigger('routerTransition', [
-    state('main', style({}) ),
-    state('blog', style({}) ),
-    transition(':enter', [
-      style({transform: 'translateX(100%)'}),
-      animate('0.5s ease-in-out', style({transform: 'translateX(0%)'}))
-    ]),
-    transition(':leave', [
-      style({transform: 'translateX(0%)'}),
-      animate('0.5s ease-in-out', style({transform: 'translateX(-100%)'}))
-    ]),
-    transition('main=>blog', [
-      group([
-         query('.content', [style({top: 0,position:'absolute'}),animate('0.5s ease-in-out', style({transform: 'translateX(-100%)'}))]),
-    
-         query('.cnm', [style({transform: 'translateX(100%)'}),animate('0.5s ease-in-out', style({transform: 'translateX(0)'}))])
-     
-       ] )
-        //  query(':enter',[animate('0.5s ease-in-out', style({transform: 'translateX(0%)'}))])    
-    ]),
-    transition('blog=>main', [
-      group([
-         query('.cnm', [style({top: 0,position:'absolute'}),animate('0.5s ease-in-out', style({transform: 'translateX(-100%)'}))]),
-    
-         query('.content', [style({transform: 'translateX(100%)'}),animate('0.5s ease-in-out', style({transform: 'translateX(0)'}))])
-     
-       ] )
-        //  query(':enter',[animate('0.5s ease-in-out', style({transform: 'translateX(0%)'}))])    
-    ])
-  ]) ],
+   animations: [    routerTransition() ],
 })
 
 export class FrontComponent implements OnInit {

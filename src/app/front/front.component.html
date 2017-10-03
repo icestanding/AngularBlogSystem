@@ -22,8 +22,8 @@
             </md-toolbar-row> 
 
     </md-sidenav>
-<main [@routerTransition]="getState(o)">
+<md-card [@routerTransition]="getState(o)" style="padding:0">
   <router-outlet #o="outlet"></router-outlet>
-</main>
+</md-card>
   <footer ></footer> 
 </md-sidenav-container>   
