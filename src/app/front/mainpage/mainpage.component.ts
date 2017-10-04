@@ -14,7 +14,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map'
 // Animation
-import {routerTransition} from '../animate'
+// import {routerTransition} from '../animate'
 
 
 
@@ -41,6 +41,7 @@ export class MainpageComponent implements OnInit {
   }
 
   ngOnInit() {
+    
   }
 
 

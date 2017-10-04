@@ -8,8 +8,6 @@ export function routerTransition() {
 
 function slideToLeft() {
   return trigger('routerTransition', [
-    state('main', style({}) ),
-    state('blog', style({}) ),
     transition(':enter', [
       style({transform: 'translateX(100%)'}),
       animate('0.3s ease-in-out', style({transform: 'translateX(0%)'}))
@@ -18,7 +16,7 @@ function slideToLeft() {
       style({transform: 'translateX(0%)'}),
       animate('0.3s ease-in-out', style({transform: 'translateX(-100%)'}))
     ]),
-    transition('main=>blog', [
+    transition('main=>achieve', [
       group([
          query('.content', [style({top: 0,position:'absolute'}),animate('0.3s ease-in-out', style({transform: 'translateX(-100%)'}))]),
     
@@ -27,7 +25,7 @@ function slideToLeft() {
        ] )
        
     ]),
-    transition('blog=>main', [
+    transition('achieve=>main', [
       group([
          query('.cnm', [style({top: 0,position:'absolute'}),animate('0.3s ease-in-out', style({transform: 'translateX(-100%)'}))]),
     

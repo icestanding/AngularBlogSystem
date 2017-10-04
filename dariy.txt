@@ -315,3 +315,8 @@ next step do the animation for the blog card, to make it nice
 
 get it down, save my ass
 https://stackoverflow.com/questions/46287674/angular-4-leave-animation-not-triggering
+
+10.4
+1.animation for blog showing,
+2.service, get data from database
+3.hight full

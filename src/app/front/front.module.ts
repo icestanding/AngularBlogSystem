@@ -14,7 +14,9 @@ import { MdSidenavModule } from '@angular/material';
 import { MdMenuModule } from '@angular/material'
 import { MdToolbarModule }from '@angular/material';
 import { BlogComponent } from './blog/blog.component'
-import { MainpageComponent } from './mainpage/mainpage.component'
+import { MainpageComponent } from './mainpage/mainpage.component';
+import { AchieveComponent } from './achieve/achieve.component'
+import { ShareModule } from '../share/app-share.module';
 
 
 @NgModule({
@@ -29,6 +31,7 @@ import { MainpageComponent } from './mainpage/mainpage.component'
     MdMenuModule ,
     MdButtonModule,
     MdToolbarModule,
+    ShareModule
   
 ],
 
@@ -37,7 +40,7 @@ declarations: [
   FrontComponent, 
   HeaderComponent, 
   FooterComponent, 
-  NavComponent, BlogComponent,
+  NavComponent, BlogComponent, AchieveComponent,
 ]
 })
 export class FrontModule { }
