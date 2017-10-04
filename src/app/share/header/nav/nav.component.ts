@@ -10,9 +10,12 @@ export class NavComponent implements OnInit {
 
     @Output () event = new EventEmitter();
     @Output () color = new EventEmitter();
+    public nav:Boolean;
+    public back:Boolean;
 
     constructor(@Inject(DOCUMENT) private document:Document) {
-    
+        this.nav = true;
+        this.back = false;
     }
     ngOnInit() {}
     
@@ -24,5 +27,9 @@ export class NavComponent implements OnInit {
     }
     change(e) {
         this.color.emit(e);
+    }
+    changenav() {
+        this.nav = false;
+        this.back = true;
     }
 }

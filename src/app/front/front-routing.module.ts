@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router'
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { FrontComponent } from './front.component';
 import { BlogComponent } from './blog/blog.component';
-import { BlogcardComponent } from './mainpage/blogcard/blogcard.component';
+// import { BlogcardComponent } from './mainpage/blogcard/blogcard.component';
 import { AchieveComponent } from './achieve/achieve.component';
 import { AboutComponent } from './about/about.component';
 

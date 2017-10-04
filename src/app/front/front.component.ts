@@ -4,7 +4,8 @@ import { MdSidenav } from '@angular/material'
 import { DOCUMENT } from '@angular/platform-browser'
 import { LoginServiceService } from '../service/login/login-service.service'
 import { routerTransition } from './router.animation'
-
+import { SidebarService } from '../service/sidebar/sidebar.service';
+import { HeaderComponent } from '../share/header/header.component'
 
 @Component({
   selector: 'app-front',
@@ -25,12 +26,14 @@ export class FrontComponent implements OnInit {
   title = 'app';
   @ViewChild('start2') Sidenav:MdSidenav;
   @ViewChild('start2') elementView: ElementRef;
+   @ViewChild('head') header;
  
 
 
 
 
-  constructor(@Inject(DOCUMENT) private document:Document, private _router:Router, private login: LoginServiceService) {
+  constructor(@Inject(DOCUMENT) private document:Document, private _router:Router, private login: LoginServiceService,
+  private sidebarservice:SidebarService) {
     // if inner size 840px
 
     this.mytheme = {
@@ -50,14 +53,14 @@ export class FrontComponent implements OnInit {
       // all template
       this.hide = true;
       let regx = /^\/admin.*/;
-      
+      let regx_open = /^\/blog\/.*/;
+      console.log("cnmb xingbuxing")
 
       if(event.url == "/login") {
         this.hide = false;
-        if(login.islogin()){
-        this.router.navigateByUrl('/admin')
-      }
-        
+          if(login.islogin()){
+          this.router.navigateByUrl('/admin')
+        }
       }
       if(event instanceof NavigationCancel) {
          if(event.url == "/admin"){
@@ -67,12 +70,17 @@ export class FrontComponent implements OnInit {
       else if (event.url.match(regx)) {
         this.hide = false;
       }
+      else if (event.url.match(regx_open)) {
+        this.Sidenav.opened=false;
+        this.header.hah();
+      }
     }
     if (event instanceof NavigationEnd) {
       if(window.innerWidth <= 1000) {
          this.Sidenav.opened=false;
       }
     }
+     
 
   });
 
@@ -88,6 +96,7 @@ export class FrontComponent implements OnInit {
   }
 
   sidebar() {
+    console.log("cnm")
     this.Sidenav.toggle();
   }
   themechange() {
@@ -112,8 +121,7 @@ export class FrontComponent implements OnInit {
     getState(outlet) {
       return outlet.activatedRouteData.state;
     }
-  
-  
+
   
 
 }

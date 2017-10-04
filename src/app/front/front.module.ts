@@ -18,6 +18,7 @@ import { MainpageComponent } from './mainpage/mainpage.component';
 import { AchieveComponent } from './achieve/achieve.component'
 import { ShareModule } from '../share/app-share.module';
 import { AboutComponent } from './about/about.component';
+import { SidebarService } from '../service/sidebar/sidebar.service';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ declarations: [
   HeaderComponent, 
   FooterComponent, 
   NavComponent, BlogComponent, AchieveComponent, AboutComponent,
-]
+],
+providers:[SidebarService]
 })
 export class FrontModule { }

@@ -16,6 +16,7 @@ import 'rxjs/add/operator/map'
 // Animation
 // import {routerTransition} from '../animate'
 import { Router } from '@angular/router';
+import { SidebarService } from '../../service/sidebar/sidebar.service';
 
 
 
@@ -29,7 +30,8 @@ export class MainpageComponent implements OnInit {
 
   public blog;
   @Output () event = new EventEmitter();
-  constructor(private http: Http,private router: Router) { 
+  constructor(private http: Http,private router: Router,
+  private sidebarservice:SidebarService) { 
     this.http.get("/api/blog").subscribe((data)=>{
       console.log(data.text());
       this.blog =  data.text();
@@ -46,9 +48,11 @@ export class MainpageComponent implements OnInit {
   open(e) {
     // this.state = (this.state === 'small' ? 'large' : 'small');
     // setTimeout(this.router.navigateByUrl('/blog'), 1000000);
+    this.event.emit(e);
+    console.log("eject event");
     let id = 123231;
     this.router.navigateByUrl('/blog/'+id)
-    this.event.emit(e);
+   
   }
 
 }

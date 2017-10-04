@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter,Inject, HostListener, ViewChild, ElementRef} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter,Inject, HostListener, ViewChild, ElementRef,
+} from '@angular/core';
 import { ThemeDirective } from '../../directive/theme/theme.directive'
 import { DOCUMENT }from '@angular/platform-browser'
 
@@ -21,6 +22,7 @@ export class HeaderComponent implements OnInit {
   @Output() event = new EventEmitter();
   @Output() colorevent = new EventEmitter();
   @ViewChild(ThemeDirective) vc:ThemeDirective; 
+   @ViewChild('nav') nav;
   public transform:{
     'header'?: boolean;
     'headerfix'?: boolean;
@@ -55,6 +57,9 @@ export class HeaderComponent implements OnInit {
   }
   sidebar(e){
     this.event.emit(e);
+  }
+  hah() {
+    this.nav.changenav();
   }
 
 }

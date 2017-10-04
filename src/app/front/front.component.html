@@ -1,6 +1,6 @@
 
 <!--[ngClass]="mytheme"-->
- <header (event)="sidebar()" [ngClass]="mytheme"   (colorevent)="themechange()" ></header>
+ <header #head (event)="sidebar()" [ngClass]="mytheme"   (colorevent)="themechange()" ></header>
   <md-sidenav-container  [ngClass]="mytheme" class="mainframe"  >
     <md-sidenav  #start2 mode="side" opened="true" class="snavfix" > 
         <md-toolbar color="accent" style="display:flex; flex-direction:column; height:20%;" >
@@ -25,7 +25,7 @@
     </md-sidenav>
         
     <md-card [@routerTransition]="getState(o)" style="padding:0; box-shadow:none" >
-        <router-outlet #o="outlet"></router-outlet>
+        <router-outlet #o="outlet" ></router-outlet>
     </md-card>
   <footer ></footer> 
 </md-sidenav-container>   
