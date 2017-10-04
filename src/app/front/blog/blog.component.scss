@@ -1,0 +1,17 @@
+.blog {
+    margin-top:10px;
+    img {
+        height: 300px;
+    }
+    md-card-content {
+        text-align:start;
+    }
+    md-card-footer {
+        display:flex; justify-content:flex-end
+    }
+
+}
+    .col-sm-10 {
+         max-width: 700px;
+         margin: 0 auto;
+    }

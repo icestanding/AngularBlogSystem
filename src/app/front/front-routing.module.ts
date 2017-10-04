@@ -15,8 +15,8 @@ import { AboutComponent } from './about/about.component';
     RouterModule.forChild([{path:'', component: FrontComponent,
     children:[
       {path:'',  component:MainpageComponent },
-      {path:'blog',  component: BlogComponent,  data:{'state': 'blog'}},  
-      {path:'achieve',  component: AchieveComponent,  data:{'state': 'achieve'}},
+      {path:'blog/:id',  component: BlogComponent},  
+      {path:'blog',  component: AchieveComponent,  data:{'state': 'achieve'}},
       {path:'about',  component: AboutComponent,  data:{'state': 'about'}}    
           
       ]}]),

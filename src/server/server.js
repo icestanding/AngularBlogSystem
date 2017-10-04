@@ -14,33 +14,20 @@ import router from './router'
 
 
 
-
-
 console.log(path.resolve(__dirname + '/../'));
 
 let app = new Koa();
 
-// app.use(serve(path.resolve(__dirname + '/../../image')));
-// app.use(serve(path.resolve(__dirname + '/../../')));
 // app.use(serve(path.resolve(__dirname + '/../')));
 
 
 
 // static root
 app.use(mount('/', serve(__dirname + '/../')));
-// app.use(route.post('/profile', upload.single('avatar')));
 app.use(historyApiFallback());
 
 
 
-// users.find({"user_name":"admin"}).then((val)=>{
-//   console.log(val);
-// }).catch((err)=> {
-//   console.log("fuck up");
-// })
-// users.insert({"user_name":"123", "password": "321"}).then(()=>{
-//   console.log("success");
-// }).catch((err)=>console.log(err));
 var timeStamp = Math.floor(Date.now());
 console.log(Intl.DateTimeFormat().year);
 

@@ -12,6 +12,7 @@ import { AdminModule } from './admin/admin.module';
 import { FrontComponent } from './front/front.component'
 import { FrontModule } from './front/front.module'
 import { AdminComponent } from './admin/admin.component'
+import { MdCardModule,MdProgressSpinnerModule } from '@angular/material'
 
 
 @NgModule({
@@ -28,7 +29,9 @@ import { AdminComponent } from './admin/admin.component'
     BrowserAnimationsModule,
     AdminModule,
     ShareModule,
-    HttpModule
+    HttpModule,
+    MdCardModule,
+    MdProgressSpinnerModule
 ],
   declarations: [
     AppComponent,

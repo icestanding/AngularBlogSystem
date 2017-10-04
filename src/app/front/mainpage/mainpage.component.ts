@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';;
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';;
 import { HttpModule, Http } from '@angular/http';
 // import observable
 import { Observable } from 'rxjs/Observable';
@@ -15,7 +15,7 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map'
 // Animation
 // import {routerTransition} from '../animate'
-
+import { Router } from '@angular/router';
 
 
 
@@ -28,8 +28,8 @@ import 'rxjs/add/operator/map'
 export class MainpageComponent implements OnInit {
 
   public blog;
-
-  constructor(private http: Http) { 
+  @Output () event = new EventEmitter();
+  constructor(private http: Http,private router: Router) { 
     this.http.get("/api/blog").subscribe((data)=>{
       console.log(data.text());
       this.blog =  data.text();
@@ -43,6 +43,12 @@ export class MainpageComponent implements OnInit {
   ngOnInit() {
     
   }
-
+  open(e) {
+    // this.state = (this.state === 'small' ? 'large' : 'small');
+    // setTimeout(this.router.navigateByUrl('/blog'), 1000000);
+    let id = 123231;
+    this.router.navigateByUrl('/blog/'+id)
+    this.event.emit(e);
+  }
 
 }

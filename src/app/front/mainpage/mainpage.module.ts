@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainpageComponent } from './mainpage.component';
 import { MdCardModule,MdListModule,MdButtonModule } from '@angular/material';
-import { BlogcardComponent } from './blogcard/blogcard.component'
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +16,6 @@ import { ShareModule } from '../../share/app-share.module';
     BrowserAnimationsModule,
     ShareModule
   ],
-  declarations: [MainpageComponent, BlogcardComponent]
+  declarations: [MainpageComponent]
 })
 export class MainpageModule { }

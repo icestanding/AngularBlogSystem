@@ -11,7 +11,7 @@ import { FooterComponent } from '../share/footer/footer.component';
 import { ThemeDirective } from '../directive/theme/theme.directive';
 import { MdButtonModule } from '@angular/material';
 import { MdSidenavModule } from '@angular/material';
-import { MdMenuModule } from '@angular/material'
+import { MdMenuModule,MdProgressSpinnerModule } from '@angular/material'
 import { MdToolbarModule }from '@angular/material';
 import { BlogComponent } from './blog/blog.component'
 import { MainpageComponent } from './mainpage/mainpage.component';
@@ -32,7 +32,8 @@ import { AboutComponent } from './about/about.component';
     MdMenuModule ,
     MdButtonModule,
     MdToolbarModule,
-    ShareModule
+    ShareModule,
+    MdProgressSpinnerModule
   
 ],
 

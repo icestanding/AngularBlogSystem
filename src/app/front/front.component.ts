@@ -1,5 +1,5 @@
 import { Component,ViewChild, ElementRef, Inject, HostListener, OnInit } from '@angular/core';
-import { Router, NavigationStart,NavigationCancel, Event as NavigationEvent } from '@angular/router';
+import { Router, NavigationStart,NavigationCancel, NavigationEnd, Event as NavigationEvent } from '@angular/router';
 import { MdSidenav } from '@angular/material'
 import { DOCUMENT } from '@angular/platform-browser'
 import { LoginServiceService } from '../service/login/login-service.service'
@@ -50,6 +50,7 @@ export class FrontComponent implements OnInit {
       // all template
       this.hide = true;
       let regx = /^\/admin.*/;
+      
 
       if(event.url == "/login") {
         this.hide = false;
@@ -65,6 +66,11 @@ export class FrontComponent implements OnInit {
       }
       else if (event.url.match(regx)) {
         this.hide = false;
+      }
+    }
+    if (event instanceof NavigationEnd) {
+      if(window.innerWidth <= 1000) {
+         this.Sidenav.opened=false;
       }
     }
 
@@ -92,20 +98,20 @@ export class FrontComponent implements OnInit {
        this.mytheme={'alternate-theme':true, 'main-theme': false};
     }
   }
-   @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    if(window.innerWidth <= 1000) {
-      this.Sidenav.mode='over';
-      this.Sidenav.opened=false;
+  @HostListener('window:resize', ['$event'])
+    onResize(event) {
+      if(window.innerWidth <= 1000) {
+        this.Sidenav.mode='over';
+        this.Sidenav.opened=false;
+      }
+      else {
+        this.Sidenav.mode='side';
+        this.Sidenav.opened=true;
+      }
     }
-    else {
-      this.Sidenav.mode='side';
-      this.Sidenav.opened=true;
+    getState(outlet) {
+      return outlet.activatedRouteData.state;
     }
-  }
-  getState(outlet) {
-    return outlet.activatedRouteData.state;
-  }
   
   
   
