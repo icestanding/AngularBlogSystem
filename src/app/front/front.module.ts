@@ -17,6 +17,7 @@ import { BlogComponent } from './blog/blog.component'
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { AchieveComponent } from './achieve/achieve.component'
 import { ShareModule } from '../share/app-share.module';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ declarations: [
   FrontComponent, 
   HeaderComponent, 
   FooterComponent, 
-  NavComponent, BlogComponent, AchieveComponent,
+  NavComponent, BlogComponent, AchieveComponent, AboutComponent,
 ]
 })
 export class FrontModule { }

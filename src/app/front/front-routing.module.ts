@@ -5,6 +5,7 @@ import { FrontComponent } from './front.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogcardComponent } from './mainpage/blogcard/blogcard.component';
 import { AchieveComponent } from './achieve/achieve.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -13,9 +14,10 @@ import { AchieveComponent } from './achieve/achieve.component';
 
     RouterModule.forChild([{path:'', component: FrontComponent,
     children:[
-      {path:'',  component:MainpageComponent, data:{'state': 'main'}},
+      {path:'',  component:MainpageComponent },
       {path:'blog',  component: BlogComponent,  data:{'state': 'blog'}},  
-      {path:'achieve',  component: AchieveComponent,  data:{'state': 'achieve'}}    
+      {path:'achieve',  component: AchieveComponent,  data:{'state': 'achieve'}},
+      {path:'about',  component: AboutComponent,  data:{'state': 'about'}}    
           
       ]}]),
   ],

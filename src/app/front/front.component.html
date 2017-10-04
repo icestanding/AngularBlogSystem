@@ -18,12 +18,12 @@
                 <button md-button routerLink="/achieve" routerLinkActive="active"> <i class="material-icons md-30"  >save</i> Achieve</button>
             </md-toolbar-row> 
             <md-toolbar-row >
-                <button md-button ><i class="material-icons md-30"  >person</i> About</button>
+                <button md-button routerLink="/about" routerLinkActive="active"><i class="material-icons md-30"  >person</i> About</button>
             </md-toolbar-row> 
 
     </md-sidenav>
     <md-card [@routerTransition]="getState(o)" style="padding:0; box-shadow:none" >
-    <router-outlet #o="outlet"></router-outlet>
+        <router-outlet #o="outlet"></router-outlet>
     </md-card>
   <footer ></footer> 
 </md-sidenav-container>   
