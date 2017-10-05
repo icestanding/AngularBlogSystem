@@ -2,4 +2,4 @@
 
 Backend Koa2 
 
-rontend Angular2/4
+Frontend Angular 4
