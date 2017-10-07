@@ -324,3 +324,4 @@ https://stackoverflow.com/questions/46287674/angular-4-leave-animation-not-trigg
 
 Icon library
 https://material.io/icons/
+have to redesign main page

@@ -36,6 +36,10 @@ export class FrontComponent implements OnInit {
   private sidebarservice:SidebarService) {
     // if inner size 840px
 
+    this.sidebarservice.messageO.subscribe((res)=>{
+       this.Sidenav.opened=false;
+    })
+
     this.mytheme = {
                     'alternate-theme': false, 
                     'main-theme': true,
@@ -70,10 +74,10 @@ export class FrontComponent implements OnInit {
       else if (event.url.match(regx)) {
         this.hide = false;
       }
-      else if (event.url.match(regx_open)) {
-        this.Sidenav.opened=false;
-        this.header.hah();
-      }
+      // else if (event.url.match(regx_open)) {
+      //   this.Sidenav.opened=false;
+      //   this.header.hah();
+      // }
     }
     if (event instanceof NavigationEnd) {
       if(window.innerWidth <= 1000) {

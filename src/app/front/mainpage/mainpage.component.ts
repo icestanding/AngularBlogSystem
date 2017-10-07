@@ -51,7 +51,9 @@ export class MainpageComponent implements OnInit {
     this.event.emit(e);
     console.log("eject event");
     let id = 123231;
-    this.router.navigateByUrl('/blog/'+id)
+    this.sidebarservice.success("successful");
+    this.router.navigateByUrl('/blog/'+id);
+    
    
   }
 
