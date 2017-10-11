@@ -1,7 +1,6 @@
 .content {
     text-align: center;
-    
-    
+    box-shadow: none;
     .col-sm-10 {
          max-width: 750px;
          margin: 0 auto;
@@ -9,30 +8,22 @@
 
 }
 .blog {
-    .blogimg {
-        height: 200px;
-        src: url("~/assets/img/be.jpeg")  center center;
-        
-    }
-    
-}
-.block {
-      background: #eee;
-      float: left;
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin: 5px;
-    }
-.blog {
     margin-top:10px;
-    img {
-        height: 300px;
+    cursor:pointer;
+    .blogimg {
+        height:300px;
     }
+    .header {
+        margin-top:10; 
+        margin-bottom:10px
+    }
+
     md-card-content {
         text-align:start;
     }
     md-card-footer {
-        display:flex; justify-content:flex-end
+        display:flex; 
+        justify-content:flex-end
     }
+    
 }
