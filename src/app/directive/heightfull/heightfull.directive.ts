@@ -15,7 +15,7 @@ export class HeightfullDirective {
 
   ngOnInit() {
     let windowsize = window.innerHeight;
-    let maxheight  = windowsize - parseInt(this.offset) + 2;
+    let maxheight  = windowsize - parseInt(this.offset) ;
     if(this.el.nativeElement.offsetHeight < maxheight ) {
        this.renderer.setStyle(this.el.nativeElement, "height", maxheight + "px");
       
@@ -23,9 +23,12 @@ export class HeightfullDirective {
   }
   @HostListener('window:resize', ['$event'])
     onResize(event) {
-       let windowsize = window.innerHeight;
-    let maxheight  = windowsize - parseInt(this.offset) + 2;
-        this.renderer.setStyle(this.el.nativeElement, "height", maxheight + "px");
+    let windowsize = window.innerHeight;
+    let maxheight  = windowsize - parseInt(this.offset) ;
+    if(this.el.nativeElement.offsetHeight < maxheight ) {
+       this.renderer.setStyle(this.el.nativeElement, "height", maxheight + "px");
+      
+    }
     }
 
 }

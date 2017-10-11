@@ -29,7 +29,7 @@ export class NavComponent implements OnInit {
     }
     ngOnInit() {}
     
-    // when reach 200 change theme, can simplify to switch and case
+  
 
     toggle(e) {
         if (this.nav == true) {

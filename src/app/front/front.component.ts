@@ -74,10 +74,7 @@ export class FrontComponent implements OnInit {
       else if (event.url.match(regx)) {
         this.hide = false;
       }
-      // else if (event.url.match(regx_open)) {
-      //   this.Sidenav.opened=false;
-      //   this.header.hah();
-      // }
+
     }
     if (event instanceof NavigationEnd) {
       if(window.innerWidth <= 1000) {
