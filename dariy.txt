@@ -184,8 +184,7 @@ default path  export PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin
 here is a sample, default .bashrc file located in /etc/skel - you could make a backup of your current .bashrc with mv .bashrc .bashrc.bak and then cp /etc/skel/.bashrc .bashrc to copy that sample back to your home directory. After that, un-comment force_color_prompt=yes in the new file and add [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" back to the end (last line) of the file so that RVM still works.
 After that, execute . .bashrc at a prompt to reload your bash profile, which should give you a colored prompt again and test RVM with the command type rvm | head -1 which should return the text: rvm is a function
 
-lichenyu
-zgmsx20a
+
 
 redirect 
 iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000
