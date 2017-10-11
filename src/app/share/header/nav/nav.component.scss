@@ -42,7 +42,9 @@
      top: 50%;
      transform: translateY(-50%);
      width: 100%;
-    right:15px;
+     right:15px;
+     display:flex;
+     flex-direction: row;
 
      div {
          display: flex; 
@@ -50,8 +52,5 @@
          justify-content: center;
  
      }
-    // .mat-toolbar-layout {
-    //     width: 100%;
-    // }
 
 }

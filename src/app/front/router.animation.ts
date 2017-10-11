@@ -6,7 +6,7 @@ export function routerTransition() {
 
 
 
-function slideToLeft() {
+export function slideToLeft() {
   return trigger('routerTransition', [
   
     transition(':enter', [
