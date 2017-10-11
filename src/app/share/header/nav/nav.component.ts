@@ -1,5 +1,9 @@
-import { Component, Output, EventEmitter, OnInit, HostListener,Inject } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit, HostListener, Inject } from '@angular/core';
 import { DOCUMENT }from '@angular/platform-browser'
+import { SidebarService } from '../../../service/sidebar/sidebar.service';
+import { Router } from '@angular/router'
+import { Location } from '@angular/common'
+
 
 @Component({
     selector: 'navigation',
@@ -13,16 +17,32 @@ export class NavComponent implements OnInit {
     public nav:Boolean;
     public back:Boolean;
 
-    constructor(@Inject(DOCUMENT) private document:Document) {
+    constructor(@Inject(DOCUMENT) private document:Document, private sidebarservice:SidebarService, private router: Router, private location:Location) {
         this.nav = true;
         this.back = false;
+         this.sidebarservice.messageO.subscribe((res)=>{
+            this.nav = false;
+            this.back = true;   
+    })
+
+
     }
     ngOnInit() {}
     
     // when reach 200 change theme, can simplify to switch and case
 
     toggle(e) {
-        this.event.emit(e);
+        if (this.nav == true) {
+            this.event.emit(e);
+        }
+        else {
+            this.nav = true;
+            this.back = false;
+            this.location.back();
+            if(window.innerWidth > 1000) {
+                this.event.emit(e);
+            }
+        }
       
     }
     change(e) {

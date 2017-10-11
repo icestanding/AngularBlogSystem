@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes} from '@angular/router';
 import { LoginServiceService } from './service/login/login-service.service';
+import { SidebarService } from './service/sidebar/sidebar.service';
 import { LoginModule } from './login/login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotfoundComponent } from './share/notfound/notfound.component';
@@ -39,7 +40,7 @@ import { MdCardModule,MdProgressSpinnerModule } from '@angular/material'
   
   ],
 
-  providers: [LoginServiceService],
+  providers: [LoginServiceService, SidebarService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
