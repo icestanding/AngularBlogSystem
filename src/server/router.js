@@ -129,13 +129,13 @@ router.post('/api/blog', async ( ctx )=> {
     let id;
     // console.log(blog);
     // cut 100 words
-  
+
 
     await blogs.insert(blog).then(async ()=> {
       if(files[0]) {
         await blogs.findOne({title: blog.title}).then(async (doc)=> {
           copyFile(files[0].path, imagepath+"/image/" + doc._id + path.extname(files[0].filename), (error)=>{if (error) throw error;});
-          await blogs.update({_id: doc._id},{ $set:{ img:doc._id + path.extname(files[0].filename)}}).then();
+          await blogs.update({_id: doc._id},{ $set:{ img: "image/" + doc._id + path.extname(files[0].filename)}}).then();
         })
       }
       ctx.response.status = 200;

@@ -338,3 +338,5 @@ draft function
 data input
 
 sample admin function
+
+image directory for image
