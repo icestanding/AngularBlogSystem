@@ -5,12 +5,15 @@
   <div class="row">
     <div class=" col-xs-12 col-sm-10" >
       <md-card *ngFor="let blog of blogs" class="blog" routerLink="/blog" (click)="open($event)">
-          <img md-card-image src="assets/img/word.jpeg" class="blogimg">
+          <img md-card-image src="assets/img/word.jpeg" class="blogimg" style="margin-bottom:0">
+       
           <md-card-content class="header" >
-            <H1 > {{blog.title}} </H1>
+            <H1> {{blog.title}} </H1>
           </md-card-content>
+              <md-card-content style="margin-bottom:0px; color:gray; padding:5px; padding-left:0px">
+             {{blog.time|date}}
+           </md-card-content>
           <md-card-content style="word-wrap: break-word; ">
-            <!--{{blog.content}}-->
             {{blog.abstract}}
         </md-card-content>
       </md-card>

@@ -37,7 +37,7 @@ export class MainpageComponent implements OnInit {
       // console.log(data.text());
       this.blogs =  data.text();
       this.blogs =  JSON.parse(data.text());
-      // remove html tag
+      // remove html tag, slicing to abstract
       for (let i = 0; i < this.blogs.length; i++ ){
         let re = /<\s*\w.*?>/g;
         let red = /<\s*\/\s*\w\s*.*?>|<\s*br\s*>/g
@@ -52,8 +52,7 @@ export class MainpageComponent implements OnInit {
       // return false;
       console.log("error cnm");
     });
-    // console.log(this.blogs);
-    // this.test = [1,2,3,4];
+
   }
 
   ngOnInit() {
