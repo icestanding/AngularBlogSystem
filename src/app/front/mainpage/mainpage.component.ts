@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';;
+import { Component, OnInit, Output, EventEmitter, HostListener} from '@angular/core';;
 import { HttpModule, Http } from '@angular/http';
 // import observable
 import { Observable } from 'rxjs/Observable';
@@ -30,10 +30,12 @@ export class MainpageComponent implements OnInit {
 
   public blogs;
   public test;
+  public img_c;
+
   @Output () event = new EventEmitter();
   constructor(private http: Http,private router: Router,
   private sidebarservice:SidebarService) { 
-    this.http.get("/api/blog").subscribe((data)=>{
+      this.http.get("/api/blog").subscribe((data)=>{
       // console.log(data.text());
       this.blogs =  data.text();
       this.blogs =  JSON.parse(data.text());
@@ -52,11 +54,17 @@ export class MainpageComponent implements OnInit {
       // return false;
       console.log("error cnm");
     });
+ 
 
   }
 
   ngOnInit() {
-    
+    if(window.innerWidth<768){
+       this.img_c=false;
+    }
+    else {
+        this.img_c=true;
+    }
   }
   open(e) {
     // this.state = (this.state === 'small' ? 'large' : 'small');
@@ -66,8 +74,15 @@ export class MainpageComponent implements OnInit {
     let id = 123231;
     this.sidebarservice.success("successful");
     this.router.navigateByUrl('/blog/'+id);
-    
-   
   }
+  @HostListener('window:resize', ['$event'])
+    onResize(event) {
+    if(window.innerWidth<768){
+       this.img_c=false;
+    }
+    else {
+        this.img_c=true;
+    }
+    }
 
 }
