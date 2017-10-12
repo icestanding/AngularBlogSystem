@@ -11,19 +11,19 @@ export function slideToLeft() {
   
     transition(':enter', [
       style({transform: 'translateX(100%)',}),
-      animate('0.3s ease-in-out', style({transform: 'translateX(0%)'}))
+      animate('0.1s ease-in-out', style({transform: 'translateX(0%)'}))
     ]),
     transition(':leave', [
       style({transform: 'translateX(0%)'}),
-      animate('0.3s ease-in-out', style({transform: 'translateX(-100%)'}))
+      animate('0.1s ease-in-out', style({transform: 'translateX(-100%)'}))
     ]),
 
        
     transition('*=>*', [
       group([
-        query(':enter', [query('md-card',[style({transform: 'translateX(100%)'}),animate('0.3s ease-in-out', style({transform: 'translateX(0)'}))], { limit: 1 })
+        query(':enter', [query('md-card',[style({transform: 'translateX(100%)'}),animate('0.15s ease-in-out', style({transform: 'translateX(0)'}))], { limit: 1 })
               ]),    
-        query(':leave', [query('md-card',[style({top: 0,position:'absolute'}),animate('0.3s ease-in-out', style({transform: 'translateX(-100%)'}))], { limit: 1 })
+        query(':leave', [query('md-card',[style({top: 0,position:'absolute'}),animate('0.15s ease-in-out', style({transform: 'translateX(-100%)'}))], { limit: 1 })
               ]),   
 
        ] )

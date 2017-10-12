@@ -29,6 +29,7 @@ import { SidebarService } from '../../service/sidebar/sidebar.service';
 export class MainpageComponent implements OnInit {
 
   public blogs;
+  public test;
   @Output () event = new EventEmitter();
   constructor(private http: Http,private router: Router,
   private sidebarservice:SidebarService) { 
@@ -40,7 +41,8 @@ export class MainpageComponent implements OnInit {
       // return false;
       console.log("error cnm");
     });
-    this.blogs = [0,2,3 ,4];
+    // console.log(this.blogs);
+    this.test = [1,2,3,4];
   }
 
   ngOnInit() {
