@@ -36,13 +36,14 @@ export class MainpageComponent implements OnInit {
     this.http.get("/api/blog").subscribe((data)=>{
       console.log(data.text());
       this.blogs =  data.text();
+      this.blogs =  JSON.parse(data.text());
       // return true;
     }, (error)=>{
       // return false;
       console.log("error cnm");
     });
     // console.log(this.blogs);
-    this.test = [1,2,3,4];
+    // this.test = [1,2,3,4];
   }
 
   ngOnInit() {

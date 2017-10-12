@@ -126,6 +126,18 @@ router.post('/api/blog', async ( ctx )=> {
     blog.time = Date();
     blog.img = "";
     let id;
+    console.log(blog);
+    // cut 100 words 
+
+
+
+
+
+
+
+
+
+
     await blogs.insert(blog).then(async ()=> {
       if(files[0]) {
         await blogs.findOne({title: blog.title}).then(async (doc)=> {

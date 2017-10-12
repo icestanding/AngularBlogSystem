@@ -1,22 +1,16 @@
 
 
 
-<md-card class="content"   [heightmax]="110" > 
+<md-card class="content"    > 
   <div class="row">
     <div class=" col-xs-12 col-sm-10" >
-      <md-card *ngFor="let t of test" class="blog" routerLink="/blog" (click)="open($event)">
+      <md-card *ngFor="let blog of blogs" class="blog" routerLink="/blog" (click)="open($event)">
           <img md-card-image src="assets/img/word.jpeg" class="blogimg">
           <md-card-content class="header" >
-            <H1 > Unknow </H1>
+            <H1 > {{blog.title}} </H1>
           </md-card-content>
-          <md-card-content >
-            <p> Write your thesis. ...
-            Write the first draft of the essay. ...
-            Divide your thoughts into paragraphs. ...
-            Try to follow a pattern of 'Claim' followed by 'Evidence'. ...
-            Write the second draft. ...
-            Use transitional phrases. ...
-            Edit the draft.</p>
+          <md-card-content [innerHTML]="blog.content" >
+            <!--{{blog.content}}-->
         </md-card-content>
       </md-card>
     </div>
