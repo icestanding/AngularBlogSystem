@@ -6,6 +6,7 @@ import monk from 'monk';
 import  mongo   from 'mongodb';
 import fs from 'fs';
 import path from 'path';
+import cate from 'truncate';
 const router = new Router();
 
 
@@ -126,17 +127,9 @@ router.post('/api/blog', async ( ctx )=> {
     blog.time = Date();
     blog.img = "";
     let id;
-    console.log(blog);
-    // cut 100 words 
-
-
-
-
-
-
-
-
-
+    // console.log(blog);
+    // cut 100 words
+  
 
     await blogs.insert(blog).then(async ()=> {
       if(files[0]) {

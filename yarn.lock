@@ -6269,6 +6269,10 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
+truncate@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/truncate/-/truncate-2.0.0.tgz#09d5bc4163f3e257cd687351241071c24f14112f"
+
 ts-node@~3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-3.2.2.tgz#bbd28e38af4aaa3e96076c466e1b220197c1a3ce"

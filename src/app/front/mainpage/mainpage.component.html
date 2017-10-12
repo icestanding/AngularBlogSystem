@@ -9,8 +9,9 @@
           <md-card-content class="header" >
             <H1 > {{blog.title}} </H1>
           </md-card-content>
-          <md-card-content [innerHTML]="blog.content" >
+          <md-card-content style="word-wrap: break-word; ">
             <!--{{blog.content}}-->
+            {{blog.abstract}}
         </md-card-content>
       </md-card>
     </div>

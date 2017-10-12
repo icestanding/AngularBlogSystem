@@ -34,9 +34,19 @@ export class MainpageComponent implements OnInit {
   constructor(private http: Http,private router: Router,
   private sidebarservice:SidebarService) { 
     this.http.get("/api/blog").subscribe((data)=>{
-      console.log(data.text());
+      // console.log(data.text());
       this.blogs =  data.text();
       this.blogs =  JSON.parse(data.text());
+      // remove html tag
+      for (let i = 0; i < this.blogs.length; i++ ){
+        let re = /<\s*\w.*?>/g;
+        let red = /<\s*\/\s*\w\s*.*?>|<\s*br\s*>/g
+        let newstring = this.blogs[i].content.replace(re, '');
+        newstring = newstring.replace(red, '');
+        newstring = newstring.slice(0, 100);
+        console.log(newstring);
+        this.blogs[i].abstract = newstring + "...";
+      }
       // return true;
     }, (error)=>{
       // return false;
