@@ -85,7 +85,7 @@ router.get('/api/blog/:id', async ( ctx )=> {
 
   let id = new mongo.ObjectId(ctx.params.id);
   let blog = db.get('blog');
-  await blog.findOne({"_id":id}).then((doc)=> {
+  await blog.find({"_id":id}).then((doc)=> {
     ctx.response.type="json";
     ctx.response.body = doc;
   }).catch( (err)=> {

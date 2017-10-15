@@ -12,10 +12,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BlogComponent implements OnInit {
 
-  public blog;
+  public blogs;
   public id;
   constructor(private http:Http, private route: ActivatedRoute) { 
     window.scrollTo(0, 0);
+   
 
   }
 
@@ -25,8 +26,8 @@ export class BlogComponent implements OnInit {
       this.http.get("/api/blog/"+params.id).subscribe((data)=>{
         console.log(data.text());
        
-        this.blog =  JSON.parse(data.text());
-        console.log(this.blog);
+        this.blogs =  JSON.parse(data.text());
+       
         // remove html tag, slicing to abstract
        
         // return true;
@@ -36,9 +37,6 @@ export class BlogComponent implements OnInit {
       });
 
     })
-    
-   
-
     
   }
 
