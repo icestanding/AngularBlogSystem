@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2, ViewChild, ViewChildren, OnInit, Output, EventEmitter, HostListener} from '@angular/core';;
+import { Component, ElementRef, Input,OnChanges,Renderer2, ViewChild, ViewChildren, OnInit, Output, EventEmitter, HostListener} from '@angular/core';;
 import { HttpModule, Http } from '@angular/http';
 // import observable
 import { Observable } from 'rxjs/Observable';
@@ -30,7 +30,7 @@ export class MainpageComponent implements OnInit {
 
   public blogs;
   public test;
-  public img_c;
+  @Input() img_c;
   
   @ViewChildren('my') blogs_container;
   @ViewChild('container') blogs_c:ElementRef;
@@ -93,6 +93,7 @@ export class MainpageComponent implements OnInit {
 
   }
 
+
   open(e) {
     // this.state = (this.state === 'small' ? 'large' : 'small');
     // setTimeout(this.router.navigateByUrl('/blog'), 1000000);
@@ -106,22 +107,43 @@ export class MainpageComponent implements OnInit {
     onResize(event) {
       if(window.innerWidth<768){
         this.img_c=false;
-        let windowsize = window.innerHeight;
-        let maxheight  = windowsize - 110 ;
-        console.log(document.getElementById("cnm").offsetHeight);
-        if(document.getElementById("cnm").offsetHeight < maxheight ) {
-         
-          this.renderer.setStyle(this.blogs_c.nativeElement, "height", maxheight + "px");  
-        }
+        setTimeout(
+          
+          ()=>{
+            
+            let windowsize = window.innerHeight;
+            let maxheight  = windowsize - 110 ;
+            console.log("less " + document.getElementById("cnm").offsetHeight);
+            if(document.getElementById("cnm").offsetHeight < maxheight ) {
+             
+              this.renderer.setStyle(this.blogs_c.nativeElement, "height", maxheight + "px");  
+            }
+
+          }
+        )
+        
   
       }
       else {
-          this.img_c=true;
-          let windowsize = window.innerHeight;
-          let maxheight  = windowsize - 110 ;
-          if(document.getElementById("cnm").offsetHeight >= maxheight ) {
-            this.renderer.removeStyle(this.blogs_c.nativeElement, "height");
+        this.img_c=true;
+        setTimeout(
+          ()=>{
+           
+            let windowsize = window.innerHeight;
+            let maxheight  = windowsize - 110 ;
+            console.log("large " + document.getElementById("cnm").offsetHeight + " maxheight:" + maxheight);
+            if(document.getElementById("cnm").offsetHeight >= maxheight ) {
+              console.log("remove");
+              this.renderer.removeStyle(this.blogs_c.nativeElement, "height");
+            }
+            else {
+              this.renderer.setStyle(this.blogs_c.nativeElement, "height", maxheight + "px");  
+              
+            }
+
           }
+        )
+  
     
       }
 
