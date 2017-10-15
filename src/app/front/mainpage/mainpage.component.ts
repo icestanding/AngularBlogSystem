@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, HostListener} from '@angular/core';;
+import { Component, ElementRef, Renderer2, ViewChild, ViewChildren, OnInit, Output, EventEmitter, HostListener} from '@angular/core';;
 import { HttpModule, Http } from '@angular/http';
 // import observable
 import { Observable } from 'rxjs/Observable';
@@ -31,10 +31,13 @@ export class MainpageComponent implements OnInit {
   public blogs;
   public test;
   public img_c;
-
+  
+  @ViewChildren('my') blogs_container;
+  @ViewChild('container') blogs_c:ElementRef;
   @Output () event = new EventEmitter();
   constructor(private http: Http,private router: Router,
-  private sidebarservice:SidebarService) { 
+  private sidebarservice:SidebarService,
+  private renderer: Renderer2) { 
       this.http.get("/api/blog").subscribe((data)=>{
       // console.log(data.text());
       this.blogs =  data.text();
@@ -59,6 +62,7 @@ export class MainpageComponent implements OnInit {
   }
 
   ngOnInit() {
+
     if(window.innerWidth<768){
        this.img_c=false;
     }
@@ -66,6 +70,29 @@ export class MainpageComponent implements OnInit {
         this.img_c=true;
     }
   }
+  ngAfterViewInit (){
+    this.blogs_container.changes.subscribe(
+      () => 
+      {
+        let windowsize = window.innerHeight;
+        let maxheight  = windowsize - 110 ;
+        // console.log(maxheight);
+        // this.renderer.setStyle(this.blogs_c.nativeElement, "height", '1000' + "px");  
+
+        // console.log(document.getElementById("cnm").offsetHeight);
+        if(document.getElementById("cnm").offsetHeight < maxheight ) {
+         
+          this.renderer.setStyle(this.blogs_c.nativeElement, "height", maxheight + "px");  
+        }
+        
+    }, (Error)=>{
+      console.log("this is error from blogs_container");
+    }
+      
+    )
+
+  }
+
   open(e) {
     // this.state = (this.state === 'small' ? 'large' : 'small');
     // setTimeout(this.router.navigateByUrl('/blog'), 1000000);
