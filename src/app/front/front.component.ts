@@ -21,8 +21,8 @@ export class FrontComponent implements OnInit {
   };
   private router: Router;
   public hide: boolean;
-
-
+  public current_url;
+  
   title = 'app';
   @ViewChild('start2') Sidenav:MdSidenav;
   @ViewChild('start2') elementView: ElementRef;
@@ -35,7 +35,7 @@ export class FrontComponent implements OnInit {
   constructor(@Inject(DOCUMENT) private document:Document, private _router:Router, private login: LoginServiceService,
   private sidebarservice:SidebarService) {
     // if inner size 840px
-
+    
     this.sidebarservice.messageO.subscribe((res)=>{
        this.Sidenav.opened=false;
     })
@@ -66,20 +66,24 @@ export class FrontComponent implements OnInit {
           this.router.navigateByUrl('/admin')
         }
       }
+      // else if (event.url.match(regx)) {
+      //   console.log("this is sidebar");
+      //   this.hide = false;
+      //   this.sidebar_hide=false;
+      // }
       if(event instanceof NavigationCancel) {
          if(event.url == "/admin"){
           this.router.navigateByUrl('/login')
         }
       }
-      else if (event.url.match(regx)) {
-        this.hide = false;
-      }
+
 
     }
     if (event instanceof NavigationEnd) {
       if(window.innerWidth <= 1000) {
          this.Sidenav.opened=false;
       }
+      this.current_url = event.url;
     }
      
 
@@ -110,13 +114,23 @@ export class FrontComponent implements OnInit {
   }
   @HostListener('window:resize', ['$event'])
     onResize(event) {
+      console.log("current url"+ this.current_url);
+      let regx_open = /^\/blog\/.*/;
       if(window.innerWidth <= 1000) {
         this.Sidenav.mode='over';
         this.Sidenav.opened=false;
+        
       }
+      else {
+        if(this.current_url.match(regx_open)) {
+          this.Sidenav.mode='side';
+          this.Sidenav.opened=false;
+        }
       else {
         this.Sidenav.mode='side';
         this.Sidenav.opened=true;
+      }
+
       }
     }
     getState(outlet) {

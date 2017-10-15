@@ -94,15 +94,16 @@ export class MainpageComponent implements OnInit {
   }
 
 
-  open(e) {
+  open(e, blog) {
     // this.state = (this.state === 'small' ? 'large' : 'small');
     // setTimeout(this.router.navigateByUrl('/blog'), 1000000);
     this.event.emit(e);
     console.log("eject event");
     let id = 123231;
     this.sidebarservice.success("successful");
-    this.router.navigateByUrl('/blog/'+id);
+    this.router.navigateByUrl('/blog/'+ blog._id);
   }
+  
   @HostListener('window:resize', ['$event'])
     onResize(event) {
       if(window.innerWidth<768){

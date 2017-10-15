@@ -2,7 +2,7 @@
   <md-card #my  class="content" id="cnm"> 
     <div class="row">
       <div class=" col-xs-12 col-sm-10" >
-        <md-card *ngFor="let blog of blogs" class="blog" (click)="open($event)">
+        <md-card *ngFor="let blog of blogs" class="blog" (click)="open($event, blog)">
             <img *ngIf="blog.img && img_c" md-card-image [src]="blog.img" class="blogimg" style="margin-bottom:0">
             <md-card-content class="header" style="word-wrap: break-word; ">
               <H1> {{blog.title}}  </H1>

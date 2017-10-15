@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Http } from '@angular/http'
+import { ActivatedRoute } from '@angular/router';
+// import { }
 
 @Component({
   selector: 'app-blog',
@@ -9,11 +12,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { 
+  public blog;
+  public id;
+  constructor(private http:Http, private route: ActivatedRoute) { 
     window.scrollTo(0, 0);
+
   }
 
   ngOnInit() {
+    this.route.params.subscribe(params=>{
+      console.log(params.id);
+      this.http.get("/api/blog/"+params.id).subscribe((data)=>{
+        console.log(data.text());
+       
+        this.blog =  JSON.parse(data.text());
+        console.log(this.blog);
+        // remove html tag, slicing to abstract
+       
+        // return true;
+      }, (error)=>{
+        // return false;
+        console.log("error cnm");
+      });
+
+    })
+    
+   
+
+    
   }
+
+
 
 }
