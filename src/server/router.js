@@ -73,7 +73,7 @@ async function AuthenCheck(header) {
 router.get('/api/blog', async ( ctx )=> {
 
   let blog = db.get('blog');
-  await blog.find({}, {sort: {time: -1}}).then((doc)=>{
+  await blog.find({}, {sort: {time: 1}}).then((doc)=>{
     ctx.response.type = 'json';
     ctx.response.body = doc;
   }).catch((err)=> {
