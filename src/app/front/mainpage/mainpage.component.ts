@@ -104,12 +104,27 @@ export class MainpageComponent implements OnInit {
   }
   @HostListener('window:resize', ['$event'])
     onResize(event) {
-    if(window.innerWidth<768){
-       this.img_c=false;
-    }
-    else {
-        this.img_c=true;
-    }
+      if(window.innerWidth<768){
+        this.img_c=false;
+        let windowsize = window.innerHeight;
+        let maxheight  = windowsize - 110 ;
+        console.log(document.getElementById("cnm").offsetHeight);
+        if(document.getElementById("cnm").offsetHeight < maxheight ) {
+         
+          this.renderer.setStyle(this.blogs_c.nativeElement, "height", maxheight + "px");  
+        }
+  
+      }
+      else {
+          this.img_c=true;
+          let windowsize = window.innerHeight;
+          let maxheight  = windowsize - 110 ;
+          if(document.getElementById("cnm").offsetHeight >= maxheight ) {
+            this.renderer.removeStyle(this.blogs_c.nativeElement, "height");
+          }
+    
+      }
+
     }
 
 }
