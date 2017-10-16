@@ -6,7 +6,7 @@
     width: 25%;
     min-width: 120px;
     max-width: 225px;
-    md-list-item {
+    mat-list-item {
         cursor:pointer; 
         margin:0 auto; 
         display:flex; 
@@ -22,7 +22,7 @@
             padding-top: 13px;
         }
     }
-    md-card-content {
+    mat-card-content {
         display: flex;
         // justify-content:flex-start;
         align-content: flex-start;
