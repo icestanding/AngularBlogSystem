@@ -44,12 +44,14 @@ export class MainpageComponent implements OnInit {
       this.blogs =  JSON.parse(data.text());
       // remove html tag, slicing to abstract
       for (let i = 0; i < this.blogs.length; i++ ){
-        let re = /<\s*\w.*?>/g;
-        let red = /<\s*\/\s*\w\s*.*?>|<\s*br\s*>/g
-        let newstring = this.blogs[i].content.replace(re, '');
-        newstring = newstring.replace(red, '');
-        newstring = newstring.slice(0, 100);
-        console.log(newstring);
+        let html_open = /<\s*\w.*?>/g;
+        let html_close = /<\s*\/\s*\w\s*.*?>|<\s*br\s*>/g
+        let html_entity_regex = /&\w+?;/g
+        let newstring = this.blogs[i].content.replace(html_open, '');
+        newstring = newstring.replace(html_close, '');
+        newstring = newstring.replace(html_entity_regex, ' ');
+        newstring = newstring.slice(0, 200);
+        
         this.blogs[i].abstract = newstring + "...";
       }
       // return true;

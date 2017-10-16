@@ -340,3 +340,6 @@ data input
 sample admin function
 
 image directory for image
+
+current page setting 
+related to current page link 

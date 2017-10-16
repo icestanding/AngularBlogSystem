@@ -1,7 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, HostListener ,ViewChildren, ViewChild, OnInit, OnDestroy, Renderer2 } from '@angular/core';
 import { Http } from '@angular/http'
 import { ActivatedRoute } from '@angular/router';
-// import { }
+import { element } from 'protractor';
+
 
 @Component({
   selector: 'app-blog',
@@ -14,7 +15,12 @@ export class BlogComponent implements OnInit {
 
   public blogs;
   public id;
-  constructor(private http:Http, private route: ActivatedRoute) { 
+  @ViewChildren('blog') blog;
+  @ViewChild('blog') blog_c;
+  
+
+  constructor(private http:Http, private route: ActivatedRoute,
+  private renderer: Renderer2) { 
     window.scrollTo(0, 0);
    
 
@@ -37,8 +43,62 @@ export class BlogComponent implements OnInit {
       });
 
     })
+
+
     
   }
+
+    ngAfterViewInit (){
+    this.blog.changes.subscribe(
+      () => 
+      {
+        let windowsize = window.innerHeight;
+        let maxheight  = windowsize - 190 ;
+        // console.log(maxheight);
+        // this.renderer.setStyle(this.blogs_c.nativeElement, "height", '1000' + "px");  
+
+        // console.log(document.getElementById("cnm").offsetHeight);
+        if(document.getElementById("cnm").offsetHeight < maxheight ) {
+         
+          this.renderer.setStyle(this.blog_c.nativeElement, "height", maxheight + "px");  
+        }
+        
+
+        
+    }, (Error)=>{
+      console.log("this is error from blogs_container");
+    }
+      
+    )
+
+
+
+
+  }
+
+  @HostListener('window:resize', ['$event'])
+    onResize(event) {
+    
+
+        let windowsize = window.innerHeight;
+        let maxheight  = windowsize - 190 ;
+        // console.log(maxheight);
+        // this.renderer.setStyle(this.blogs_c.nativeElement, "height", '1000' + "px");  
+
+        // console.log(document.getElementById("cnm").offsetHeight);
+        if(document.getElementById("cnm").offsetHeight >= maxheight ) {
+              console.log("remove");
+              this.renderer.removeStyle(this.blog_c.nativeElement, "height");
+            }
+            else {
+              this.renderer.setStyle(this.blog_c.nativeElement, "height", maxheight + "px");  
+              
+            }
+
+
+
+
+    }
 
 
 
