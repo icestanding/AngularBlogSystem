@@ -71,10 +71,11 @@ async function AuthenCheck(header) {
 
 /* api for blog */
 router.get('/api/blog', async ( ctx )=> {
-
+  // let i = -1;
   let blog = db.get('blog');
-  await blog.find({}, {sort: {time: 1}}).then((doc)=>{
+  await blog.find({}, {sort: {time: -1}}).then((doc)=>{
     ctx.response.type = 'json';
+    
     ctx.response.body = doc;
   }).catch((err)=> {
     console.log(err);
@@ -93,7 +94,9 @@ router.get('/api/blog/:id', async ( ctx )=> {
     }
   );
 });
+
 router.delete('/api/blog/:id', async ( ctx )=> {
+
   console.log("cnmb");
   let id = new mongo.ObjectId(ctx.params.id);
   let blogs = db.get('blog');
@@ -124,7 +127,7 @@ router.post('/api/blog', async ( ctx )=> {
     const {files, fields} = await asyncBusboy(ctx.req);
     let blog = JSON.parse(fields.blog);
     let blogs = db.get('blog');
-    blog.time = Date();
+    blog.time = new Date();
     blog.img = "";
     let id;
     // console.log(blog);

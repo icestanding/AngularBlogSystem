@@ -53,7 +53,7 @@ export class BlogComponent implements OnInit {
       () => 
       {
         let windowsize = window.innerHeight;
-        let maxheight  = windowsize - 190 ;
+        let maxheight  = windowsize - 230 ;
         // console.log(maxheight);
         // this.renderer.setStyle(this.blogs_c.nativeElement, "height", '1000' + "px");  
 
@@ -81,7 +81,7 @@ export class BlogComponent implements OnInit {
     
 
         let windowsize = window.innerHeight;
-        let maxheight  = windowsize - 190 ;
+        let maxheight  = windowsize - 230 ;
         // console.log(maxheight);
         // this.renderer.setStyle(this.blogs_c.nativeElement, "height", '1000' + "px");  
 
