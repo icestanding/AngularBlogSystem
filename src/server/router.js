@@ -145,6 +145,7 @@ router.post('/api/blog', async ( ctx )=> {
 
     }).catch( (err)=> {
         ctx.response.status = 404;
+        
       }
     );
   }

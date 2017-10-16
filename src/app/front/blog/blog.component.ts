@@ -82,24 +82,15 @@ export class BlogComponent implements OnInit {
 
         let windowsize = window.innerHeight;
         let maxheight  = windowsize - 230 ;
-        // console.log(maxheight);
-        // this.renderer.setStyle(this.blogs_c.nativeElement, "height", '1000' + "px");  
-
-        // console.log(document.getElementById("cnm").offsetHeight);
-        if(document.getElementById("cnm").offsetHeight >= maxheight ) {
-              console.log("remove");
-              this.renderer.removeStyle(this.blog_c.nativeElement, "height");
-            }
-            else {
-              this.renderer.setStyle(this.blog_c.nativeElement, "height", maxheight + "px");  
-              
-            }
-
-
-
-
-    }
-
+   
+          
+        
+        if(document.getElementById("cnm").offsetHeight < maxheight ) {
+          
+           this.renderer.setStyle(this.blog_c.nativeElement, "height", maxheight + "px");  
+        } 
+      }
+  
 
 
 }
