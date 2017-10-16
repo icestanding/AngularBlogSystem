@@ -1,7 +1,7 @@
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-30 { font-size: 30px; }
-.material-icons.md-48 { font-size: 48px; }
+.material-icons.mat-18 { font-size: 18px; }
+.material-icons.mat-24 { font-size: 24px; }
+.material-icons.mat-30 { font-size: 30px; }
+.material-icons.mat-48 { font-size: 48px; }
 
 .snavfix {
     position: fixed;
@@ -13,7 +13,7 @@
     width: 260px;
     box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 
-    md-list-item {
+    mat-list-item {
         cursor:pointer; 
         margin:0 auto; 
         display:flex; 
@@ -29,10 +29,10 @@
             padding-top: 13px;
         }
     }
-    md-toolbar {
+    mat-toolbar {
         padding: 0px;
     }
-    md-toolbar-row {
+    mat-toolbar-row {
         display: flex;
         // justify-content:flex-start;
         align-content: flex-start;

@@ -1,26 +1,26 @@
 <div class="logindiv">
-    <md-card class="logincard">
+    <mat-card class="logincard">
       <img class="logoimg" src="{{logoPath}}"> 
         <form class="loginform">
             <div class="type">
                 <!-- this is for id -->
-                <md-input-container class="text" >
-                    <input name="username" mdInput placeholder="Username" [formControl]="UsernameFormControl" [(ngModel)]="username">
-                </md-input-container>
+                <mat-input-container class="text" >
+                    <input name="username" matInput placeholder="Username" [formControl]="UsernameFormControl" [(ngModel)]="username">
+                </mat-input-container>
                 <!-- this is for password -->
-                <md-input-container   class="text" >
-                    <input name="password" mdInput placeholder="Password" type="password" [(ngModel)]="password">
-                </md-input-container>     
+                <mat-input-container   class="text" >
+                    <input name="password" matInput placeholder="Password" type="password" [(ngModel)]="password">
+                </mat-input-container>     
                 <!-- <a class="alink" (click)="fogetpsw()" > Forget your password? </a> -->
             </div>
             <div class="button">
-                <button md-raised-button color="accent" class="loginbutton" (click)="signUp()">
+                <button mat-raised-button color="accent" class="loginbutton" (click)="signUp()">
                     Sign In
                 </button>  
                 <!-- <p style=" font-size: 12px;" class="layout"> Don't have account, <span class="spacer"></span><a href="">Sign up </a></p>  -->
                 <!-- <p style=" font-size: 12px;">Don't have account, <a href="">Sign up </a></p> -->
             </div>
         </form>
-    </md-card>
+    </mat-card>
 </div>
   <!-- power by travelegde -->

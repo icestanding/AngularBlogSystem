@@ -1,40 +1,40 @@
 
 <!--[ngClass]="mytheme"-->
  <header #head (event)="sidebar()" [ngClass]="mytheme"   (colorevent)="themechange()" ></header>
-  <md-sidenav-container  [ngClass]="mytheme" class="mainframe"  >
-    <md-sidenav  #start2 mode="side" opened="true" class="snavfix" > 
-        <md-toolbar color="accent" style="display:flex; flex-direction:column; height:20%; min-height:150px; margin-bottom:15px" >
+  <mat-sidenav-container  [ngClass]="mytheme" class="mainframe"  >
+    <mat-sidenav  #start2 mode="side" opened="true" class="snavfix" > 
+        <mat-toolbar color="accent" style="display:flex; flex-direction:column; height:20%; min-height:150px; margin-bottom:15px" >
 
-            <!--<md-toolbar-row style="margin-top:20px;  flex-direction:column; justify-content:center">-->
+            <!--<mat-toolbar-row style="margin-top:20px;  flex-direction:column; justify-content:center">-->
             <div style="display:flex; flex-direction:row;margin-top:20px;">
                 <div style=" display:flex; flex-direction:row;justify-content:flex-start;  padding-left:25px">
-                    <div md-card-avatar class="self-image" style="height:50px; width:50px; margin:0px;"></div>               
+                    <div mat-card-avatar class="self-image" style="height:50px; width:50px; margin:0px;"></div>               
                 </div>
                 <div style="margin-left:30px; width:20%; height:50px; display:flex; flex-direction:column; justify-content:center; ">
                         <a href="https://www.linkedin.com/in/coderchenyu/" title="Website name"><i  class="linked-image" ></i></a>
 
                 </div>
             </div>
-            <!-- <md-toolbar-row>               
+            <!-- <mat-toolbar-row>               
                     <i  class="linked-image" ></i>
-            </md-toolbar-row> -->
-            <!--</md-toolbar-row>-->
-        </md-toolbar>
-           <md-toolbar-row style="margin-bottom:15px" >
-                <!-- <i class="material-icons md-30"  >home</i> -->
-                <button md-button routerLink="/" routerLinkActive="active"> HOME</button>
-            </md-toolbar-row> 
-            <md-toolbar-row style="margin-bottom:15px">
-                    <!-- <i class="material-icons md-30"  >save</i> -->
-                <button md-button routerLink="/blog" routerLinkActive="active">  ACHIEVE</button>
-            </md-toolbar-row> 
-            <md-toolbar-row style="margin-bottom:15px">
-                    <!-- <i class="material-icons md-30"  >person</i> -->
-                <button md-button routerLink="/about" routerLinkActive="active">ABOUT</button>
-            </md-toolbar-row> 
-    </md-sidenav>
-    <md-card [@routerTransition]="getState(o)" style="padding:0; box-shadow:none; overflow:hidden" >
+            </mat-toolbar-row> -->
+            <!--</mat-toolbar-row>-->
+        </mat-toolbar>
+           <mat-toolbar-row style="margin-bottom:15px" >
+                <!-- <i class="material-icons mat-30"  >home</i> -->
+                <button mat-button routerLink="/" routerLinkActive="active"> HOME</button>
+            </mat-toolbar-row> 
+            <mat-toolbar-row style="margin-bottom:15px">
+                    <!-- <i class="material-icons mat-30"  >save</i> -->
+                <button mat-button routerLink="/blog" routerLinkActive="active">  ACHIEVE</button>
+            </mat-toolbar-row> 
+            <mat-toolbar-row style="margin-bottom:15px">
+                    <!-- <i class="material-icons mat-30"  >person</i> -->
+                <button mat-button routerLink="/about" routerLinkActive="active">ABOUT</button>
+            </mat-toolbar-row> 
+    </mat-sidenav>
+    <mat-card [@routerTransition]="getState(o)" style="padding:0; box-shadow:none; overflow:hidden" >
         <router-outlet #o="outlet" ></router-outlet>
-    </md-card>
+    </mat-card>
   <footer ></footer> 
-</md-sidenav-container>   
+</mat-sidenav-container>   

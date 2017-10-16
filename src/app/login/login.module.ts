@@ -4,14 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LoginComponent } from './login.component';
 import { HomeModule } from './login-routing.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdToolbarModule } from '@angular/material';
-import { MdInputModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
 import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
-import { MdButtonModule } from '@angular/material';
-import { MdCardModule } from '@angular/material';
-import { MdProgressBarModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material';
+import { MatCardModule } from '@angular/material';
+import { MatProgressBarModule } from '@angular/material';
 import { LoginformComponent } from './loginform/loginform.component';
-import { MdSidenavModule } from '@angular/material';
+import { MatSidenavModule } from '@angular/material';
 import { ShareModule } from '../share/app-share.module';
 
 
@@ -21,14 +21,14 @@ import { ShareModule } from '../share/app-share.module';
     BrowserModule,
     HomeModule,
     BrowserAnimationsModule,
-    MdToolbarModule,
-    MdInputModule,
+    MatToolbarModule,
+    MatInputModule,
     FormsModule,
-    MdButtonModule,
+    MatButtonModule,
     ReactiveFormsModule,
-    MdCardModule,
-    MdProgressBarModule,
-    MdSidenavModule,
+    MatCardModule,
+    MatProgressBarModule,
+    MatSidenavModule,
     ShareModule
   ],
   declarations: [

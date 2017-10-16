@@ -1,22 +1,22 @@
 
 <div class="row" id="cnm" #blog style="margin-top:40px; margin-bottom:80px; ">
   <div class=" col-xs-12 col-sm-10">
-<md-card *ngFor="let blog of blogs" class="blog" style="margin-top:10px;  ">
-  <md-card-content style="margin-bottom:0px; color:gray; padding:5px; padding-left:0px">
+<mat-card *ngFor="let blog of blogs" class="blog" style="margin-top:10px;  ">
+  <mat-card-content style="margin-bottom:0px; color:gray; padding:5px; padding-left:0px">
     {{blog.time|date}}
-  </md-card-content>
-        <md-card-content class="header" style="word-wrap: break-word; ">
+  </mat-card-content>
+        <mat-card-content class="header" style="word-wrap: break-word; ">
           <H1> {{blog.title}}  </H1>
-        </md-card-content>
+        </mat-card-content>
 
-        <img *ngIf="blog.img " md-card-image [src]="blog.img"  >
+        <img *ngIf="blog.img " mat-card-image [src]="blog.img"  >
         
    
-        <md-card-content style="word-wrap: break-word;" [innerHtml]="blog.content">
+        <mat-card-content style="word-wrap: break-word;" [innerHtml]="blog.content">
         
-      </md-card-content>
+      </mat-card-content>
 
-  </md-card>
+  </mat-card>
 </div>
 </div>
 

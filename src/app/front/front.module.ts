@@ -4,15 +4,15 @@ import { FrontComponent } from './front.component';
 import { RouterModule } from '@angular/router';
 import { FrontRoutingModule } from './front-routing.module';
 import { MainpageModule } from './mainpage/mainpage.module';
-import { MdCardModule, MdSlideToggleModule } from '@angular/material';
+import { MatCardModule, MatSlideToggleModule } from '@angular/material';
 import { NavComponent } from '../share/header/nav/nav.component';
 import { HeaderComponent } from '../share/header/header.component';
 import { FooterComponent } from '../share/footer/footer.component';
 import { ThemeDirective } from '../directive/theme/theme.directive';
-import { MdButtonModule } from '@angular/material';
-import { MdSidenavModule } from '@angular/material';
-import { MdMenuModule,MdProgressSpinnerModule } from '@angular/material'
-import { MdToolbarModule }from '@angular/material';
+import { MatButtonModule } from '@angular/material';
+import { MatSidenavModule } from '@angular/material';
+import { MatMenuModule,MatProgressSpinnerModule } from '@angular/material'
+import { MatToolbarModule }from '@angular/material';
 import { BlogComponent } from './blog/blog.component'
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { AchieveComponent } from './achieve/achieve.component'
@@ -27,14 +27,14 @@ import { SidebarService } from '../service/sidebar/sidebar.service';
     CommonModule,
     FrontRoutingModule,
     MainpageModule,
-    MdSidenavModule, 
-    MdCardModule,
-    MdSlideToggleModule,
-    MdMenuModule ,
-    MdButtonModule,
-    MdToolbarModule,
+    MatSidenavModule, 
+    MatCardModule,
+    MatSlideToggleModule,
+    MatMenuModule ,
+    MatButtonModule,
+    MatToolbarModule,
     ShareModule,
-    MdProgressSpinnerModule
+    MatProgressSpinnerModule
   
 ],
 

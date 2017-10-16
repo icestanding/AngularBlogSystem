@@ -1,6 +1,6 @@
 import { Component,ViewChild, ElementRef, Inject, HostListener, OnInit } from '@angular/core';
 import { Router, NavigationStart,NavigationCancel, NavigationEnd, Event as NavigationEvent } from '@angular/router';
-import { MdSidenav } from '@angular/material'
+import { MatSidenav } from '@angular/material'
 import { DOCUMENT } from '@angular/platform-browser'
 import { LoginServiceService } from '../service/login/login-service.service'
 import { routerTransition } from './router.animation'
@@ -24,7 +24,7 @@ export class FrontComponent implements OnInit {
   public current_url;
   
   title = 'app';
-  @ViewChild('start2') Sidenav:MdSidenav;
+  @ViewChild('start2') Sidenav:MatSidenav;
   @ViewChild('start2') elementView: ElementRef;
    @ViewChild('head') header;
  

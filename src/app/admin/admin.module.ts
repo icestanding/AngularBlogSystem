@@ -4,7 +4,7 @@ import { AdminComponent } from "./admin.component";
 import {BrowserModule} from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminRoutingModule } from "./admin-routing.module";
-import { MdButtonModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material';
 
 // import { QuillModule } from './editor/quill.module'
 import { ShareModule } from '../share/app-share.module';
@@ -16,7 +16,7 @@ import { BlogModule } from './blog/blog.module';
    AdminRoutingModule,
    BrowserModule,
    HttpClientModule,
-   MdButtonModule,
+   MatButtonModule,
    ShareModule,
   //  QuillModule,
    BlogModule

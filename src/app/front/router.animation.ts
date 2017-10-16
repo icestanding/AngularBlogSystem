@@ -21,9 +21,9 @@ export function slideToLeft() {
        
     transition('*=>*', [
       group([
-        query(':enter', [query('md-card',[style({transform: 'translateX(100%)'}),animate('0.15s ease-in-out', style({transform: 'translateX(0)'}))], { limit: 1 })
+        query(':enter', [query('mat-card',[style({transform: 'translateX(100%)'}),animate('0.15s ease-in-out', style({transform: 'translateX(0)'}))], { limit: 1 })
               ]),    
-        query(':leave', [query('md-card',[style({top: 0,position:'absolute'}),animate('0.15s ease-in-out', style({transform: 'translateX(-100%)'}))], { limit: 1 })
+        query(':leave', [query('mat-card',[style({top: 0,position:'absolute'}),animate('0.15s ease-in-out', style({transform: 'translateX(-100%)'}))], { limit: 1 })
               ]),   
 
        ] )

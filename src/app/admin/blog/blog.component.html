@@ -6,7 +6,7 @@
       <li *ngFor="let hero of blogs">
         <!-- <span class="badge">{{hero.title}}</span> -->
         <span [innerHTML]="hero.content" (click)="show(hero)"></span>
-        <button md-button (click)="delete(hero)">Delete </button>
+        <button mat-button (click)="delete(hero)">Delete </button>
       </li>
     </ul>
 <!-- <p *ngFor="let blog of blogs"> {{blog}} </p> -->
