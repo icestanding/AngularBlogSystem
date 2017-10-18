@@ -49,47 +49,14 @@ export class BlogComponent implements OnInit {
   }
 
     ngAfterViewInit (){
-    this.blog.changes.subscribe(
-      () => 
-      {
-        let windowsize = window.innerHeight;
-        let maxheight  = windowsize - 230 ;
-        // console.log(maxheight);
-        // this.renderer.setStyle(this.blogs_c.nativeElement, "height", '1000' + "px");  
-
-        // console.log(document.getElementById("cnm").offsetHeight);
-        if(document.getElementById("cnm").offsetHeight < maxheight ) {
-         
-          this.renderer.setStyle(this.blog_c.nativeElement, "height", maxheight + "px");  
-        }
+   
         
-
-        
-    }, (Error)=>{
-      console.log("this is error from blogs_container");
-    }
-      
-    )
 
 
 
 
   }
 
-  @HostListener('window:resize', ['$event'])
-    onResize(event) {
-    
-
-        let windowsize = window.innerHeight;
-        let maxheight  = windowsize - 230 ;
-   
-          
-        
-        if(document.getElementById("cnm").offsetHeight < maxheight ) {
-          
-           this.renderer.setStyle(this.blog_c.nativeElement, "height", maxheight + "px");  
-        } 
-      }
   
 
 

@@ -73,25 +73,22 @@ export class MainpageComponent implements OnInit {
     }
   }
   ngAfterViewInit (){
-    this.blogs_container.changes.subscribe(
-      () => 
-      {
-        let windowsize = window.innerHeight;
-        let maxheight  = windowsize - 110 ;
-        // console.log(maxheight);
-        // this.renderer.setStyle(this.blogs_c.nativeElement, "height", '1000' + "px");  
-
-        // console.log(document.getElementById("cnm").offsetHeight);
-        if(document.getElementById("cnm").offsetHeight < maxheight ) {
+    // this.blogs_container.changes.subscribe(
+    //   () => 
+    //   {
+    //     let windowsize = window.innerHeight;
+    //     let maxheight  = windowsize - 110 ;
+     
+    //     if(document.getElementById("cnm").offsetHeight < maxheight ) {
          
-          this.renderer.setStyle(this.blogs_c.nativeElement, "height", maxheight + "px");  
-        }
+    //       this.renderer.setStyle(this.blogs_c.nativeElement, "height", maxheight + "px");  
+    //     }
         
-    }, (Error)=>{
-      console.log("this is error from blogs_container");
-    }
+    // }, (Error)=>{
+    //   console.log("this is error from blogs_container");
+    // }
       
-    )
+    // )
 
   }
 
@@ -110,42 +107,17 @@ export class MainpageComponent implements OnInit {
     onResize(event) {
       if(window.innerWidth<768){
         this.img_c=false;
-        setTimeout(
-          
-          ()=>{
-            
-            let windowsize = window.innerHeight;
-            let maxheight  = windowsize - 110 ;
-            console.log("less " + document.getElementById("cnm").offsetHeight);
-            if(document.getElementById("cnm").offsetHeight < maxheight ) {
-             
-              this.renderer.setStyle(this.blogs_c.nativeElement, "height", maxheight + "px");  
-            }
+      
 
-          }
-        )
+          
+        
         
   
       }
       else {
         this.img_c=true;
-        setTimeout(
-          ()=>{
-           
-            let windowsize = window.innerHeight;
-            let maxheight  = windowsize - 110 ;
-            console.log("large " + document.getElementById("cnm").offsetHeight + " maxheight:" + maxheight);
-            if(document.getElementById("cnm").offsetHeight >= maxheight ) {
-              console.log("remove");
-              this.renderer.removeStyle(this.blogs_c.nativeElement, "height");
-            }
-            else {
-              this.renderer.setStyle(this.blogs_c.nativeElement, "height", maxheight + "px");  
-              
-            }
-
-          }
-        )
+        
+        
   
     
       }
