@@ -74,11 +74,9 @@
     display: block;
     cursor: pointer;
 }
-
-.main {
-    min-height: calc(100vh - 60px)
+.main{
+min-height:  calc(100vh - 110px); 
 }
-
 
 
 @media(max-width:601px) {

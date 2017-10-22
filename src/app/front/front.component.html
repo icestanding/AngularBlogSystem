@@ -1,7 +1,7 @@
 
 <!--[ngClass]="mytheme"-->
  <header #head (event)="sidebar()" [ngClass]="mytheme"   (colorevent)="themechange()" ></header>
-  <mat-sidenav-container  [ngClass]="mytheme" class="mainframe"  >
+  <mat-sidenav-container  [ngClass]="mytheme" class="mainframe"  style="overflow:hidden">
     <mat-sidenav  #start2 mode="side" opened="true" class="snavfix" > 
         <mat-toolbar color="accent" style="display:flex; flex-direction:column; height:20%; min-height:150px; margin-bottom:15px" >
 
@@ -36,9 +36,12 @@
                 <button mat-button routerLink="/about" routerLinkActive="active">ABOUT</button>
             </mat-toolbar-row> 
     </mat-sidenav>
-    <mat-card [@routerTransition]="getState(o)" style="padding:0; box-shadow:none; overflow:hidden" class="main">
-        <router-outlet #o="outlet" ></router-outlet>
-          <footer ></footer> 
-    </mat-card>
-
+    <mat-sidenav-content style="overflow:hidden">
+        <mat-card [@routerTransition]="getState(o)" style="padding:0; box-shadow:none; overflow:hidden" class="main">
+            <router-outlet #o="outlet" ></router-outlet>       
+        </mat-card>
+    </mat-sidenav-content>
+   
 </mat-sidenav-container>   
+
+<footer [ngClass]="mytheme"></footer>

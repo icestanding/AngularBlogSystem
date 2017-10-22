@@ -193,6 +193,7 @@ router.put('/api/blog/:id', async ( ctx )=> {
 
 /* api for auth */
 router.post('/api/auth', async(ctx)=>{
+
   let user = db.get("user");
   await user.findOne({id: ctx.request.body.id}).then( (data) => {
 
