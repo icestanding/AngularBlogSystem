@@ -1,13 +1,8 @@
-<p>
-  blog works!
-</p>
-<!-- {{blogs}} -->
-    <ul class="heroes">
-      <li *ngFor="let hero of blogs">
-        <!-- <span class="badge">{{hero.title}}</span> -->
-        <span [innerHTML]="hero.content" (click)="show(hero)"></span>
-        <button mat-button (click)="delete(hero)">Delete </button>
-      </li>
-    </ul>
-<!-- <p *ngFor="let blog of blogs"> {{blog}} </p> -->
-<!-- <quill-editor></quill-editor> -->
+
+
+<ul class="blog-list">
+  <li *ngFor="let blog of blogs" class="blog">
+    <span [innerHTML]="blog.title" (click)="show(blog)"></span>
+    <button mat-button (click)="delete(blog)">Delete </button>
+  </li>
+</ul>

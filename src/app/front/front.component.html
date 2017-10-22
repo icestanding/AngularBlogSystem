@@ -2,7 +2,7 @@
 <!--[ngClass]="mytheme"-->
  <header #head (event)="sidebar()" [ngClass]="mytheme"   (colorevent)="themechange()" ></header>
   <mat-sidenav-container  [ngClass]="mytheme" class="mainframe"  style="overflow:hidden">
-    <mat-sidenav  #start2 mode="side" opened="true" class="snavfix" > 
+    <mat-sidenav  #start2 mode="side" opened="false" class="snavfix" > 
         <mat-toolbar color="accent" style="display:flex; flex-direction:column; height:20%; min-height:150px; margin-bottom:15px" >
 
             <!--<mat-toolbar-row style="margin-top:20px;  flex-direction:column; justify-content:center">-->
@@ -18,10 +18,7 @@
             </div>
             <mat-toolbar-row style="margin-top:17px; padding-left:32px"> Chen  </mat-toolbar-row>
 
-            <!-- <mat-toolbar-row>               
-                    <i  class="linked-image" ></i>
-            </mat-toolbar-row> -->
-            <!--</mat-toolbar-row>-->
+
         </mat-toolbar>
            <mat-toolbar-row style="margin-bottom:15px" >
                 <!-- <i class="material-icons mat-30"  >home</i> -->
