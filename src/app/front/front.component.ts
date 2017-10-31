@@ -46,10 +46,14 @@ export class FrontComponent implements OnInit {
                   };
     this.router = _router;
     this.hide = true;
+    
 
+          // this.Sidenav.mode='over';
+      // this.Sidenav.opened=false;
     this.router.events.forEach((event: NavigationEvent) => {
     if(event instanceof NavigationStart) {
-
+      // console.log("this is fking url"+ event.url);
+      // all template
       this.hide = true;
       let regx = /^\/admin.*/;
       let regx_open = /^\/blog\/.*/;
@@ -61,7 +65,11 @@ export class FrontComponent implements OnInit {
           this.router.navigateByUrl('/admin')
         }
       }
-
+      // else if (event.url.match(regx)) {
+      //   console.log("this is sidebar");
+      //   this.hide = false;
+      //   this.sidebar_hide=false;
+      // }
       if(event instanceof NavigationCancel) {
          if(event.url == "/admin"){
           this.router.navigateByUrl('/login')
@@ -71,13 +79,9 @@ export class FrontComponent implements OnInit {
 
     }
     if (event instanceof NavigationEnd) {
-      
       if(window.innerWidth <= 1000) {
          this.Sidenav.opened=false;
       }
-      else {
-        this.Sidenav.opened=true;
-     }
       this.current_url = event.url;
     }
      
@@ -93,9 +97,9 @@ export class FrontComponent implements OnInit {
       this.Sidenav.mode='over';
       this.Sidenav.opened=false;
     }
-    else {
+    else{
       this.Sidenav.opened=true;
-   }
+    }
   }
 
   sidebar() {

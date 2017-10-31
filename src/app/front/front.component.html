@@ -34,7 +34,7 @@
             </mat-toolbar-row> 
     </mat-sidenav>
     <mat-sidenav-content style="overflow:hidden">
-        <mat-card [@routerTransition]="getState(o)" style="padding:0; box-shadow:none; overflow:hidden" class="main">
+        <mat-card [@routerTransition]="getState(o)" style="padding:0; box-shadow:none; overflow:hidden; border-radius: 0;" class="main">
             <router-outlet #o="outlet" ></router-outlet>       
         </mat-card>
     </mat-sidenav-content>
