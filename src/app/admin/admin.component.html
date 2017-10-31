@@ -1,6 +1,19 @@
 
-Welcome to admin
-<button mat-button (click)="logout()">logout</button>
-<button mat-button routerLink="/admin/editor" routerLinkActive="active"> New Post</button>
-<router-outlet></router-outlet>
+
+<mat-sidenav-container style="height:100vh">       
+    <mat-sidenav mode="side" opened="true" style="display:flex; flex-direction:column; min-width:250px" > 
+        <mat-toolbar-row style="width:100%">
+            <button style="width:100%" mat-button (click)="logout()">logout</button>
+        </mat-toolbar-row>
+        <mat-toolbar-row style="width:100%">
+            <button style="width:100%" mat-button routerLink="/admin/editor" routerLinkActive="active"> New Post</button>
+        </mat-toolbar-row>
+        <mat-toolbar-row style="width:100%">
+                <button style="width:100%" mat-button routerLink="/admin/blog" routerLinkActive="active"> blog</button>
+        </mat-toolbar-row>
+    </mat-sidenav>
+    <mat-sidenav-content >
+            <router-outlet></router-outlet>       
+    </mat-sidenav-content>
+</mat-sidenav-container>
 

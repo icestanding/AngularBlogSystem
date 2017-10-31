@@ -311,6 +311,7 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
         }
         let options = new RequestOptions(arg);  
         this.http.post('/api/blog', formData, options).subscribe();
+        this.router.navigateByUrl('/admin/blog');
       } else {
         console.log('not null');
         let blog = {title: this.title,
@@ -325,6 +326,7 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
         }
         let options = new RequestOptions(arg);  
         this.http.put('/api/blog/'+this.id, formData, options).subscribe();
+        this.router.navigateByUrl('/admin/blog')
       }
   }
 }

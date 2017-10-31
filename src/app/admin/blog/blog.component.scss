@@ -1,3 +1,16 @@
-.blog-list {
+.blogs {
+    display: flex;
+    flex-direction: row;
+}
+.blog {
+    display: grid;
     
+    .title {
+        width: 60%;
+        cursor: pointer;
+    }
+    .title:hover {
+        background-color: gray;
+    }
+    margin-top:10px;
 }

@@ -4,12 +4,14 @@ import { QuillModule} from '../editor/quill.module'
 // import { BlogRoutingModule }from './blog-routing.module'
 import { BlogComponent } from './blog.component';
 import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material'
 @NgModule({
   imports: [
     CommonModule,
     // BlogRoutingModule,
     FormsModule,
-    QuillModule
+    QuillModule,
+    MatButtonModule
   ],
   declarations: [BlogComponent],
   exports: [BlogComponent],
