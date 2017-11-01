@@ -2,7 +2,8 @@
 <ul class="blog-list">
   <li *ngFor="let blog of blogs" class="blogs" >
     <div class="blog">
-      <span class="title" [innerHTML]="blog.title" (click)="show(blog)"></span>
+      <button mat-button class="title" [innerHTML]="blog.title" (click)="show(blog)">Delete </button>
+      <div></div>
       <button mat-button (click)="delete(blog)">Delete </button>
     </div>
   </li>

@@ -345,3 +345,6 @@ current page setting
 related to current page link 
 
 get card size need rebust method for full height
+
+11.1
+load information

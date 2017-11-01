@@ -98,6 +98,7 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
   //title
   public title:string;
   public category:string;
+  public blogs;
 
   @Input() theme: string;
   @Input() modules: { [index: string]: Object };
@@ -126,24 +127,22 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
     // this.hero$ = this.route.paramMap
     //   .switchMap((params: ParamMap) =>
     //     this.service.getHero(params.get('id')));
-    this.id = this.route.snapshot.paramMap.get('id');
-    if(this.id != null) {
-        this.http.get("/blog/"+ this.id).map(data => data.json()).subscribe((data)=>{
-        // console.log(data[0]._id);
-        // let blog = JSON.parse(data.text());
-        // console.log(blog);
-        this.title = data[0].title;
-        this.category = data[0].category;
-        this.quillEditor.root.innerHTML = data[0].content;
-      // return true;
-    }, (error)=>{
-      // return false;
-      console.log("error cnm");
-    });
+    this.route.params.subscribe(params=>{
+      console.log(params.id);
+      this.http.get("/api/blog/"+params.id).subscribe((data)=>{
+        console.log(data.text());
+       
+        this.blogs =  JSON.parse(data.text());
+       
+        // remove html tag, slicing to abstract
+       
+        // return true;
+      }, (error)=>{
+        // return false;
+        console.log("error cnm");
+      });
 
-
-
-    }
+    })
   }
 
   
