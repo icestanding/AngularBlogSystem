@@ -44,6 +44,7 @@ import * as Quill from 'quill';
 @Component({
   selector: 'quill-editor',
   templateUrl: './quill-editor.component.html',
+  styleUrls: ['./quill-editor.component.scss'],  
   // <button (click)="show()"> Show </button>
   providers: [{
     provide: NG_VALUE_ACCESSOR,
@@ -122,7 +123,9 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
   constructor(private http: Http,private elementRef: ElementRef, @Inject(DOCUMENT) private doc: any, private renderer: Renderer2,
     private route: ActivatedRoute,
     private router: Router
-) { }
+) {
+  this.blogs=[{img:"", title:""}]
+ }
   ngOnInit() {
     // this.hero$ = this.route.paramMap
     //   .switchMap((params: ParamMap) =>

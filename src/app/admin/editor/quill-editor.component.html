@@ -1,10 +1,14 @@
 
 
 <mat-card *ngFor="let blog of blogs" class="blog" style="margin-top:10px;  ">
-    
-    <mat-input-container class="text" >
+    <div style="width:100%">
+    <mat-input-container  >
         <input matInput placeholder="Title" [(ngModel)]="blog.title">
     </mat-input-container>  
+    </div>
+    
+    <img *ngIf="blog.img" mat-card-image [src]="blog.img" class="blogimg" style="margin-bottom:0">
+    
     <mat-select placeholder="Category" [(ngModel)]="category">
         <mat-option *ngFor="let food of foods" [value]="food.value" >
             {{ food.viewValue }}
@@ -12,8 +16,9 @@
     </mat-select> 
 
     <mat-card style="width:100%">
-    <button mat-raised-button color="primary" class="loginbutton" (click)="submit()"> submit </button>
     <input type="file" #fileInput placeholder="Upload file..." />
-    <!-- <button type="button" (click)="upload()">Upload</button> -->
+    <button mat-raised-button color="primary" class="loginbutton" (click)="submit()"> submit </button>
+ 
+    
     </mat-card>
 </mat-card>

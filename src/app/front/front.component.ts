@@ -65,11 +65,11 @@ export class FrontComponent implements OnInit {
           this.router.navigateByUrl('/admin')
         }
       }
-      // else if (event.url.match(regx)) {
-      //   console.log("this is sidebar");
-      //   this.hide = false;
-      //   this.sidebar_hide=false;
-      // }
+      else if (event.url.match(regx)) {
+        console.log("fuck match")
+        this.Sidenav.opened=false;
+        
+      }
       if(event instanceof NavigationCancel) {
          if(event.url == "/admin"){
           this.router.navigateByUrl('/login')
@@ -93,12 +93,20 @@ export class FrontComponent implements OnInit {
 
   }
   ngAfterViewInit() {
-    if(window.innerWidth <= 1000) {
-      this.Sidenav.mode='over';
+    let regx = /^\/blog\/.*/;
+    if (this.router.url.match(regx)) {
+      console.log("fuck match")
       this.Sidenav.opened=false;
+      
     }
-    else{
-      this.Sidenav.opened=true;
+    else {
+      if(window.innerWidth <= 1000) {
+        this.Sidenav.mode='over';
+        this.Sidenav.opened=false;
+      }
+      else{
+        this.Sidenav.opened=true;
+      }
     }
   }
 

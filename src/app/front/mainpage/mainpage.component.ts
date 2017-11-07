@@ -59,7 +59,6 @@ export class MainpageComponent implements OnInit {
       // return false;
       console.log("error cnm");
     });
- 
 
   }
 
@@ -72,30 +71,8 @@ export class MainpageComponent implements OnInit {
         this.img_c=true;
     }
   }
-  ngAfterViewInit (){
-    // this.blogs_container.changes.subscribe(
-    //   () => 
-    //   {
-    //     let windowsize = window.innerHeight;
-    //     let maxheight  = windowsize - 110 ;
-     
-    //     if(document.getElementById("cnm").offsetHeight < maxheight ) {
-         
-    //       this.renderer.setStyle(this.blogs_c.nativeElement, "height", maxheight + "px");  
-    //     }
-        
-    // }, (Error)=>{
-    //   console.log("this is error from blogs_container");
-    // }
-      
-    // )
-
-  }
-
 
   open(e, blog) {
-    // this.state = (this.state === 'small' ? 'large' : 'small');
-    // setTimeout(this.router.navigateByUrl('/blog'), 1000000);
     this.event.emit(e);
     console.log("eject event");
     let id = 123231;
@@ -107,19 +84,9 @@ export class MainpageComponent implements OnInit {
     onResize(event) {
       if(window.innerWidth<768){
         this.img_c=false;
-      
-
-          
-        
-        
-  
       }
       else {
         this.img_c=true;
-        
-        
-  
-    
       }
 
     }

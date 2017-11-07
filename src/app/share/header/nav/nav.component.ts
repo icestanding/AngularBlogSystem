@@ -27,7 +27,17 @@ export class NavComponent implements OnInit {
 
 
     }
-    ngOnInit() {}
+    ngOnInit() {
+        let regx = /^\/blog\/.*/;
+        console.log(this.router.url);
+        if (this.router.url.match(regx)) {
+      
+            this.nav = false;
+            this.back = true;
+        // this.sidebar_hide=false;
+      }
+    }
+
     
   
 
