@@ -100,6 +100,7 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
   public title:string;
   public category:string;
   public blogs;
+  public img;
 
   @Input() theme: string;
   @Input() modules: { [index: string]: Object };
@@ -137,8 +138,10 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
        
         this.blogs =  JSON.parse(data.text());
        
-        // remove html tag, slicing to abstract
-       
+        console.log("blogs is");
+        this.title = this.blogs[0].title;
+        this.quillEditor.root.innerHTML = this.blogs[0].content;
+        this.img = this.blogs[0].img;
         // return true;
       }, (error)=>{
         // return false;

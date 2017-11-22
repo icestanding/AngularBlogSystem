@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit,  Inject} from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
 // import observable
 import { Observable } from 'rxjs/Observable';
@@ -16,7 +16,7 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map'
-
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -24,7 +24,7 @@ import 'rxjs/add/operator/map'
 })
 export class BlogComponent implements OnInit {
   public blogs: {};
-  constructor(private http: Http, private router:Router) {     this.http.get("/api/blog").subscribe((data)=>{
+  constructor(public dialog: MatDialog, private http: Http, private router:Router) {     this.http.get("/api/blog").subscribe((data)=>{
       // console.log(data.text());
       this.blogs = JSON.parse( data.text());
       
@@ -57,5 +57,32 @@ export class BlogComponent implements OnInit {
       console.log("error cnm");
     });
   }
+  openDialog(): void {
+    let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      height: '400px',
+      width: '600px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+     
+    });
+  }
 
 } 
+
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  templateUrl: 'delete.html',
+})
+export class DialogOverviewExampleDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+}

@@ -4,7 +4,8 @@
     <div class="blog">
       <button mat-button class="title" [innerHTML]="blog.title" (click)="show(blog)">Delete </button>
       <div></div>
-      <button mat-button (click)="delete(blog)">Delete </button>
+      <button mat-button (click)="openDialog()">Delete </button>
+      <!-- (click)="delete(blog)" -->
     </div>
   </li>
 </ul>
