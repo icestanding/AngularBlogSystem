@@ -348,3 +348,8 @@ get card size need rebust method for full height
 
 11.1
 load information
+
+1.18 Icon
+
+https://www.flaticon.com/packs/font-awesome
+version about page

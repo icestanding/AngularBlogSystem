@@ -66,14 +66,27 @@
     background-image: url('../../assets/img/mona.png');
     background-size: cover;
 }
-.linked-image {
-    background-image: url('../../assets/img/linkedin.png');
+.linkedin-icon {
+    background-image: url('../../assets/img/png/linkedin.png');
     background-size: cover;
     height: 20px;
     width: 20px;
     display: block;
     cursor: pointer;
 }
+
+.github-icon {
+    background-image: url('../../assets/img/png/github.png');
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+    display: block;
+    cursor: pointer;
+    color: white
+}
+
+
+
 .main{
 min-height:  calc(100vh - 110px); 
 }

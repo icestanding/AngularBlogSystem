@@ -1,0 +1,28 @@
+
+
+.category {
+    border-bottom: solid black 1px;
+}
+
+.box-left {
+    grid-area: left;
+    text-align: left
+}
+.box-right {
+    grid-area: right;
+    text-align: right
+}
+.box-content {
+    grid-area: bottom;
+}
+
+.time-box {
+   display: grid;
+   grid-template-columns: 50%  50%;
+   grid-template-rows: auto auto;
+
+   grid-template-areas:
+   "left right"
+   "bottom bottom";
+}
+
