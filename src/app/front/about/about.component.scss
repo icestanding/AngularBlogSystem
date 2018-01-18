@@ -1,7 +1,28 @@
+h3 {
+    margin: 0;
+}
 
+#profile {
+    display: flex;
+    flex-direction: row;
+    #photo {
+        width: 20%;
+        min-width: 120px;
+        max-width: 300px;
+        
+
+    }
+    #summary{
+        width: 80%
+    }
+}
 
 .category {
-    border-bottom: solid black 1px;
+    border-bottom: solid rgb(218, 210, 210) 1px;
+}
+.category:hover {
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    
 }
 
 .box-left {
@@ -25,4 +46,6 @@
    "left right"
    "bottom bottom";
 }
+
+
 
