@@ -1,23 +1,40 @@
-<mat-card  style="box-shadow:none; padding:0" >
-    <div id="profile" class="category">  
-        <div id="photo">
-            <img  src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" style="width:100%; height:100%">
-        </div>
-        <div id="summary">
-            <p>Chen Lee</p> 
-                Web Developer 
-                Email:lichenyu119@gmail.com
+<mat-card style="box-shadow:none">
+    <!-- <mat-card style="padding:0"> -->
+    <div class="container category">
+        <div class="row">
+            <div class = "col-md-12 col-sm-12 col-xs-12">
+                <mat-card  id="profile">
+                    <div id="profile-img">
+                            <img class="image-responsive"  src="../../assets/img/profile.png" alt="Photo of a Shiba Inu" >
+                        
+                    </div>
+                    <div id="profile-right">
+                            <div class="slant"></div>
+                    </div>
+
+                    <!-- <div id="profile" class="category">   -->
+                        <!-- <div id="photo">
+                            
+                        </div>
+                        <div id="summary">
+                            <p>Chen Lee</p> 
+                                Web Developer 
+                                Email:lichenyu119@gmail.com
+                        </div>
+                    </div> -->
+                </mat-card>
+            </div>
         </div>
     </div>
         
- <div class="category">
+ <div class="container category " >
     <h3>TECHNOLOGY SUMMARY</h3>
     <p>Platforms: Linux, AWS, Windows, OS X</p>
     <p>Programming Language: JavaScript (ES6), Node.js, Typescript, Java, C/C++, C#, .Net, HTML5, SASS, CSS3, Python, Perl, Java, Shell</p>
     <p>Framework: Angular4 & 2, Angularjs, Koa2</p>
     <p>DBMS: MySQL, MongoDB PostgreSQL</p>
  </div>
- <div class="category">
+ <div class="container category">
     <h3>EDUCATION</h3>
     <div class="time-box">
         <div class="box-left">
@@ -55,7 +72,7 @@
         </div>
     </div>
 </div>
-<div class="category">
+<div class="container category">
     <h3>WORK EXPERIENCE</h3>
     
     <div class="time-box">
@@ -110,7 +127,7 @@
         </div>
     </div>
 </div>
-<div class="category">
+<div class="container category">
     <h3>PERSONAL PROJECT</h3>
     <div class="time-box">
         <div class="box-left">Blog System	(www.devchen.me)	</div>										
@@ -123,7 +140,7 @@
         </div>
     </div>
 </div>
-<div class="category">
+<div class="container category " id="bottom">
     <h3>UNIVERSITY PROJECT</h3>
         <div class="time-box">
             <div class="box-left"> UNSW Human Computer Interaction course	</div>										
@@ -161,8 +178,5 @@
                     ∙  Mastered version control and configuration management, programming for reliability, testing and debugging techniques through programming assignments and a lot of labs.
             </div>
         </div>
-      
-</div>
-<div class="category"></div>
-
+    </div>
 </mat-card>

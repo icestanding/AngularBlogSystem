@@ -353,3 +353,6 @@ load information
 
 https://www.flaticon.com/packs/font-awesome
 version about page
+
+1.19
+responsive 768px

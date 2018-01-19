@@ -2,27 +2,77 @@ h3 {
     margin: 0;
 }
 
+
 #profile {
-    display: flex;
-    flex-direction: row;
-    #photo {
-        width: 20%;
-        min-width: 120px;
-        max-width: 300px;
+//     display: flex;
+//     flex-direction: row;
+//     #photo {
+//         width: 20%;
+//         min-width: 120px;
+//         max-width: 300px;
         
 
-    }
-    #summary{
-        width: 80%
-    }
+//     }
+//     #summary{
+//         width: 80%
+//     }
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    background-color: #00796b;
+    
+}
+#profile-right {
+//   position: absolute;
+//   right: 0;
+// //   width:50%;
+//   height: 400px;
+//   background-color: #00796b;
+//   z-index: 1;
+ 
+}
+
+#profile-img img {
+    width:400px;
+    height: 400px;
+    // display: flex;
+}
+#bottom {
+    border-bottom:none;
+    margin-bottom:10px
+}
+.slant {
+    top: 0;
+    z-index: 1;
+    // right: 0;
+    left: 300px;
+    position: absolute;
+    border-style: solid;
+    border-width: 400px 100px 0 0;
+    border-color: transparent #00796b transparent transparent;
+   
+}
+
+
+
+
+
+
+
+
+
+.gray {
+    background:rgb(240, 225, 225)
 }
 
 .category {
-    border-bottom: solid rgb(218, 210, 210) 1px;
+    width: 75%;
+   padding: 0;
 }
 .category:hover {
     box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-    
+
 }
 
 .box-left {
@@ -48,4 +98,16 @@ h3 {
 }
 
 
+@media (min-width: 768px) {
 
+    .container {
+         width: 750px;
+    }
+}
+
+@media (min-width: 992px){
+
+    .container {
+        width: 970px;
+    }
+}
