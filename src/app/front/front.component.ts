@@ -100,7 +100,7 @@ export class FrontComponent implements OnInit {
       
     }
     else {
-      if(window.innerWidth <= 1000) {
+      if(window.innerWidth <= 1350) {
         this.Sidenav.mode='over';
         this.Sidenav.opened=false;
       }
@@ -126,7 +126,7 @@ export class FrontComponent implements OnInit {
     onResize(event) {
       console.log("current url"+ this.current_url);
       let regx_open = /^\/blog\/.*/;
-      if(window.innerWidth <= 1000) {
+      if(window.innerWidth <= 1350) {
         this.Sidenav.mode='over';
         this.Sidenav.opened=false;
         
