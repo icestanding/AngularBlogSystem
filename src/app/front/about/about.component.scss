@@ -10,7 +10,7 @@ h3 {
     flex-direction: row;
     padding: 0;
     background-color: #1976D2;
-    margin-top:-190px;
+    margin-top:-240px;
     
 }
 #profile-right {
@@ -23,6 +23,26 @@ h3 {
     height: 400px;
     // display: flex;
 }
+#profile-right h1 {
+    display: block;
+    width: 100%;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.29);
+}
+
+#profile-right h6 {
+    display: block;
+    width: 100%;
+    font-weight: 300;
+    margin-top: -10px;
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.29);
+}
+
+
 #bottom {
     border-bottom:none;
     margin-bottom:10px
@@ -39,8 +59,13 @@ h3 {
    
 }
 
+.content ul {
+    list-style-type: none;
+}
 
-
+#contact p {
+    color: #fff;
+}
 
 
 
@@ -54,11 +79,12 @@ h3 {
 .category {
     width: 75%;
    padding: 0;
+   margin-top:50px;
+   
+   box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+   
 }
-.category:hover {
-    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 
-}
 
 .box-left {
     grid-area: left;
@@ -91,6 +117,9 @@ h3 {
     background-position: center center;
     background-attachment: fixed;
 
+}
+.content {
+    padding: 40px;
 }
 
 
