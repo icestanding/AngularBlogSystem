@@ -1,7 +1,27 @@
 h3 {
     margin: 0;
+    font-size: 2em;
+    font-weight: 500;
+    color: #1976D2;
+    display: block;
+
+   
 }
 
+.subtitle {
+    display: flex;
+    flex-direction:row;
+ 
+   justify-content: center;
+    i {
+        display: block;
+        padding-top: 1px;
+        color: #1976D2;
+        padding-right: 10px;
+    }
+}
+
+ 
 
 #profile {
 
@@ -10,7 +30,7 @@ h3 {
     flex-direction: row;
     padding: 0;
     background-color: #1976D2;
-    margin-top:-240px;
+    
     
 }
 #profile-right {
@@ -48,6 +68,23 @@ h3 {
     border-bottom:none;
     margin-bottom:10px
 }
+
+#summary {
+    background-color: white
+}
+
+#contact li {
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+h3 i {
+    margin-right: 10px;
+}
+
 .slant {
     top: 0;
     z-index: 1;
@@ -63,11 +100,15 @@ h3 {
 .content ul {
     list-style-type: none;
     padding: 0;
+       
 }
 
 .content ul li{
     list-style-type: none;
-    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width:200px;
+  
 }
 
 
@@ -97,6 +138,18 @@ span {
    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
    text-align: center;
 }
+
+.category-ns {
+    width: 75%;
+   padding: 0;
+   margin-top:50px;
+   
+   text-align: center;
+}
+
+
+
+
 
 
 .box-left {
@@ -133,6 +186,7 @@ span {
 }
 .content {
     padding: 40px;
+    
 }
 
 
@@ -155,8 +209,12 @@ span {
         border: none;
     }
     .container {
-        width: 100%;
-        padding:15px;
+        width: 90%;
+        // padding:15px;
+        margin-top: 50px;
+        // margin-left: 20px;
+        // margin-right: auto;
+     
     }
     #profile {
         display: flex;
@@ -166,6 +224,7 @@ span {
         margin-left: auto;
         margin-right: auto;
         width:200px;
+       
         
     }
     #profile-img img {
@@ -198,89 +257,47 @@ span {
 
 // bar chart
 
-
-
-dl {
+.skill {
     display: flex;
-    background-color: white;
     flex-direction: column;
-
-    max-width: 700px;
-    position: relative;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-  
-  dt {
-    align-self: flex-start;
-    width: 100%;
-    font-weight: 700;
-    display: block;
-    text-align: center;
-    font-size: 1.2em;
-    font-weight: 700;
+    text-align: left;
     margin-bottom: 20px;
-    
-  }
-  dd {
-      margin-bottom:10px ;
-  }
-  
-  .text {
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    height: 40px;
-    width: 130px;
-    background-color: white;
-    position: absolute;
-    left: 0;
-    justify-content: flex-end;
-  }
-  
-  .percentage {
-    font-size: .8em;
-    line-height: 1;
-    text-transform: uppercase;
-    // width: 100%;
-    height: 10px;
-    
+}
 
-//     background: repeating-linear-gradient(
-//     to right,
-//     #ddd,
-//     #ddd 1px,
-//     #fff 1px,
-//     #fff 5%
-//   );
-    border-bottom: solid 1px rgb(214, 198, 198);
-    
+
+.percentage {
+
+  width: 100%;
+  height: 10px;
+  border-bottom: solid 1px rgb(214, 198, 198);
+  &:after {
+    content: "";
+    display: block;
+    background-color: #1976D2;
+    width: 50px;
+    margin-bottom: 10px;
+    height: 90%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color .3s ease;
+    cursor: pointer;
+  }
+  &:hover,
+  &:focus {
     &:after {
-      content: "";
-      display: block;
-      background-color: #F44336;
-      width: 40px;
-    //   margin-bottom: 10px;
-      height: 90%;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: background-color .3s ease;
-      cursor: pointer;
-    }
-    &:hover,
-    &:focus {
-      &:after {
-         background-color: #aaa; 
-      }
+       background-color: #aaa; 
     }
   }
-  
-  @for $i from 1 through 100 {
-    .percentage-#{$i} {
-      &:after {
-        $value: ($i * 1%);
-        width: $value;
-      }
+}
+
+@for $i from 1 through 100 {
+  .percentage-#{$i} {
+    &:after {
+      $value: ($i * 1%);
+      width: $value;
     }
   }
+}
+
+

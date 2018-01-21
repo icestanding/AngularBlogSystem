@@ -15,6 +15,6 @@ import { MatButtonModule, MatDialogModule } from '@angular/material'
     MatDialogModule
   ],
   declarations: [BlogComponent],
-  exports: [BlogComponent],
+  exports: [BlogComponent, MatDialogModule],
 })
 export class BlogModule { }

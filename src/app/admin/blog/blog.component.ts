@@ -57,32 +57,32 @@ export class BlogComponent implements OnInit {
       console.log("error cnm");
     });
   }
-  openDialog(): void {
-    let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      height: '400px',
-      width: '600px',
-    });
+  // openDialog(): void {
+  //   let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+  //     height: '400px',
+  //     width: '600px',
+  //   });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
      
-    });
-  }
+  //   });
+  // }
 
 } 
 
-@Component({
-  selector: 'dialog-overview-example-dialog',
-  templateUrl: 'delete.html',
-})
-export class DialogOverviewExampleDialog {
+// @Component({
+//   selector: 'dialog-overview-example-dialog',
+//   templateUrl: 'delete.html',
+// })
+// export class DialogOverviewExampleDialog {
 
-  constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+//   constructor(
+//     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+//     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
+//   onNoClick(): void {
+//     this.dialogRef.close();
+//   }
 
-}
+// }
