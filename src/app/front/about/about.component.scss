@@ -2,7 +2,7 @@ h3 {
     margin: 0;
     font-size: 2em;
     font-weight: 500;
-    color: #1976D2;
+    color: rgb(47, 57, 66);
     display: block;
 
    
@@ -16,7 +16,7 @@ h3 {
     i {
         display: block;
         padding-top: 1px;
-        color: #1976D2;
+        color: rgb(47, 57, 66);
         padding-right: 10px;
     }
 }
@@ -70,7 +70,10 @@ h3 {
 }
 
 #summary {
-    background-color: white
+    background-color: white;
+    font-weight:400;
+    font-size: 1.2em;
+    color: rgb(65, 65, 65)
 }
 
 #contact li {
@@ -133,7 +136,7 @@ span {
 .category {
     width: 75%;
    padding: 0;
-   margin-top:50px;
+   margin-top:70px;
    
    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
    text-align: center;
@@ -142,7 +145,7 @@ span {
 .category-ns {
     width: 75%;
    padding: 0;
-   margin-top:50px;
+   margin-top:70px;
    
    text-align: center;
 }
@@ -189,6 +192,118 @@ span {
     
 }
 
+.timeline {
+    margin-top: 100px;
+    .connect {
+        width: 5px;
+        background-color: #1976D2;
+        height: 80px;
+        position: relative;
+        right: -26px;
+        bottom:70px;
+        // margin-left: auto;
+        // margin-right: auto;
+       
+    }
+    .first {
+        margin-top:none;
+    }
+    .left-bucket {
+        display: flex;
+        flex-direction: row;
+
+        margin-top: -80px;
+        .time {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            background-color: #1976D2;     
+            position: relative;
+            right: -30px;  
+         
+        }
+        .time-r {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            background-color: #1976D2;     
+            position: relative;
+            right: 30px;  
+
+        }
+        
+        .left-side {
+            width:50%;
+        }
+        .right-side {
+            width: 50%;
+        }
+        .connect-l {
+            width: 50px;
+            background-color: #1976D2;
+            height: 5px;
+            right: 30px;
+            top:-53px;
+            position: relative;
+        }
+        .connect-r {
+            width: 50px;
+            background-color: #1976D2;
+            height: 5px;
+            left: 40px;
+            top:-53px;
+            position: relative;
+        }
+        .message {
+            height: 200px;
+            // width: 200px;
+            // border: solid black 1px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+ 
+        }
+        .message-r {
+            height: 200px;
+            // width: 200px;
+            // border: solid black 1px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+
+        }
+        .detail {
+            // height: 150px;
+            box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+            background: white;
+            width:80%;
+            position: relative;
+            bottom: 50px;
+            text-align: left;
+            padding: 10px;
+            padding-left: 20px;
+            h4 {
+                font-weight:450;
+                font-size: 1.8em;
+                color: rgb(90, 90, 90);
+                margin-bottom: 0;
+            }
+
+            p {
+                margin-bottom: 0;
+                margin-top:3px;
+                font-size: 1.2em;
+                font-weight: 400;
+                color: rgb(90, 90, 90)
+            }
+        }
+
+    }
+
+}
+
+
+
 
 @media (min-width: 768px) {
 
@@ -211,7 +326,7 @@ span {
     .container {
         width: 90%;
         // padding:15px;
-        margin-top: 50px;
+        margin-top: 60px;
         // margin-left: 20px;
         // margin-right: auto;
      
@@ -262,6 +377,14 @@ span {
     flex-direction: column;
     text-align: left;
     margin-bottom: 20px;
+    color: white;
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+#skill-part{
+    margin-top: 30px;
+    background-color: #512DA8
 }
 
 
@@ -273,7 +396,7 @@ span {
   &:after {
     content: "";
     display: block;
-    background-color: #1976D2;
+    background-color: white;
     width: 50px;
     margin-bottom: 10px;
     height: 90%;
