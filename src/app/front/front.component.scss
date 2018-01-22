@@ -97,3 +97,44 @@ min-height:  calc(100vh - 110px);
        top: 50px;
    }
 }
+
+.toptoolbar {
+    display:flex; 
+    flex-direction:column; 
+    height:20%; 
+    min-height:150px; 
+    margin-bottom:15px
+}
+
+.side-profile {
+    display:flex; 
+    flex-direction:row;
+    margin-top:40px; 
+    width:100%;
+    .profile-container {
+        display:flex; 
+        flex-direction:row;
+        justify-content:flex-start;  
+        padding-left:25px;
+        .profile-img {
+            height:60px; 
+            width:60px;
+             margin:0px;
+        }
+    }
+    .quicklink {
+        margin-left:30px; 
+        width:25%; 
+        height:50px; 
+        margin-top:30px; 
+        display:flex; 
+        flex-direction:row; 
+        justify-content:space-around;
+        a {
+            height:20px; width:20px;
+        }
+    }
+}
+.sidelink {
+    margin-bottom:15px
+}

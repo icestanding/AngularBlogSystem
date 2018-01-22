@@ -3,37 +3,32 @@
  <header #head (event)="sidebar()" [ngClass]="mytheme"   (colorevent)="themechange()" ></header>
   <mat-sidenav-container  [ngClass]="mytheme" class="mainframe"  style="overflow:hidden">
     <mat-sidenav  #start2 mode="side" opened="false" class="snavfix" > 
-        <mat-toolbar color="accent" style="display:flex; flex-direction:column; height:20%; min-height:150px; margin-bottom:15px" >
-
+        <mat-toolbar color="accent" class="toptoolbar">
             <!--<mat-toolbar-row style="margin-top:20px;  flex-direction:column; justify-content:center">-->
-            <div style="display:flex; flex-direction:row;margin-top:40px; width:100%">
-                <div style=" display:flex; flex-direction:row;justify-content:flex-start;  padding-left:25px">
-                    <div mat-card-avatar class="self-image" style="height:60px; width:60px; margin:0px;"></div>               
+            <div class="side-profile">
+                <div class="profile-container">
+                    <div mat-card-avatar class="self-image profile-img"></div>               
                 </div>
-                <div style="margin-left:30px; width:25%; height:50px; margin-top:30px; display:flex; flex-direction:row; justify-content:space-around; ">
-                        <a style="height:20px; width:20px;" href="https://www.linkedin.com/in/coderchenyu/"><i  class="linkedin-icon" ></i></a>
-                        <a style="height:20px; width:20px" href="https://github.com/icestanding"><i  class="github-icon" ></i></a>
+                <div class="quicklink">
+                        <a  href="https://www.linkedin.com/in/coderchenyu/"><i  class="linkedin-icon" ></i></a>
+                        <a  href="https://github.com/icestanding"><i  class="github-icon" ></i></a>
                         
-                </div>
-
-                
+                </div> 
             </div>
             <mat-toolbar-row style="margin-top:17px; padding-left:32px; color:white"> Chen  </mat-toolbar-row>
-
-
         </mat-toolbar>
-           <mat-toolbar-row style="margin-bottom:15px" >
-                <!-- <i class="material-icons mat-30"  >home</i> -->
-                <button mat-button routerLink="/" routerLinkActive="active"> HOME</button>
-            </mat-toolbar-row> 
-            <!-- <mat-toolbar-row style="margin-bottom:15px"> -->
-                    <!-- <i class="material-icons mat-30"  >save</i> -->
-                <!-- <button mat-button routerLink="/blog" routerLinkActive="active"> ARCHIVE</button>
-            </mat-toolbar-row>  -->
-            <mat-toolbar-row style="margin-bottom:15px">
-                    <!-- <i class="material-icons mat-30"  >person</i> -->
-                <button mat-button routerLink="/about" routerLinkActive="active">ABOUT</button>
-            </mat-toolbar-row> 
+        <mat-toolbar-row class="sidelink">
+            <!-- <i class="material-icons mat-30"  >home</i> -->
+            <button mat-button routerLink="/" routerLinkActive="active"> HOME</button>
+        </mat-toolbar-row> 
+        <!-- <mat-toolbar-row style="margin-bottom:15px"> -->
+                <!-- <i class="material-icons mat-30"  >save</i> -->
+            <!-- <button mat-button routerLink="/blog" routerLinkActive="active"> ARCHIVE</button>
+        </mat-toolbar-row>  -->
+        <mat-toolbar-row class="sidelink">
+                <!-- <i class="material-icons mat-30"  >person</i> -->
+            <button mat-button routerLink="/about" routerLinkActive="active">ABOUT</button>
+        </mat-toolbar-row> 
     </mat-sidenav>
     <mat-sidenav-content style="overflow:hidden">
         <mat-card [@routerTransition]="getState(o)" style="padding:0; box-shadow:none; overflow:hidden; border-radius: 0;" class="main">
