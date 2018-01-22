@@ -208,7 +208,7 @@ span {
     .first {
         margin-top:none;
     }
-    .left-bucket {
+    .bucket {
         display: flex;
         flex-direction: row;
 
@@ -282,6 +282,9 @@ span {
             text-align: left;
             padding: 10px;
             padding-left: 20px;
+            padding-bottom: 20px;
+            border-left: 5px solid orange;
+            overflow: hidden;
             h4 {
                 font-weight:450;
                 font-size: 1.8em;
@@ -360,6 +363,53 @@ span {
         z-index: 1;
         background-color: transparent; 
     }
+    .subtitle {
+        
+    }
+    .timeline {
+        margin-top:80px;
+        .bucket {
+            all: initial ;
+            .left-side {
+                all: initial ;
+            }
+            .right-side {
+                all: initial ;
+            }
+            .connect {
+                all: initial ;
+            }
+            .connect-l {
+                all: initial ;
+            }
+            .connect-r {
+                all: initial ;
+            }
+            .time-r {
+                all: initial ;
+            }
+            .time {
+                all: initial ;
+            }
+            .message-r {
+                all: initial ;
+            }
+            .message {
+                all: initial ;
+            }
+            .detail {
+                margin: 0;
+                width: 100%;
+                border-left: 5px solid orange;
+                margin-bottom: 10px;
+            }
+
+        }
+    }
+
+
+
+
 
 }
 
