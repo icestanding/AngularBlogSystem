@@ -370,5 +370,29 @@ Include /etc/apache2/httpd.conf - Congratulations! Your certificate and chain ha
    your certificates, run "certbot renew"
 ubuntu@ip-172-31-10-135:/etc/apache2$ 
 
+nginx server
+root /var/www/mysite;
+
+location / {
+    try_files $uri /base.html;
+}
+
+location = /base.html {
+    expires 30s;
+}
 
 
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                # Uncomment to enable naxsi on this location
+                # include /etc/nginx/naxsi.rules
+
+                proxy_pass http://localhost:8080;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection 'upgrade';
+                proxy_set_header Host $host;
+                proxy_cache_bypass $http_upgrade;
+        }
