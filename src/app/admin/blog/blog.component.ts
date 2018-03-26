@@ -39,23 +39,24 @@ export class BlogComponent implements OnInit {
   
   ngOnInit() {
   }
-  show(blog) {
-      this.router.navigateByUrl('admin/editor/' + blog._id);
+  show(id) {
+      this.router.navigateByUrl('admin/editor/' + id);
   }
-  delete(blog) {
-    console.log("fuck")
-      this.http.delete('/api/blog/' + blog._id).subscribe();
-
-    this.http.get("/api/blog").subscribe((data)=>{
-      // console.log(data.text());
-      this.blogs = JSON.parse( data.text());
+  delete(id) {
+    console.log(id);
+    //   this.http.delete('/api/blog/' + blog._id).subscribe();
+    this.http.delete('/api/blog/' + id).subscribe();
+    console.log("cnm");
+    // this.http.get("/api/blog").subscribe((data)=>{
+    //   // console.log(data.text());
+    //   this.blogs = JSON.parse( data.text());
       
-      // console.log(this.blogs);
-      // return true;
-    }, (error)=>{
-      // return false;
-      console.log("error cnm");
-    });
+    //   // console.log(this.blogs);
+    //   // return true;
+    // }, (error)=>{
+    //   // return false;
+    //   console.log("error cnm");
+    // });
   }
   // openDialog(): void {
   //   let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {

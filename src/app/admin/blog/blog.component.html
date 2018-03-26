@@ -2,9 +2,9 @@
 <ul class="blog-list">
   <li *ngFor="let blog of blogs" class="blogs" >
     <div class="blog">
-      <button mat-button class="title" [innerHTML]="blog.title" (click)="show(blog)">Delete </button>
+      <button mat-button class="title" [innerHTML]="blog.title" (click)="show(blog._id)">Delete </button>
       <div></div>
-      <button mat-button (click)="openDialog()">Delete </button>
+      <button mat-button (click)="delete(blog._id)">Delete </button>
       <!-- (click)="delete(blog)" -->
     </div>
   </li>

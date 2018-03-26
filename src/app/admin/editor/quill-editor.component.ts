@@ -101,6 +101,7 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
   public category:string;
   public blogs;
   public img;
+  public param_id;
 
   @Input() theme: string;
   @Input() modules: { [index: string]: Object };
@@ -131,8 +132,11 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
     // this.hero$ = this.route.paramMap
     //   .switchMap((params: ParamMap) =>
     //     this.service.getHero(params.get('id')));
+    this.param_id = "";
     this.route.params.subscribe(params=>{
+      this.param_id = params.id;
       console.log(params.id);
+
       this.http.get("/api/blog/"+params.id).subscribe((data)=>{
         console.log(data.text());
        
@@ -303,7 +307,7 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
   }
 
   submit() {
-      if(this.id == null) {
+      if(this.param_id == null) {
         console.log('null');
         let blog = {title: this.title,
         content: this.quillEditor.root.innerHTML, category: this.category, quill: this.quillEditor.getContents()}
@@ -330,7 +334,10 @@ export class QuillEditorComponent implements AfterViewInit, ControlValueAccessor
           headers: new Headers({'Authorization': localStorage.getItem('user')})
         }
         let options = new RequestOptions(arg);  
-        this.http.put('/api/blog/'+this.id, formData, options).subscribe();
+        console.log("-------------------------------------------------------------");
+        console.log(this.param_id);
+        console.log("-------------------------------------------------------------");
+        this.http.put('/api/blog/'+this.param_id , formData, options).subscribe();  
         this.router.navigateByUrl('/admin/blog')
       }
   }

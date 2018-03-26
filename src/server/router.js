@@ -138,7 +138,7 @@ router.post('/api/blog', async ( ctx )=> {
       if(files[0]) {
         await blogs.findOne({title: blog.title}).then(async (doc)=> {
           copyFile(files[0].path, imagepath+"/image/" + doc._id + path.extname(files[0].filename), (error)=>{if (error) throw error;});
-          await blogs.update({_id: doc._id},{ $set:{ img: "image/" + doc._id + path.extname(files[0].filename)}}).then();
+          await blogs.update({_id: doc._id},{ $set:{ img: doc._id + path.extname(files[0].filename)}}).then();
         })
       }
       ctx.response.status = 200;
@@ -156,25 +156,27 @@ router.post('/api/blog', async ( ctx )=> {
 
 router.put('/api/blog/:id', async ( ctx )=> {
   if(AuthenCheck(ctx.header)) {
+    console.log("----------------------------------------------");
     const {files, fields} = await asyncBusboy(ctx.req);
     let blog = JSON.parse(fields.blog);
-    let id = fields.id;
+    let id = ctx.params.id;
     let blogs = db.get('blog');
     await blogs.update({_id: mongo.ObjectId(id)}, {$set:blog}).then(async () => {
+      console.log("cnmbyo");
       if (files[0]) {
         await blogs.findOne({_id: mongo.ObjectId(id)}).then(async (doc) => {
           // delete old
           if(doc.img != "") {
-            await fs.stat(imagepath  + "/" + doc.img, async function (err, stats) {
+            await fs.stat(imagepath  + "/image/" + doc.img, async function (err, stats) {
               if (err) {
                 return console.error(err);
               }
-             await fs.unlink(imagepath + "/" + doc.img, function (err) {
+             await fs.unlink(imagepath + "/image/" + doc.img, function (err) {
                 if (err) return console.log(err);
                 copyFile(files[0].path, imagepath + "/image/" + doc._id + path.extname(files[0].filename), (error) => {
                   if (error) throw error;
                 });
-                blogs.update({_id: doc._id}, {$set: {img: "/image/" + doc._id + path.extname(files[0].filename)}}).then();
+                blogs.update({_id: doc._id}, {$set: {img: doc._id + path.extname(files[0].filename)}}).then();
               })
             })
           }
@@ -189,6 +191,30 @@ router.put('/api/blog/:id', async ( ctx )=> {
     })
   }
 });
+
+
+
+// delete
+router.del('/api/blog/:id', async ( ctx )=> {
+  if(AuthenCheck(ctx.header)) {
+    console.log("this is the fking delete")
+    let id = new mongo.ObjectId(ctx.params.id);
+    let blog = db.get('blog');
+    await blog.find({"_id":id}).then((doc)=> {
+      if(doc.img != "") {
+        fs.unlinkSync(doc.img);
+        blogs.delete({_id: doc._id}).then();
+      }
+      else {
+        blogs.delete({_id: doc._id}).then();
+      }
+    }).catch( (err)=> {
+        ctx.response.status = 404;
+      }
+    );
+  }
+});
+
 
 
 /* api for auth */
