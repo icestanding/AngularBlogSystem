@@ -24,15 +24,11 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 })
 export class BlogComponent implements OnInit {
   public blogs: {};
-  constructor(public dialog: MatDialog, private http: Http, private router:Router) {     this.http.get("/api/blog").subscribe((data)=>{
-      // console.log(data.text());
+  constructor(public dialog: MatDialog, private http: Http, private router:Router) {     
+    this.http.get("/api/blog").subscribe((data)=>{
       this.blogs = JSON.parse( data.text());
-      
-      // console.log(this.blogs);
-      // return true;
     }, (error)=>{
-      // return false;
-      console.log("error cnm");
+      console.log("load error");
     });
 
   }
@@ -43,47 +39,46 @@ export class BlogComponent implements OnInit {
       this.router.navigateByUrl('admin/editor/' + id);
   }
   delete(id) {
-    console.log(id);
-    //   this.http.delete('/api/blog/' + blog._id).subscribe();
-    this.http.delete('/api/blog/' + id).subscribe();
-    console.log("cnm");
-    // this.http.get("/api/blog").subscribe((data)=>{
-    //   // console.log(data.text());
-    //   this.blogs = JSON.parse( data.text());
-      
-    //   // console.log(this.blogs);
-    //   // return true;
-    // }, (error)=>{
-    //   // return false;
-    //   console.log("error cnm");
-    // });
+      let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+        width: '250px',
+        data: {id: id}
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        this.http.get("/api/blog").subscribe((data)=>{
+          this.blogs = JSON.parse( data.text());
+          console.log("refresh")
+        }, (error)=>{
+          console.log("load error");
+        });
+      });
   }
-  // openDialog(): void {
-  //   let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-  //     height: '400px',
-  //     width: '600px',
-  //   });
-
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log('The dialog was closed');
-     
-  //   });
-  // }
-
 } 
 
-// @Component({
-//   selector: 'dialog-overview-example-dialog',
-//   templateUrl: 'delete.html',
-// })
-// export class DialogOverviewExampleDialog {
 
-//   constructor(
-//     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-//     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
-//   onNoClick(): void {
-//     this.dialogRef.close();
-//   }
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  templateUrl: 'delete.html',
+  styleUrls: ['./delete.scss']
+})
+export class DialogOverviewExampleDialog {
 
-// }
+  constructor(
+    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+    private http: Http,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+  delete(): void {
+    this.http.delete('/api/blog/' + this.data.id).subscribe();
+    this.dialogRef.close();
+  }
+  close(): void {
+    console.log("cnmb");
+    this.dialogRef.close();
+  }
+
+}
