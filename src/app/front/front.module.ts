@@ -19,7 +19,7 @@ import { AchieveComponent } from './achieve/achieve.component'
 import { ShareModule } from '../share/app-share.module';
 import { AboutComponent } from './about/about.component';
 import { SidebarService } from '../service/sidebar/sidebar.service';
-
+import { DisqusModule } from "ngx-disqus";
 
 @NgModule({
   imports: [
@@ -34,8 +34,8 @@ import { SidebarService } from '../service/sidebar/sidebar.service';
     MatButtonModule,
     MatToolbarModule,
     ShareModule,
-    MatProgressSpinnerModule
-  
+    MatProgressSpinnerModule,
+    DisqusModule.forRoot('devcheny')
 ],
 
 declarations: [
