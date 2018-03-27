@@ -12,10 +12,10 @@
         <img *ngIf="blog.img " mat-card-image [src]="blog.img">
 
 
-        <mat-card-content style="word-wrap: break-word;" [innerHtml]="blog.content">
+        <mat-card-content style="word-wrap: break-word;margin-bottom: 80px;" [innerHtml]="blog.content">
           
         </mat-card-content>
-        <disqus [identifier]="pageId"></disqus>
+        <disqus [identifier]="pageId" class="disqus"></disqus>
       </mat-card>
     </div>
   </div>

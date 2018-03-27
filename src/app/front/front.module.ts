@@ -35,7 +35,7 @@ import { DisqusModule } from "ngx-disqus";
     MatToolbarModule,
     ShareModule,
     MatProgressSpinnerModule,
-    DisqusModule.forRoot('disqus_shortname')
+    DisqusModule.forRoot('devcheny')
 ],
 
 declarations: [

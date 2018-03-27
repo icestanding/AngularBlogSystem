@@ -27,12 +27,12 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.pageid = "";
+    
     this.route.params.subscribe(params=>{
       console.log(params.id);
       this.http.get("/api/blog/"+params.id).subscribe((data)=>{
         console.log(data.text());
-       
+        this.pageid = params.id;
         this.blogs =  JSON.parse(data.text());
        
       }, (error)=>{
