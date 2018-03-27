@@ -17,7 +17,7 @@ export class BlogComponent implements OnInit {
   public id;
   @ViewChildren('blog') blog;
   @ViewChild('blog') blog_c;
-  
+  public pageid;
 
   constructor(private http:Http, private route: ActivatedRoute,
   private renderer: Renderer2) { 
@@ -27,6 +27,7 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.pageid = "";
     this.route.params.subscribe(params=>{
       console.log(params.id);
       this.http.get("/api/blog/"+params.id).subscribe((data)=>{
@@ -34,21 +35,11 @@ export class BlogComponent implements OnInit {
        
         this.blogs =  JSON.parse(data.text());
        
-        // remove html tag, slicing to abstract
-       
-        // return true;
       }, (error)=>{
         // return false;
         console.log("error cnm");
       });
 
-    })
-
-
-    
+    })    
   }
-
-  
-
-
 }
