@@ -48,7 +48,8 @@ export class NavComponent implements OnInit {
         else {
             this.nav = true;
             this.back = false;
-            this.location.back();
+            // this.location.back();
+            this.router.navigateByUrl('');
             if(window.innerWidth > 1000) {
                 this.event.emit(e);
             }
