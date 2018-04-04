@@ -34,14 +34,24 @@ export class AboutComponent implements OnInit {
     'second-border'?: boolean;
   }
   constructor(public colorservice: ColorService) {
-    this.background_theme = {
-      'primary-background': false,
-      'second-background': true
-    }
-    this.border_theme = {
-      'primary-border': false,
-      'second-border': true
-    }
+    // this.background_theme = {
+    //   'primary-background': true,
+    //   'second-background': false
+    // }
+    // this.border_theme = {
+    //   'primary-border': true,
+    //   'second-border': false
+    // }
+    this.colorservice.getData().subscribe(data=> {
+      this.background_theme = {
+        'primary-background': data[0],
+        'second-background': data[1]
+      }
+      this.border_theme = {
+        'primary-border': data[0],
+        'second-border':  data[1]
+      }
+    })
   }
 
   ngOnInit() {

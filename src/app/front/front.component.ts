@@ -54,6 +54,8 @@ export class FrontComponent implements OnInit {
       // this.Sidenav.opened=false;
     this.router.events.forEach((event: NavigationEvent) => {
     if(event instanceof NavigationStart) {
+
+
       // console.log("this is fking url"+ event.url);
       // all template
       this.hide = true;
@@ -85,6 +87,13 @@ export class FrontComponent implements OnInit {
          this.Sidenav.opened=false;
       }
       this.current_url = event.url;
+      if(this.mytheme["alternate-theme"] == true) {
+        this.colorservice.updateData([false, true]);
+      }
+      else {
+        this.colorservice.updateData([true, false]);
+      }
+
     }
      
 
