@@ -11,9 +11,10 @@ import { NotfoundComponent } from './share/notfound/notfound.component';
 import { ShareModule } from './share/app-share.module';
 import { AdminModule } from './admin/admin.module';
 import { FrontComponent } from './front/front.component'
-import { FrontModule } from './front/front.module'
-import { AdminComponent } from './admin/admin.component'
-import { MatCardModule,MatProgressSpinnerModule } from '@angular/material'
+import { FrontModule } from './front/front.module';
+import { AdminComponent } from './admin/admin.component';
+import { MatCardModule,MatProgressSpinnerModule } from '@angular/material';
+import { ColorService } from './service/color/color.service'
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { MatCardModule,MatProgressSpinnerModule } from '@angular/material'
   
   ],
 
-  providers: [LoginServiceService, SidebarService],
+  providers: [LoginServiceService, SidebarService, ColorService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

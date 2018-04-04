@@ -6,6 +6,7 @@ import { LoginServiceService } from '../service/login/login-service.service'
 import { routerTransition } from './router.animation'
 import { SidebarService } from '../service/sidebar/sidebar.service';
 import { HeaderComponent } from '../share/header/header.component'
+import { ColorService } from '../service/color/color.service'
 
 @Component({
   selector: 'app-front',
@@ -33,7 +34,8 @@ export class FrontComponent implements OnInit {
 
 
   constructor(@Inject(DOCUMENT) private document:Document, private _router:Router, private login: LoginServiceService,
-  private sidebarservice:SidebarService) {
+  private sidebarservice:SidebarService,
+  public colorservice: ColorService) {
     // if inner size 840px
     
     this.sidebarservice.messageO.subscribe((res)=>{
@@ -115,11 +117,15 @@ export class FrontComponent implements OnInit {
     this.Sidenav.toggle();
   }
   themechange() {
+    
     if(this.mytheme["alternate-theme"] == true) {
       this.mytheme={'alternate-theme':false, 'main-theme': true};
+      this.colorservice.updateData([true, false]);
     }
     else {
        this.mytheme={'alternate-theme':true, 'main-theme': false};
+       this.colorservice.updateData([false, true]);
+       
     }
   }
   @HostListener('window:resize', ['$event'])

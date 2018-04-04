@@ -1,3 +1,28 @@
+
+$primary-color: #1976D2;
+$second-color: #6A1B9A;
+
+
+.primary-background { 
+    background-color: $primary-color;
+    
+}
+
+.second-background {
+    background-color: $second-color;
+}
+
+.primary-border {
+   
+    border-color: transparent $primary-color transparent transparent;
+}
+.second-border {
+    border-color: transparent $second-color transparent transparent;
+}
+
+
+
+
 h3 {
     margin: 0;
     font-size: 2em;
@@ -24,12 +49,12 @@ h3 {
  
 
 #profile {
-
+    
     height: 400px;
     display: flex;
     flex-direction: row;
     padding: 0;
-    background-color: #1976D2;
+    // background-color: $primary-color;
     
     
 }
@@ -97,7 +122,7 @@ h3 i {
     position: absolute;
     border-style: solid;
     border-width: 400px 100px 0 0;
-    border-color: transparent #1976D2 transparent transparent;
+    
    
 }
 

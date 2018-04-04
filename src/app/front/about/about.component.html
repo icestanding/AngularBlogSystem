@@ -8,12 +8,12 @@
     <div class="container category" style="margin-top:-240px;">
         <div class="row">
             <div class = "col-md-12 col-sm-12 col-xs-12">
-                <mat-card  id="profile">
+                <mat-card  id="profile" [ngClass]="background_theme">
                     <div id="profile-img">
                         <img class="image-responsive"  src="../../assets/img/profile.png" alt="Photo of a Shiba Inu" >
                     </div>
                     <div id="profile-right" style="width:100%">
-                        <div class="slant"></div>
+                        <div class="slant" [ngClass]="border_theme"></div>
                         <div class="content " >
                             <h1>Chen Lee</h1> 
                             <h6>Software Engineer & Web Developer</h6>
