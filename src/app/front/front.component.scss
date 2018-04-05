@@ -103,7 +103,10 @@ min-height:  calc(100vh - 110px);
     flex-direction:column; 
     height:20%; 
     min-height:150px; 
-    margin-bottom:15px
+    margin-bottom:15px;
+    background-image: url('../../assets/img/sidebackground.jpg');
+    background-size: cover;
+
 }
 
 .side-profile {

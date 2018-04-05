@@ -33,15 +33,12 @@ export class AboutComponent implements OnInit {
     'primary-border'?: boolean;
     'second-border'?: boolean;
   }
+  public accent_theme: {
+    'primary-accent'?: boolean;
+    'second-accent'?: boolean;
+  }
   constructor(public colorservice: ColorService) {
-    // this.background_theme = {
-    //   'primary-background': true,
-    //   'second-background': false
-    // }
-    // this.border_theme = {
-    //   'primary-border': true,
-    //   'second-border': false
-    // }
+
     this.colorservice.getData().subscribe(data=> {
       this.background_theme = {
         'primary-background': data[0],
@@ -50,6 +47,10 @@ export class AboutComponent implements OnInit {
       this.border_theme = {
         'primary-border': data[0],
         'second-border':  data[1]
+      }
+      this.accent_theme = {
+        'primary-accent': data[0],
+        'second-accent':  data[1]
       }
     })
   }
@@ -63,6 +64,10 @@ export class AboutComponent implements OnInit {
       this.border_theme = {
         'primary-border': data[0],
         'second-border':  data[1]
+      }
+      this.accent_theme = {
+        'primary-accent': data[0],
+        'second-accent':  data[1]
       }
     })
   }

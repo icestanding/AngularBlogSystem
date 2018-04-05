@@ -1,6 +1,8 @@
 
 $primary-color: #1976D2;
 $second-color: #6A1B9A;
+$accent-color-1: #FFB300;
+$accent-color-2: #D81B60;
 
 
 .primary-background { 
@@ -19,6 +21,19 @@ $second-color: #6A1B9A;
 .second-border {
     border-color: transparent $second-color transparent transparent;
 }
+.primary-accent {
+   
+    border-left: 5px solid $accent-color-1;
+ }
+ .second-accent {
+    border-left: 5px solid $accent-color-2;
+ }
+ 
+
+
+
+
+
 
 
 
@@ -27,7 +42,7 @@ h3 {
     margin: 0;
     font-size: 2em;
     font-weight: 500;
-    color: rgb(47, 57, 66);
+    // color: rgb(47, 57, 66);
     display: block;
 
    
@@ -41,7 +56,7 @@ h3 {
     i {
         display: block;
         padding-top: 1px;
-        color: rgb(47, 57, 66);
+        // color: rgb(47, 57, 66);
         padding-right: 10px;
     }
 }
@@ -95,10 +110,9 @@ h3 {
 }
 
 #summary {
-    background-color: white;
+
     font-weight:400;
     font-size: 1.2em;
-    color: rgb(65, 65, 65);
     text-align:start;
 }
 
@@ -223,7 +237,7 @@ span {
     margin-top: 100px;
     .connect {
         width: 5px;
-        background-color: #1976D2;
+        // background-color: #1976D2;
         height: 80px;
         position: relative;
         right: -26px;
@@ -244,7 +258,7 @@ span {
             width: 60px;
             height: 60px;
             border-radius: 30px;
-            background-color: #1976D2;     
+            // background-color: #1976D2;     
             position: relative;
             right: -30px;  
          
@@ -253,7 +267,7 @@ span {
             width: 60px;
             height: 60px;
             border-radius: 30px;
-            background-color: #1976D2;     
+            // background-color: #1976D2;     
             position: relative;
             right: 30px;  
 
@@ -267,7 +281,7 @@ span {
         }
         .connect-l {
             width: 50px;
-            background-color: #1976D2;
+            // background-color: #1976D2;
             height: 5px;
             right: 30px;
             top:-53px;
@@ -275,7 +289,7 @@ span {
         }
         .connect-r {
             width: 50px;
-            background-color: #1976D2;
+            // background-color: #1976D2;
             height: 5px;
             left: 40px;
             top:-53px;
@@ -302,7 +316,7 @@ span {
         .detail {
             // height: 150px;
             box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-            background: white;
+            // background: white;
             width:80%;
             position: relative;
             bottom: 50px;
@@ -310,12 +324,12 @@ span {
             padding: 10px;
             padding-left: 20px;
             padding-bottom: 20px;
-            border-left: 5px solid orange;
+            // border-left: 5px solid orange;
             overflow: hidden;
             h4 {
                 font-weight:450;
                 font-size: 1.8em;
-                color: rgb(90, 90, 90);
+                // color: rgb(90, 90, 90);
                 margin-bottom: 0;
             }
 
@@ -324,7 +338,7 @@ span {
                 margin-top:3px;
                 font-size: 1.2em;
                 font-weight: 400;
-                color: rgb(90, 90, 90)
+                // color: rgb(90, 90, 90)
             }
         }
 
@@ -427,7 +441,7 @@ span {
             .detail {
                 margin: 0;
                 width: 100%;
-                border-left: 5px solid orange;
+                // border-left: 5px solid orange;
                 margin-bottom: 10px;
             }
 
