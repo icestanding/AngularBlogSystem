@@ -21,8 +21,8 @@ export class HeaderComponent implements OnInit {
 
   @Output() event = new EventEmitter();
   @Output() colorevent = new EventEmitter();
-  @ViewChild(ThemeDirective) vc:ThemeDirective; 
-   @ViewChild('nav') nav;
+  @ViewChild(ThemeDirective, null) vc:ThemeDirective; 
+   @ViewChild('nav', null) nav;
   public transform:{
     'header'?: boolean;
     'headerfix'?: boolean;

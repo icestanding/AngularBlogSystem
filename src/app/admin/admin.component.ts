@@ -13,7 +13,7 @@ export class AdminComponent implements OnInit {
   private result: Object;
 
 
-  @ViewChild('editor') editor;
+  @ViewChild('editor', null) editor;
   constructor(private http: HttpClient, private auth:LoginServiceService) {
 
   }
