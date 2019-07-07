@@ -33,7 +33,6 @@ export class MainpageComponent implements OnInit {
   @Input() img_c;
   
   @ViewChildren('my') blogs_container;
-  @ViewChild('container') blogs_c:ElementRef;
   @Output () event = new EventEmitter();
   constructor(private http: Http,private router: Router,
   private sidebarservice:SidebarService,

@@ -1,7 +1,6 @@
 import { Component,ViewChild, ElementRef, Inject, HostListener, OnInit } from '@angular/core';
 import { Router, NavigationStart,NavigationCancel, NavigationEnd, Event as NavigationEvent } from '@angular/router';
 import { MatSidenav } from '@angular/material'
-import { DOCUMENT } from '@angular/platform-browser'
 import { LoginServiceService } from '../service/login/login-service.service'
 import { routerTransition } from './router.animation'
 import { SidebarService } from '../service/sidebar/sidebar.service';
@@ -25,15 +24,15 @@ export class FrontComponent implements OnInit {
   public current_url;
   
   title = 'app';
-  @ViewChild('start2') Sidenav:MatSidenav;
-  @ViewChild('start2') elementView: ElementRef;
-   @ViewChild('head') header;
+  @ViewChild('start2', null) Sidenav:MatSidenav;
+  @ViewChild('start2', null) elementView: ElementRef;
+   @ViewChild('head', null) header;
  
 
 
 
 
-  constructor(@Inject(DOCUMENT) private document:Document, private _router:Router, private login: LoginServiceService,
+  constructor(private _router:Router, private login: LoginServiceService,
   private sidebarservice:SidebarService,
   public colorservice: ColorService) {
     // if inner size 840px

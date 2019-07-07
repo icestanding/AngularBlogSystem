@@ -16,7 +16,6 @@ export class BlogComponent implements OnInit {
   public blogs;
   public id;
   @ViewChildren('blog') blog;
-  @ViewChild('blog') blog_c;
   public pageid;
 
   constructor(private http:Http, private route: ActivatedRoute,

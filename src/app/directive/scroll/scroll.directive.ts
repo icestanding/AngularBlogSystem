@@ -1,5 +1,4 @@
 import { Directive, Input, ElementRef, HostListener, Renderer2, Injectable} from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser'
 
 //  This directive is used to add scroll class
 // bug to fix check if a class exists

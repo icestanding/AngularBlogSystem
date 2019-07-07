@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter,Inject, HostListener, ViewChild, ElementRef,
 } from '@angular/core';
 import { ThemeDirective } from '../../directive/theme/theme.directive'
-import { DOCUMENT }from '@angular/platform-browser'
 
 @Component({
   selector: 'header',

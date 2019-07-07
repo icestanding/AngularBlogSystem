@@ -19,7 +19,6 @@ import { AchieveComponent } from './achieve/achieve.component'
 import { ShareModule } from '../share/app-share.module';
 import { AboutComponent } from './about/about.component';
 import { SidebarService } from '../service/sidebar/sidebar.service';
-import { DisqusModule } from "ngx-disqus";
 import { ColorService } from '../service/color/color.service';
 
 @NgModule({
@@ -36,7 +35,6 @@ import { ColorService } from '../service/color/color.service';
     MatToolbarModule,
     ShareModule,
     MatProgressSpinnerModule,
-    DisqusModule.forRoot('devcheny')
 ],
 
 declarations: [

@@ -1,5 +1,4 @@
 import { Component, Output, EventEmitter, OnInit, HostListener, Inject } from '@angular/core';
-import { DOCUMENT }from '@angular/platform-browser'
 import { SidebarService } from '../../../service/sidebar/sidebar.service';
 import { Router } from '@angular/router'
 import { Location } from '@angular/common'
@@ -17,7 +16,7 @@ export class NavComponent implements OnInit {
     public nav:Boolean;
     public back:Boolean;
 
-    constructor(@Inject(DOCUMENT) private document:Document, private sidebarservice:SidebarService, private router: Router, private location:Location) {
+    constructor( private sidebarservice:SidebarService, private router: Router, private location:Location) {
         this.nav = true;
         this.back = false;
          this.sidebarservice.messageO.subscribe((res)=>{

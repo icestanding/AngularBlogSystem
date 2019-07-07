@@ -54,11 +54,11 @@ export class LoginformComponent implements OnInit {
     return Math.max(0, Math.min(100, value));
   }
 
-  signUp () {
-    if(this.login.login(this.username,  this.password)){
-      this.route.navigateByUrl('/admin');
-    }
-  }
+  // signUp () {
+  //   if(this.login.login(this.username,  this.password)){
+  //     this.route.navigateByUrl('/admin');
+  //   }
+  // }
 
 
 }

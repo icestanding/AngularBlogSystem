@@ -14,7 +14,7 @@ import { LoginServiceService } from '../service/login/login-service.service'
 
 export class LoginComponent implements OnInit {
   
-  @ViewChild('start2') MatSidenav:MatSidenav;
+  @ViewChild('start2', null) MatSidenav:MatSidenav;
   private router: Router;
   data:string;
   constructor(private _router: Router, private auth: LoginServiceService) {
