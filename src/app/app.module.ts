@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { RouterModule, Routes} from '@angular/router';
+import { RouterModule} from '@angular/router';
 import { LoginServiceService } from './service/login/login-service.service';
 import { SidebarService } from './service/sidebar/sidebar.service';
 import { LoginModule } from './login/login.module';
@@ -15,33 +15,27 @@ import { FrontModule } from './front/front.module';
 import { AdminComponent } from './admin/admin.component';
 import { MatCardModule,MatProgressSpinnerModule } from '@angular/material';
 import { ColorService } from './service/color/color.service'
-
+import { Routes  } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [
+    
     BrowserModule,
-    LoginModule,
-    FrontModule,
-    RouterModule.forRoot(
-      [
-        {path: '**', component:NotfoundComponent}
-      ],
-      {enableTracing: true}
-    ),
-    BrowserAnimationsModule,
-    AdminModule,
-    ShareModule,
-    HttpModule,
-    MatCardModule,
-    MatProgressSpinnerModule
+    AppRoutingModule,
+    // LoginModule,
+    // FrontModule,
+
+    // BrowserAnimationsModule,
+    // AdminModule,
+    // ShareModule,
+    // HttpModule,
+    // MatCardModule,
+    // MatProgressSpinnerModule,
 ],
   declarations: [
     AppComponent,
-    NotfoundComponent
-  
   ],
-
-  providers: [LoginServiceService, SidebarService, ColorService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
