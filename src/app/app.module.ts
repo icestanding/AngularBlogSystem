@@ -17,6 +17,7 @@ import { MatCardModule,MatProgressSpinnerModule } from '@angular/material';
 import { ColorService } from './service/color/color.service'
 import { Routes  } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     AppRoutingModule,
     // LoginModule,
-    // FrontModule,
+    FrontModule,
 
     // BrowserAnimationsModule,
     // AdminModule,
@@ -35,7 +36,9 @@ import { AppRoutingModule } from './app-routing.module';
 ],
   declarations: [
     AppComponent,
+    TestComponent,
   ],
   bootstrap: [AppComponent],
 })
+
 export class AppModule { }
